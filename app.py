@@ -191,7 +191,7 @@ def build_sidebar(active_id="overview"):
 # ── App layout ────────────────────────────────────────────────────────────────
 app.layout = html.Div([
     dcc.Store(id="active-page", data="overview"),
-    dcc.Style(CUSTOM_CSS),
+    html.Style(CUSTOM_CSS),
     html.Div(id="sidebar-container"),
     html.Div(id="page-content", className="main-content"),
 ])
