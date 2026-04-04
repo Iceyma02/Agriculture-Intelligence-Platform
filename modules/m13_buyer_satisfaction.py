@@ -27,19 +27,25 @@ def layout():
         volume=("volume_tons", "sum"),
     ).reset_index().sort_values("overall", ascending=False)
 
+    # Radar for top 4 buyers
     categories = ["Overall", "Quality", "Delivery", "Payment"]
     fig_radar = go.Figure()
     top4 = by_buyer.head(4)
     for i, (_, row) in enumerate(top4.iterrows()):
         vals = [row["overall"], row["quality"], row["delivery"], row["payment"]]
         vals += vals[:1]
+        # Convert hex to rgba properly
+        hex_color = PALETTE[i]
+        r = int(hex_color[1:3], 16)
+        g = int(hex_color[3:5], 16)
+        b = int(hex_color[5:7], 16)
         fig_radar.add_trace(go.Scatterpolar(
             r=vals,
             theta=categories + [categories[0]],
             fill="toself",
             name=row["buyer"][:18],
             line=dict(color=PALETTE[i], width=2),
-            fillcolor=f"{PALETTE[i]}18",
+            fillcolor=f"rgba({r}, {g}, {b}, 0.1)",
         ))
     apply_theme(fig_radar, 340)
     fig_radar.update_layout(
@@ -51,6 +57,7 @@ def layout():
         title=dict(text="Buyer Satisfaction Radar — Top 4 Buyers", font=dict(color="#86efac", size=13)),
     )
 
+    # Score bar chart
     fig_scores = go.Figure()
     fig_scores.add_trace(go.Bar(name="Overall", x=by_buyer["buyer"], y=by_buyer["overall"], marker_color=GREEN))
     fig_scores.add_trace(go.Bar(name="Quality", x=by_buyer["buyer"], y=by_buyer["quality"], marker_color=LIME))
@@ -59,6 +66,7 @@ def layout():
     apply_theme(fig_scores, 280)
     fig_scores.update_layout(title=dict(text="Satisfaction Scores by Buyer", font=dict(color="#86efac", size=13)))
 
+    # Revenue vs satisfaction scatter
     fig_scatter = go.Figure(go.Scatter(
         x=by_buyer["revenue"], y=by_buyer["overall"],
         mode="markers+text",
@@ -74,6 +82,7 @@ def layout():
         yaxis=dict(title="Score /5", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)"),
     )
 
+    # Complaints trend (monthly)
     if "month_label" in bs.columns:
         trend = bs.groupby("month_label")["complaints"].sum().reset_index()
         fig_complaints = go.Figure(go.Bar(
@@ -85,6 +94,7 @@ def layout():
     else:
         fig_complaints = go.Figure()
 
+    # Summary table
     rows = []
     for _, row in by_buyer.iterrows():
         score_color = GREEN if row["overall"] >= 4.2 else AMBER if row["overall"] >= 3.5 else RED
