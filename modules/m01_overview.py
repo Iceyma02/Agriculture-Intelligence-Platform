@@ -105,7 +105,11 @@ def load_farms():
     data_dir = Path(__file__).parent.parent / "data" / "csv"
     farms_path = data_dir / "farms.csv"
     if farms_path.exists():
-        return pd.read_csv(farms_path)
+        df = pd.read_csv(farms_path)
+        # Standardize column names
+        if 'id' in df.columns and 'farm_id' not in df.columns:
+            df = df.rename(columns={'id': 'farm_id'})
+        return df
     return pd.DataFrame()
 
 def load_monthly():
@@ -121,13 +125,23 @@ def load_pnl():
     data_dir = Path(__file__).parent.parent / "data" / "csv"
     pnl_path = data_dir / "pnl.csv"
     if pnl_path.exists():
-        return pd.read_csv(pnl_path)
+        df = pd.read_csv(pnl_path)
+        # Standardize column names
+        if 'farm_name' not in df.columns and 'Farm' in df.columns:
+            df = df.rename(columns={'Farm': 'farm_name'})
+        return df
     return pd.DataFrame()
 
 def layout():
     f = load_farms()
     m = load_monthly()
     p = load_pnl()
+    
+    # Debug print to see actual columns (will appear in logs)
+    print(f"Farms columns: {f.columns.tolist() if not f.empty else 'EMPTY'}")
+    print(f"PNL columns: {p.columns.tolist() if not p.empty else 'EMPTY'}")
+    print(f"Farms shape: {f.shape}")
+    print(f"PNL shape: {p.shape}")
     
     # Handle empty dataframes
     if f.empty or p.empty:
@@ -141,7 +155,10 @@ def layout():
     total_profit = p["gross_profit_usd"].sum() if "gross_profit_usd" in p else 0
     avg_margin = p["profit_margin_pct"].mean() if "profit_margin_pct" in p else 0
     total_ha = f["size_ha"].sum() if "size_ha" in f else 0
-    active_farms = len(f[f["status"] == "Active"]) if "status" in f and not f.empty else 0
+    
+    # Handle different column names for status
+    status_col = "status" if "status" in f.columns else "Status" if "Status" in f.columns else None
+    active_farms = len(f[f[status_col] == "Active"]) if status_col and not f.empty else 0
     critical_alerts = 4
 
     # Revenue trend (last 18 months, all farms)
@@ -162,11 +179,19 @@ def layout():
         fig_trend = create_empty_chart("No revenue trend data available", "Portfolio Revenue Trend (18 months)")
 
     # Farm profit rankings
-    if not p.empty and "gross_profit_usd" in p and "farm_name" in p:
-        farm_profit = p.groupby("farm_name")["gross_profit_usd"].sum().reset_index().sort_values("gross_profit_usd", ascending=True)
+    if not p.empty and "gross_profit_usd" in p:
+        # Try to use farm_name or index if available
+        if "farm_name" in p.columns:
+            farm_profit = p.groupby("farm_name")["gross_profit_usd"].sum().reset_index().sort_values("gross_profit_usd", ascending=True)
+            y_values = farm_profit["farm_name"]
+        else:
+            # Use index as farm identifier
+            farm_profit = p.groupby(p.index)["gross_profit_usd"].sum().reset_index().sort_values("gross_profit_usd", ascending=True)
+            y_values = [f"Farm {i+1}" for i in range(len(farm_profit))]
+        
         fig_ranking = go.Figure(go.Bar(
             x=farm_profit["gross_profit_usd"],
-            y=farm_profit["farm_name"],
+            y=y_values,
             orientation="h",
             marker=dict(
                 color=farm_profit["gross_profit_usd"],
@@ -180,57 +205,78 @@ def layout():
     else:
         fig_ranking = create_empty_chart("No profit data available", "Profit Ranking by Farm")
 
-    # Crop mix - FIXED VERSION with bar chart
+    # Crop mix - IMPROVED VERSION
     try:
-        # Make sure we have the necessary data
         if not p.empty and not f.empty:
-            # Ensure farm_id exists in both dataframes
-            if 'farm_id' in p.columns and 'farm_id' in f.columns:
-                # Convert to same type
-                p['farm_id'] = p['farm_id'].astype(str)
-                f['farm_id'] = f['farm_id'].astype(str)
+            # Find the correct ID column names
+            p_id_col = None
+            f_id_col = None
+            
+            # Check for ID columns in PNL
+            for col in ['farm_id', 'Farm_ID', 'farmid', 'FarmId', 'id', 'ID']:
+                if col in p.columns:
+                    p_id_col = col
+                    break
+            
+            # Check for ID columns in FARMS
+            for col in ['farm_id', 'Farm_ID', 'farmid', 'FarmId', 'id', 'ID']:
+                if col in f.columns:
+                    f_id_col = col
+                    break
+            
+            # Check for crop column in FARMS
+            crop_col = None
+            for col in ['primary_crop', 'crop', 'Crop', 'PrimaryCrop']:
+                if col in f.columns:
+                    crop_col = col
+                    break
+            
+            if p_id_col and f_id_col and crop_col:
+                # Convert to string for merging
+                p[p_id_col] = p[p_id_col].astype(str)
+                f[f_id_col] = f[f_id_col].astype(str)
                 
                 # Merge the data
-                crop_rev = p.merge(f[['farm_id', 'primary_crop']], on='farm_id', how='left')
+                crop_rev = p.merge(f[[f_id_col, crop_col]], left_on=p_id_col, right_on=f_id_col, how='left')
                 
-                # Check if primary_crop exists in merged dataframe
-                if 'primary_crop' in crop_rev.columns and 'revenue_usd' in crop_rev.columns:
-                    crop_mix = crop_rev.groupby('primary_crop')['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False)
+                if crop_col in crop_rev.columns and 'revenue_usd' in crop_rev.columns:
+                    crop_mix = crop_rev.groupby(crop_col)['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False)
+                    crop_mix = crop_mix[crop_mix[crop_col].notna()]  # Remove null crops
                     
-                    # Only create chart if we have data
                     if not crop_mix.empty and crop_mix['revenue_usd'].sum() > 0:
-                        # Use bar chart instead of donut for better reliability
-                        fig_donut = go.Figure(go.Bar(
-                            x=crop_mix['primary_crop'], 
+                        fig_crop = go.Figure(go.Bar(
+                            x=crop_mix[crop_col], 
                             y=crop_mix['revenue_usd'],
                             marker=dict(color=PALETTE[:len(crop_mix)]),
                             text=[fmt_usd(v) for v in crop_mix['revenue_usd']],
                             textposition='outside',
                             textfont=dict(color="#f0fdf4", size=10),
                         ))
-                        apply_theme(fig_donut, 300)
-                        fig_donut.update_layout(
+                        apply_theme(fig_crop, 300)
+                        fig_crop.update_layout(
                             title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
                             xaxis_tickangle=-25,
                             yaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)")
                         )
                     else:
-                        fig_donut = create_empty_chart("No crop revenue data available", "Revenue by Primary Crop")
+                        fig_crop = create_empty_chart("No crop revenue data available", "Revenue by Primary Crop")
                 else:
-                    fig_donut = create_empty_chart("Crop data columns missing", "Revenue by Primary Crop")
+                    fig_crop = create_empty_chart("Required columns missing", "Revenue by Primary Crop")
             else:
-                fig_donut = create_empty_chart("Farm ID mismatch between datasets", "Revenue by Primary Crop")
+                missing = []
+                if not p_id_col: missing.append("farm_id in PNL")
+                if not f_id_col: missing.append("farm_id in FARMS") 
+                if not crop_col: missing.append("crop column in FARMS")
+                fig_crop = create_empty_chart(f"Missing: {', '.join(missing)}", "Revenue by Primary Crop")
         else:
-            fig_donut = create_empty_chart("No P&L or farm data available", "Revenue by Primary Crop")
+            fig_crop = create_empty_chart("No P&L or farm data available", "Revenue by Primary Crop")
     except Exception as e:
         print(f"Error creating crop chart: {e}")
-        fig_donut = create_empty_chart(f"Error: {str(e)[:50]}", "Revenue by Primary Crop")
+        fig_crop = create_empty_chart(f"Error: {str(e)[:50]}", "Revenue by Primary Crop")
 
     # Province performance
     if not f.empty and "province" in f.columns and "profit_margin_pct" in f.columns:
         prov = f.groupby("province").agg(
-            farms_count=("farm_id", "count") if "farm_id" in f.columns else ("id", "count"),
-            total_ha=("size_ha", "sum"),
             avg_margin=("profit_margin_pct", "mean")
         ).reset_index()
         fig_prov = go.Figure(go.Bar(
@@ -264,10 +310,10 @@ def layout():
             kpi(str(critical_alerts), "Critical Alerts", "Requires attention", False, RED),
         ], style={"display": "grid", "gridTemplateColumns": "repeat(6,1fr)", "gap": "14px", "marginBottom": "24px"}),
 
-        # Trend + Donut (now bar chart)
+        # Trend + Crop
         html.Div([
             card([dcc.Graph(figure=fig_trend, config={"displayModeBar": False})], {"flex": "2"}),
-            card([dcc.Graph(figure=fig_donut, config={"displayModeBar": False})], {"flex": "1"}),
+            card([dcc.Graph(figure=fig_crop, config={"displayModeBar": False})], {"flex": "1"}),
         ], style={"display": "flex", "gap": "16px", "marginBottom": "16px"}),
 
         # Rankings + Province
