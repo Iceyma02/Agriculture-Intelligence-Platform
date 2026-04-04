@@ -3,18 +3,25 @@
 from dash import html, dcc
 import plotly.graph_objects as go
 import sys, os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+from utils import inventory
+from utils import GREEN, AMBER, RED, LIME, BLUE, fmt_usd, fmt_tons, apply_theme, page_header, card, kpi, status_badge
 
 def layout():
     inv = inventory()
+    
+    if inv.empty:
+        return html.Div([
+            page_header("Inputs & Stock Monitor", "Real-time input tracking across all farms · Alerts on critical levels"),
+            card([html.Div("⚠️ No inventory data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
 
     total_items = len(inv)
     critical_count = len(inv[inv["status"] == "Critical"])
     low_count = len(inv[inv["status"] == "Low"])
     ok_count = len(inv[inv["status"] == "OK"])
 
-    # Status donut
     fig_status = go.Figure(go.Pie(
         labels=["OK", "Low", "Critical"],
         values=[ok_count, low_count, critical_count],
@@ -26,9 +33,7 @@ def layout():
     apply_theme(fig_status, 280)
     fig_status.update_layout(title=dict(text="Stock Health Overview", font=dict(color="#86efac", size=13)), showlegend=False)
 
-    # By category
     cat_status = inv.groupby(["category","status"]).size().reset_index(name="count")
-    categories = inv["category"].unique()
     fig_cat = go.Figure()
     for status, color in [("OK", GREEN), ("Low", AMBER), ("Critical", RED)]:
         sub = cat_status[cat_status["status"] == status]
@@ -37,10 +42,9 @@ def layout():
     apply_theme(fig_cat, 280)
     fig_cat.update_layout(title=dict(text="Stock Status by Category", font=dict(color="#86efac", size=13)))
 
-    # Stock level gauge per item (top 8 critical)
     critical_items = inv[inv["status"] == "Critical"].head(8)
     fig_bars = go.Figure()
-    for i, (_, row) in enumerate(critical_items.iterrows()):
+    for _, row in critical_items.iterrows():
         pct = row["qty_current"] / row["qty_max"] * 100
         fig_bars.add_trace(go.Bar(
             name=row["item_name"][:25],
@@ -56,7 +60,6 @@ def layout():
         showlegend=False, xaxis=dict(range=[0,100]),
     )
 
-    # Table — all critical items
     rows = []
     for _, row in inv[inv["status"] != "OK"].sort_values("status").head(30).iterrows():
         rows.append(html.Tr([
