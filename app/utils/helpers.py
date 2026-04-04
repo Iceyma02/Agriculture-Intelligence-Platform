@@ -2,6 +2,7 @@
 
 import pandas as pd
 import plotly.graph_objects as go
+from dash import html
 
 # Color definitions
 GREEN = '#22c55e'
@@ -18,6 +19,12 @@ def fmt_usd(value):
     if pd.isna(value):
         return "$0"
     return f"${value:,.0f}"
+
+def fmt_tons(value):
+    """Format tons with units"""
+    if pd.isna(value):
+        return "0 t"
+    return f"{value:,.0f} t"
 
 def apply_theme(fig, height=300):
     """Apply dark theme to plotly figures"""
@@ -36,7 +43,6 @@ def apply_theme(fig, height=300):
 
 def page_header(title, subtitle):
     """Create page header"""
-    from dash import html
     return html.Div([
         html.H1(title, className="page-title"),
         html.P(subtitle, className="page-subtitle"),
@@ -44,7 +50,6 @@ def page_header(title, subtitle):
 
 def card(children, style=None):
     """Create a card component"""
-    from dash import html
     card_style = {"background": "#111811", "border": "1px solid rgba(34,197,94,0.15)", 
                   "borderRadius": "12px", "padding": "20px"}
     if style:
@@ -53,10 +58,20 @@ def card(children, style=None):
 
 def kpi(value, label, delta=None, is_up=None, color=None):
     """Create a KPI card"""
-    from dash import html
     delta_style = {"color": GREEN if is_up else RED} if delta else {}
     return html.Div([
         html.Div(value, className="kpi-value", style={"color": color} if color else {}),
         html.Div(label, className="kpi-label"),
         html.Div(delta, className="kpi-delta", style=delta_style) if delta else None,
     ], className="kpi-card")
+
+def status_badge(status):
+    """Create a status badge HTML component"""
+    if status == "Active" or status == "OK" or status == "On time" or status == "Delivered":
+        return html.Span("● " + status, className="badge-ok")
+    elif status == "Warning" or status == "Low" or status == "Delayed" or status == "In Transit":
+        return html.Span("⚠ " + status, className="badge-low")
+    elif status == "Suspended" or status == "Critical" or status == "Pending":
+        return html.Span("● " + status, className="badge-critical")
+    else:
+        return html.Span(status, style={"color": "#6b7280", "fontSize": "0.72rem"})
