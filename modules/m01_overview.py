@@ -3,75 +3,193 @@
 from dash import html, dcc, Input, Output
 import plotly.graph_objects as go
 import plotly.express as px
+import pandas as pd
 import sys, os
+from pathlib import Path
+
+# Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+
+# Color definitions (since utils.helpers is missing)
+GREEN = '#22c55e'
+BLUE = '#3b82f6'
+AMBER = '#f59e0b'
+RED = '#ef4444'
+LIME = '#a3e635'
+PURPLE = '#a855f7'
+PINK = '#ec4899'
+PALETTE = [LIME, BLUE, AMBER, PURPLE, GREEN, PINK]
+
+# Helper functions
+def fmt_usd(value):
+    """Format number as USD currency"""
+    if pd.isna(value):
+        return "$0"
+    return f"${value:,.0f}"
+
+def apply_theme(fig, height=300):
+    """Apply dark theme to plotly figures"""
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#86efac", size=11),
+        height=height,
+        margin=dict(l=10, r=10, t=40, b=10),
+        hovermode="x unified",
+    )
+    fig.update_xaxes(gridcolor="rgba(34,197,94,0.1)", zerolinecolor="rgba(34,197,94,0.2)")
+    fig.update_yaxes(gridcolor="rgba(34,197,94,0.1)", zerolinecolor="rgba(34,197,94,0.2)")
+
+def page_header(title, subtitle):
+    """Create page header"""
+    return html.Div([
+        html.H1(title, className="page-title"),
+        html.P(subtitle, className="page-subtitle"),
+    ], className="page-header")
+
+def card(children, style=None):
+    """Create a card component"""
+    card_style = {"background": "#111811", "border": "1px solid rgba(34,197,94,0.15)", 
+                  "borderRadius": "12px", "padding": "20px"}
+    if style:
+        card_style.update(style)
+    return html.Div(children, style=card_style)
+
+def kpi(value, label, delta=None, is_up=None, color=None):
+    """Create a KPI card"""
+    delta_style = {"color": GREEN if is_up else RED} if delta else {}
+    return html.Div([
+        html.Div(value, className="kpi-value", style={"color": color} if color else {}),
+        html.Div(label, className="kpi-label"),
+        html.Div(delta, className="kpi-delta", style=delta_style) if delta else None,
+    ], className="kpi-card")
+
+def load_farms():
+    """Load farms data"""
+    data_dir = Path(__file__).parent.parent / "data" / "csv"
+    farms_path = data_dir / "farms.csv"
+    if farms_path.exists():
+        return pd.read_csv(farms_path)
+    return pd.DataFrame()
+
+def load_monthly():
+    """Load monthly performance data"""
+    data_dir = Path(__file__).parent.parent / "data" / "csv"
+    monthly_path = data_dir / "monthly_performance.csv"
+    if monthly_path.exists():
+        return pd.read_csv(monthly_path)
+    return pd.DataFrame()
+
+def load_pnl():
+    """Load P&L data"""
+    data_dir = Path(__file__).parent.parent / "data" / "csv"
+    pnl_path = data_dir / "pnl.csv"
+    if pnl_path.exists():
+        return pd.read_csv(pnl_path)
+    return pd.DataFrame()
 
 def layout():
-    f = farms()
-    m = monthly()
-    p = pnl()
-
-    total_revenue = p["revenue_usd"].sum()
-    total_profit = p["gross_profit_usd"].sum()
-    avg_margin = p["profit_margin_pct"].mean()
-    total_ha = f["size_ha"].sum()
-    active_farms = len(f[f["status"] == "Active"])
+    f = load_farms()
+    m = load_monthly()
+    p = load_pnl()
+    
+    # Handle empty dataframes
+    if f.empty or p.empty:
+        return html.Div([
+            page_header("Farm Operations Dashboard", "National portfolio overview · All farms · All seasons"),
+            card([html.Div("⚠️ Data not available. Please ensure datasets are generated.", 
+                           style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
+    
+    total_revenue = p["revenue_usd"].sum() if "revenue_usd" in p else 0
+    total_profit = p["gross_profit_usd"].sum() if "gross_profit_usd" in p else 0
+    avg_margin = p["profit_margin_pct"].mean() if "profit_margin_pct" in p else 0
+    total_ha = f["size_ha"].sum() if "size_ha" in f else 0
+    active_farms = len(f[f["status"] == "Active"]) if "status" in f and not f.empty else 0
     critical_alerts = 4
 
     # Revenue trend (last 18 months, all farms)
-    trend = m.groupby("month_label")["revenue_usd"].sum().reset_index()
-    trend = trend.tail(18)
-    fig_trend = go.Figure()
-    fig_trend.add_trace(go.Scatter(
-        x=trend["month_label"], y=trend["revenue_usd"],
-        mode="lines", fill="tozeroy",
-        line=dict(color=GREEN, width=2.5),
-        fillcolor="rgba(34,197,94,0.08)",
-        name="Revenue"
-    ))
-    apply_theme(fig_trend, 260)
-    fig_trend.update_layout(title=dict(text="Portfolio Revenue Trend (18 months)", font=dict(color="#86efac", size=13)))
+    if not m.empty and "month_label" in m and "revenue_usd" in m:
+        trend = m.groupby("month_label")["revenue_usd"].sum().reset_index()
+        trend = trend.tail(18)
+        fig_trend = go.Figure()
+        fig_trend.add_trace(go.Scatter(
+            x=trend["month_label"], y=trend["revenue_usd"],
+            mode="lines", fill="tozeroy",
+            line=dict(color=GREEN, width=2.5),
+            fillcolor="rgba(34,197,94,0.08)",
+            name="Revenue"
+        ))
+        apply_theme(fig_trend, 260)
+        fig_trend.update_layout(title=dict(text="Portfolio Revenue Trend (18 months)", font=dict(color="#86efac", size=13)))
+    else:
+        fig_trend = go.Figure()
+        apply_theme(fig_trend, 260)
+        fig_trend.update_layout(title=dict(text="No revenue data available", font=dict(color="#86efac", size=13)))
 
     # Farm profit rankings
-    farm_profit = p.groupby("farm_name")["gross_profit_usd"].sum().reset_index().sort_values("gross_profit_usd", ascending=True)
-    fig_ranking = go.Figure(go.Bar(
-        x=farm_profit["gross_profit_usd"],
-        y=farm_profit["farm_name"],
-        orientation="h",
-        marker=dict(
-            color=farm_profit["gross_profit_usd"],
-            colorscale=[[0, "#1a2e1a"], [0.5, "#16a34a"], [1, "#22c55e"]],
-        ),
-        text=[fmt_usd(v) for v in farm_profit["gross_profit_usd"]],
-        textfont=dict(color="#f0fdf4", size=11),
-    ))
-    apply_theme(fig_ranking, 340)
-    fig_ranking.update_layout(title=dict(text="Profit Ranking by Farm", font=dict(color="#86efac", size=13)))
+    if not p.empty and "gross_profit_usd" in p and "farm_name" in p:
+        farm_profit = p.groupby("farm_name")["gross_profit_usd"].sum().reset_index().sort_values("gross_profit_usd", ascending=True)
+        fig_ranking = go.Figure(go.Bar(
+            x=farm_profit["gross_profit_usd"],
+            y=farm_profit["farm_name"],
+            orientation="h",
+            marker=dict(
+                color=farm_profit["gross_profit_usd"],
+                colorscale=[[0, "#1a2e1a"], [0.5, "#16a34a"], [1, "#22c55e"]],
+            ),
+            text=[fmt_usd(v) for v in farm_profit["gross_profit_usd"]],
+            textfont=dict(color="#f0fdf4", size=11),
+        ))
+        apply_theme(fig_ranking, 340)
+        fig_ranking.update_layout(title=dict(text="Profit Ranking by Farm", font=dict(color="#86efac", size=13)))
+    else:
+        fig_ranking = go.Figure()
+        apply_theme(fig_ranking, 340)
+        fig_ranking.update_layout(title=dict(text="No profit data available", font=dict(color="#86efac", size=13)))
 
     # Crop mix donut
-    crop_rev = p.merge(farms()[["farm_id", "primary_crop"]], on="farm_id", how="left")
-    crop_mix = crop_rev.groupby("primary_crop")["revenue_usd"].sum().reset_index()
-    fig_donut = go.Figure(go.Pie(
-        labels=crop_mix["primary_crop"], values=crop_mix["revenue_usd"],
-        hole=0.6, marker=dict(colors=PALETTE),
-        textinfo="label+percent", textfont=dict(color="#f0fdf4", size=11),
-    ))
-    apply_theme(fig_donut, 300)
-    fig_donut.update_layout(title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
-                             showlegend=False)
+    if not p.empty and not f.empty:
+        try:
+            crop_rev = p.merge(f[["farm_id", "primary_crop"]], on="farm_id", how="left")
+            crop_mix = crop_rev.groupby("primary_crop")["revenue_usd"].sum().reset_index()
+            fig_donut = go.Figure(go.Pie(
+                labels=crop_mix["primary_crop"], values=crop_mix["revenue_usd"],
+                hole=0.6, marker=dict(colors=PALETTE),
+                textinfo="label+percent", textfont=dict(color="#f0fdf4", size=11),
+            ))
+            apply_theme(fig_donut, 300)
+            fig_donut.update_layout(title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
+                                     showlegend=False)
+        except:
+            fig_donut = go.Figure()
+            apply_theme(fig_donut, 300)
+            fig_donut.update_layout(title=dict(text="No crop data available", font=dict(color="#86efac", size=13)))
+    else:
+        fig_donut = go.Figure()
+        apply_theme(fig_donut, 300)
+        fig_donut.update_layout(title=dict(text="No crop data available", font=dict(color="#86efac", size=13)))
 
     # Province performance
-    prov = f.groupby("province").agg(farms_count=("id","count"), total_ha=("size_ha","sum"),
-                                      avg_margin=("profit_margin_pct","mean")).reset_index()
-    fig_prov = go.Figure(go.Bar(
-        x=prov["province"], y=prov["avg_margin"],
-        marker=dict(color=AMBER, opacity=0.85),
-        text=[f"{v:.1f}%" for v in prov["avg_margin"]],
-        textfont=dict(color="#f0fdf4"),
-    ))
-    apply_theme(fig_prov, 260)
-    fig_prov.update_layout(title=dict(text="Avg Profit Margin by Province", font=dict(color="#86efac", size=13)))
+    if not f.empty and "province" in f and "profit_margin_pct" in f:
+        prov = f.groupby("province").agg(
+            farms_count=("farm_id", "count") if "farm_id" in f else ("id", "count"),
+            total_ha=("size_ha", "sum"),
+            avg_margin=("profit_margin_pct", "mean")
+        ).reset_index()
+        fig_prov = go.Figure(go.Bar(
+            x=prov["province"], y=prov["avg_margin"],
+            marker=dict(color=AMBER, opacity=0.85),
+            text=[f"{v:.1f}%" for v in prov["avg_margin"]],
+            textfont=dict(color="#f0fdf4"),
+        ))
+        apply_theme(fig_prov, 260)
+        fig_prov.update_layout(title=dict(text="Avg Profit Margin by Province", font=dict(color="#86efac", size=13)))
+    else:
+        fig_prov = go.Figure()
+        apply_theme(fig_prov, 260)
+        fig_prov.update_layout(title=dict(text="No province data available", font=dict(color="#86efac", size=13)))
 
     alerts = [
         ("🔴", "Mvurwi Mixed Farm", "Fertilizer stock at critical level — reorder required"),
@@ -88,7 +206,7 @@ def layout():
             kpi(fmt_usd(total_revenue), "Total Portfolio Revenue", "↑ 12.4% vs last year", True),
             kpi(fmt_usd(total_profit), "Total Gross Profit", "↑ 8.1% vs last year", True, LIME),
             kpi(f"{avg_margin:.1f}%", "Avg Profit Margin", "↑ 1.2pp vs last season", True, AMBER),
-            kpi(f"{total_ha:,} ha", "Hectares Under Cultivation", None),
+            kpi(f"{total_ha:,.0f} ha", "Hectares Under Cultivation", None),
             kpi(f"{active_farms}/{len(f)}", "Active Farms", None, True, BLUE),
             kpi(str(critical_alerts), "Critical Alerts", "Requires attention", False, RED),
         ], style={"display": "grid", "gridTemplateColumns": "repeat(6,1fr)", "gap": "14px", "marginBottom": "24px"}),
