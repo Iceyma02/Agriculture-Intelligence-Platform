@@ -11,18 +11,13 @@ from utils import GREEN, AMBER, page_header, card, status_badge
 def layout():
     f = farms()
     
-    # Handle empty dataframe
     if f.empty:
         return html.Div([
             page_header("Farm Map", "Geographic distribution · Color-coded by profit margin · Bubble size = farm hectarage"),
-            card([html.Div("⚠️ No farm data available. Please ensure datasets are generated.", 
-                           style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+            card([html.Div("⚠️ No farm data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
         ])
 
-    # Bubble map
     fig = go.Figure()
-
-    # Color by profit margin
     fig.add_trace(go.Scattermapbox(
         lat=f["lat"],
         lon=f["lon"],
@@ -66,7 +61,6 @@ def layout():
         showlegend=False,
     )
 
-    # Farm table
     rows = []
     for _, row in f.iterrows():
         rows.append(html.Tr([
