@@ -1,17 +1,23 @@
 """Module 03 — Farm Performance"""
 
-from dash import html, dcc, Input, Output, dash_table
+from dash import html, dcc
 import plotly.graph_objects as go
-import plotly.express as px
 import sys, os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+from utils import monthly, farms
+from utils import GREEN, LIME, AMBER, BLUE, PALETTE, fmt_usd, fmt_tons, apply_theme, page_header, card, kpi
 
 def layout():
     m = monthly()
     f = farms()
 
-    # Rolling 12 months comparison
+    if m.empty:
+        return html.Div([
+            page_header("Farm Performance", "Revenue, yield and efficiency rankings across all farms"),
+            card([html.Div("⚠️ No performance data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
+
     last12 = m[m["month"] >= "2025-04"].groupby("farm_name").agg(
         revenue=("revenue_usd","sum"), profit=("profit_usd","sum"), yield_tons=("yield_tons","sum")
     ).reset_index().sort_values("revenue", ascending=False)
@@ -36,7 +42,6 @@ def layout():
     fig_yield.update_layout(title=dict(text="Total Yield (tons) by Farm", font=dict(color="#86efac", size=13)),
                              xaxis_tickangle=-25)
 
-    # YoY trend per farm (multi-line)
     trend = m.groupby(["month_label","farm_name"])["revenue_usd"].sum().reset_index()
     farms_top4 = last12.head(4)["farm_name"].tolist()
     fig_trend = go.Figure()
