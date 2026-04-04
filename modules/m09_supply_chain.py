@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.helpers import *
+from plotly.colors import qualitative as colors
 
 STAGE_ORDER = ["Field Harvest","Transport","Storage","Processing","Delivered","Export Cleared"]
 STAGE_COLORS = [LIME, BLUE, AMBER, PURPLE, GREEN, PINK]
