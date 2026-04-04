@@ -6,6 +6,13 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.helpers import *
 from plotly.colors import qualitative as colors
 
+LIME = '#22c55e'
+BLUE = '#3b82f6'
+AMBER = '#f59e0b'
+PURPLE = '#a855f7'
+GREEN = '#10b981'
+PINK = '#ec4899'
+
 STAGE_ORDER = ["Field Harvest","Transport","Storage","Processing","Delivered","Export Cleared"]
 STAGE_COLORS = [LIME, BLUE, AMBER, PURPLE, GREEN, PINK]
 
