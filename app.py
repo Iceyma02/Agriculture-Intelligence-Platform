@@ -128,6 +128,30 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 .modebar { display: none !important; }
 """
 
+# Inject CSS into the app's HTML head
+app.index_string = f'''
+<!DOCTYPE html>
+<html>
+    <head>
+        {{%metas%}}
+        <title>{{%title%}}</title>
+        {{%favicon%}}
+        {{%css%}}
+        <style>
+            {CUSTOM_CSS}
+        </style>
+    </head>
+    <body>
+        {{%app_entry%}}
+        <footer>
+            {{%config%}}
+            {{%scripts%}}
+            {{%renderer%}}
+        </footer>
+    </body>
+</html>
+'''
+
 # ── Nav structure ─────────────────────────────────────────────────────────────
 NAV_ITEMS = [
     {"section": "Overview"},
@@ -191,7 +215,6 @@ def build_sidebar(active_id="overview"):
 # ── App layout ────────────────────────────────────────────────────────────────
 app.layout = html.Div([
     dcc.Store(id="active-page", data="overview"),
-    html.Style(CUSTOM_CSS),
     html.Div(id="sidebar-container"),
     html.Div(id="page-content", className="main-content"),
 ])
