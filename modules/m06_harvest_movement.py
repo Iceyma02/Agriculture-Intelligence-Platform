@@ -3,13 +3,20 @@
 from dash import html, dcc
 import plotly.graph_objects as go
 import sys, os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+from utils import movement
+from utils import GREEN, AMBER, BLUE, LIME, RED, PALETTE, fmt_usd, fmt_tons, apply_theme, page_header, card, kpi, status_badge
 
 def layout():
     mv = movement()
+    
+    if mv.empty:
+        return html.Div([
+            page_header("Harvest Movement", "Crop flow from field to market · Transport, storage and delivery tracking"),
+            card([html.Div("⚠️ No movement data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
 
-    # By movement type
     by_type = mv.groupby("movement_type")["quantity_tons"].sum().reset_index().sort_values("quantity_tons", ascending=False)
     fig_type = go.Figure(go.Bar(
         x=by_type["movement_type"], y=by_type["quantity_tons"],
@@ -20,7 +27,6 @@ def layout():
     apply_theme(fig_type, 280)
     fig_type.update_layout(title=dict(text="Volume by Movement Type", font=dict(color="#86efac",size=13)), xaxis_tickangle=-15)
 
-    # By crop
     by_crop = mv.groupby("crop")["value_usd"].sum().reset_index().sort_values("value_usd", ascending=False)
     fig_crop = go.Figure(go.Pie(
         labels=by_crop["crop"], values=by_crop["value_usd"],
@@ -30,7 +36,6 @@ def layout():
     apply_theme(fig_crop, 280)
     fig_crop.update_layout(title=dict(text="Value by Crop", font=dict(color="#86efac",size=13)), showlegend=False)
 
-    # Timeline
     mv["date"] = mv["date"].astype(str)
     daily = mv.groupby("date")["quantity_tons"].sum().reset_index()
     daily = daily.sort_values("date")
@@ -43,7 +48,6 @@ def layout():
     apply_theme(fig_time, 260)
     fig_time.update_layout(title=dict(text="Daily Movement Volume (tons)", font=dict(color="#86efac",size=13)))
 
-    # Recent movements table
     recent = mv.sort_values("date", ascending=False).head(25)
     rows = []
     for _, row in recent.iterrows():
