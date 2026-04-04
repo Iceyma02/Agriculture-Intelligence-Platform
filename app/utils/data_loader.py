@@ -57,7 +57,7 @@ def market_prices():
     """Load market prices data"""
     return load_dataset("market_prices.csv")
 
-def buyer_satisfaction():
+def buyer_sat():
     """Load buyer satisfaction data"""
     return load_dataset("buyer_satisfaction.csv")
 
@@ -76,3 +76,7 @@ def economic():
 def board():
     """Load board summary data"""
     return load_dataset("board_summary.csv")
+
+def weather():
+    """Load weather data"""
+    return load_dataset("weather.csv")
