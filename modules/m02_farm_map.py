@@ -3,11 +3,21 @@
 from dash import html, dcc
 import plotly.graph_objects as go
 import sys, os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+from utils import farms
+from utils import GREEN, AMBER, page_header, card, status_badge
 
 def layout():
     f = farms()
+    
+    # Handle empty dataframe
+    if f.empty:
+        return html.Div([
+            page_header("Farm Map", "Geographic distribution · Color-coded by profit margin · Bubble size = farm hectarage"),
+            card([html.Div("⚠️ No farm data available. Please ensure datasets are generated.", 
+                           style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
 
     # Bubble map
     fig = go.Figure()
@@ -80,9 +90,7 @@ def layout():
 
     return html.Div([
         page_header("Farm Map", "Geographic distribution · Color-coded by profit margin · Bubble size = farm hectarage"),
-
         card([dcc.Graph(figure=fig, config={"displayModeBar": True})], {"marginBottom": "16px"}),
-
         html.Div([
             card([
                 html.Div("📍  All Farm Locations", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}),
