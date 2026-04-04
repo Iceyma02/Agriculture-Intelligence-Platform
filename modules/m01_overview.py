@@ -10,7 +10,7 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Color definitions (since utils.helpers is missing)
+# Color definitions
 GREEN = '#22c55e'
 BLUE = '#3b82f6'
 AMBER = '#f59e0b'
@@ -27,6 +27,12 @@ def fmt_usd(value):
         return "$0"
     return f"${value:,.0f}"
 
+def fmt_tons(value):
+    """Format tons with units"""
+    if pd.isna(value):
+        return "0 t"
+    return f"{value:,.0f} t"
+
 def apply_theme(fig, height=300):
     """Apply dark theme to plotly figures"""
     fig.update_layout(
@@ -40,6 +46,24 @@ def apply_theme(fig, height=300):
     )
     fig.update_xaxes(gridcolor="rgba(34,197,94,0.1)", zerolinecolor="rgba(34,197,94,0.2)")
     fig.update_yaxes(gridcolor="rgba(34,197,94,0.1)", zerolinecolor="rgba(34,197,94,0.2)")
+    return fig
+
+def create_empty_chart(message="No data available", title="Data Not Available"):
+    """Create an empty chart with a message"""
+    fig = go.Figure()
+    fig.add_annotation(
+        text=message,
+        x=0.5, y=0.5,
+        showarrow=False,
+        font=dict(color="#86efac", size=14)
+    )
+    apply_theme(fig, 300)
+    fig.update_layout(
+        title=dict(text=title, font=dict(color="#86efac", size=13)),
+        xaxis=dict(visible=False),
+        yaxis=dict(visible=False)
+    )
+    return fig
 
 def page_header(title, subtitle):
     """Create page header"""
@@ -64,6 +88,17 @@ def kpi(value, label, delta=None, is_up=None, color=None):
         html.Div(label, className="kpi-label"),
         html.Div(delta, className="kpi-delta", style=delta_style) if delta else None,
     ], className="kpi-card")
+
+def status_badge(status):
+    """Create a status badge HTML component"""
+    if status in ["Active", "OK", "On time", "Delivered"]:
+        return html.Span("● " + status, className="badge-ok")
+    elif status in ["Warning", "Low", "Delayed", "In Transit"]:
+        return html.Span("⚠ " + status, className="badge-low")
+    elif status in ["Suspended", "Critical", "Pending"]:
+        return html.Span("● " + status, className="badge-critical")
+    else:
+        return html.Span(status, style={"color": "#6b7280", "fontSize": "0.72rem"})
 
 def load_farms():
     """Load farms data"""
@@ -124,9 +159,7 @@ def layout():
         apply_theme(fig_trend, 260)
         fig_trend.update_layout(title=dict(text="Portfolio Revenue Trend (18 months)", font=dict(color="#86efac", size=13)))
     else:
-        fig_trend = go.Figure()
-        apply_theme(fig_trend, 260)
-        fig_trend.update_layout(title=dict(text="No revenue data available", font=dict(color="#86efac", size=13)))
+        fig_trend = create_empty_chart("No revenue trend data available", "Portfolio Revenue Trend (18 months)")
 
     # Farm profit rankings
     if not p.empty and "gross_profit_usd" in p and "farm_name" in p:
@@ -145,36 +178,58 @@ def layout():
         apply_theme(fig_ranking, 340)
         fig_ranking.update_layout(title=dict(text="Profit Ranking by Farm", font=dict(color="#86efac", size=13)))
     else:
-        fig_ranking = go.Figure()
-        apply_theme(fig_ranking, 340)
-        fig_ranking.update_layout(title=dict(text="No profit data available", font=dict(color="#86efac", size=13)))
+        fig_ranking = create_empty_chart("No profit data available", "Profit Ranking by Farm")
 
-    # Crop mix donut
-    if not p.empty and not f.empty:
-        try:
-            crop_rev = p.merge(f[["farm_id", "primary_crop"]], on="farm_id", how="left")
-            crop_mix = crop_rev.groupby("primary_crop")["revenue_usd"].sum().reset_index()
-            fig_donut = go.Figure(go.Pie(
-                labels=crop_mix["primary_crop"], values=crop_mix["revenue_usd"],
-                hole=0.6, marker=dict(colors=PALETTE),
-                textinfo="label+percent", textfont=dict(color="#f0fdf4", size=11),
-            ))
-            apply_theme(fig_donut, 300)
-            fig_donut.update_layout(title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
-                                     showlegend=False)
-        except:
-            fig_donut = go.Figure()
-            apply_theme(fig_donut, 300)
-            fig_donut.update_layout(title=dict(text="No crop data available", font=dict(color="#86efac", size=13)))
-    else:
-        fig_donut = go.Figure()
-        apply_theme(fig_donut, 300)
-        fig_donut.update_layout(title=dict(text="No crop data available", font=dict(color="#86efac", size=13)))
+    # Crop mix - FIXED VERSION with bar chart
+    try:
+        # Make sure we have the necessary data
+        if not p.empty and not f.empty:
+            # Ensure farm_id exists in both dataframes
+            if 'farm_id' in p.columns and 'farm_id' in f.columns:
+                # Convert to same type
+                p['farm_id'] = p['farm_id'].astype(str)
+                f['farm_id'] = f['farm_id'].astype(str)
+                
+                # Merge the data
+                crop_rev = p.merge(f[['farm_id', 'primary_crop']], on='farm_id', how='left')
+                
+                # Check if primary_crop exists in merged dataframe
+                if 'primary_crop' in crop_rev.columns and 'revenue_usd' in crop_rev.columns:
+                    crop_mix = crop_rev.groupby('primary_crop')['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False)
+                    
+                    # Only create chart if we have data
+                    if not crop_mix.empty and crop_mix['revenue_usd'].sum() > 0:
+                        # Use bar chart instead of donut for better reliability
+                        fig_donut = go.Figure(go.Bar(
+                            x=crop_mix['primary_crop'], 
+                            y=crop_mix['revenue_usd'],
+                            marker=dict(color=PALETTE[:len(crop_mix)]),
+                            text=[fmt_usd(v) for v in crop_mix['revenue_usd']],
+                            textposition='outside',
+                            textfont=dict(color="#f0fdf4", size=10),
+                        ))
+                        apply_theme(fig_donut, 300)
+                        fig_donut.update_layout(
+                            title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
+                            xaxis_tickangle=-25,
+                            yaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)")
+                        )
+                    else:
+                        fig_donut = create_empty_chart("No crop revenue data available", "Revenue by Primary Crop")
+                else:
+                    fig_donut = create_empty_chart("Crop data columns missing", "Revenue by Primary Crop")
+            else:
+                fig_donut = create_empty_chart("Farm ID mismatch between datasets", "Revenue by Primary Crop")
+        else:
+            fig_donut = create_empty_chart("No P&L or farm data available", "Revenue by Primary Crop")
+    except Exception as e:
+        print(f"Error creating crop chart: {e}")
+        fig_donut = create_empty_chart(f"Error: {str(e)[:50]}", "Revenue by Primary Crop")
 
     # Province performance
-    if not f.empty and "province" in f and "profit_margin_pct" in f:
+    if not f.empty and "province" in f.columns and "profit_margin_pct" in f.columns:
         prov = f.groupby("province").agg(
-            farms_count=("farm_id", "count") if "farm_id" in f else ("id", "count"),
+            farms_count=("farm_id", "count") if "farm_id" in f.columns else ("id", "count"),
             total_ha=("size_ha", "sum"),
             avg_margin=("profit_margin_pct", "mean")
         ).reset_index()
@@ -187,9 +242,7 @@ def layout():
         apply_theme(fig_prov, 260)
         fig_prov.update_layout(title=dict(text="Avg Profit Margin by Province", font=dict(color="#86efac", size=13)))
     else:
-        fig_prov = go.Figure()
-        apply_theme(fig_prov, 260)
-        fig_prov.update_layout(title=dict(text="No province data available", font=dict(color="#86efac", size=13)))
+        fig_prov = create_empty_chart("No province data available", "Avg Profit Margin by Province")
 
     alerts = [
         ("🔴", "Mvurwi Mixed Farm", "Fertilizer stock at critical level — reorder required"),
@@ -211,7 +264,7 @@ def layout():
             kpi(str(critical_alerts), "Critical Alerts", "Requires attention", False, RED),
         ], style={"display": "grid", "gridTemplateColumns": "repeat(6,1fr)", "gap": "14px", "marginBottom": "24px"}),
 
-        # Trend + Donut
+        # Trend + Donut (now bar chart)
         html.Div([
             card([dcc.Graph(figure=fig_trend, config={"displayModeBar": False})], {"flex": "2"}),
             card([dcc.Graph(figure=fig_donut, config={"displayModeBar": False})], {"flex": "1"}),
