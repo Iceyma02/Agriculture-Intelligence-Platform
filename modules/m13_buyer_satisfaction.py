@@ -1,25 +1,33 @@
 """Module 13 — Buyer Satisfaction"""
+
 from dash import html, dcc
 import plotly.graph_objects as go
 import sys, os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+from utils import buyer_sat
+from utils import GREEN, AMBER, RED, LIME, BLUE, PALETTE, fmt_usd, fmt_tons, apply_theme, page_header, card, kpi
 
 def layout():
     bs = buyer_sat()
+    
+    if bs.empty:
+        return html.Div([
+            page_header("Buyer Satisfaction", "Customer feedback · Quality ratings · Complaint tracking · Repeat orders"),
+            card([html.Div("⚠️ No buyer satisfaction data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
 
     by_buyer = bs.groupby("buyer").agg(
-        overall=("overall_score","mean"),
-        quality=("quality_score","mean"),
-        delivery=("delivery_score","mean"),
-        payment=("payment_score","mean"),
-        complaints=("complaints","sum"),
-        revenue=("revenue_usd","sum"),
-        volume=("volume_tons","sum"),
+        overall=("overall_score", "mean"),
+        quality=("quality_score", "mean"),
+        delivery=("delivery_score", "mean"),
+        payment=("payment_score", "mean"),
+        complaints=("complaints", "sum"),
+        revenue=("revenue_usd", "sum"),
+        volume=("volume_tons", "sum"),
     ).reset_index().sort_values("overall", ascending=False)
 
-    # Radar for top 4 buyers
-    categories = ["Overall","Quality","Delivery","Payment"]
+    categories = ["Overall", "Quality", "Delivery", "Payment"]
     fig_radar = go.Figure()
     top4 = by_buyer.head(4)
     for i, (_, row) in enumerate(top4.iterrows()):
@@ -37,65 +45,64 @@ def layout():
     fig_radar.update_layout(
         polar=dict(
             bgcolor="rgba(0,0,0,0)",
-            radialaxis=dict(visible=True, range=[0,5], tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.1)"),
+            radialaxis=dict(visible=True, range=[0, 5], tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.1)"),
             angularaxis=dict(tickfont=dict(color="#86efac"), gridcolor="rgba(34,197,94,0.12)"),
         ),
-        title=dict(text="Buyer Satisfaction Radar — Top 4 Buyers", font=dict(color="#86efac",size=13)),
+        title=dict(text="Buyer Satisfaction Radar — Top 4 Buyers", font=dict(color="#86efac", size=13)),
     )
 
-    # Score bar chart
     fig_scores = go.Figure()
     fig_scores.add_trace(go.Bar(name="Overall", x=by_buyer["buyer"], y=by_buyer["overall"], marker_color=GREEN))
     fig_scores.add_trace(go.Bar(name="Quality", x=by_buyer["buyer"], y=by_buyer["quality"], marker_color=LIME))
     fig_scores.add_trace(go.Bar(name="Delivery", x=by_buyer["buyer"], y=by_buyer["delivery"], marker_color=BLUE))
     fig_scores.update_layout(barmode="group", xaxis_tickangle=-20)
     apply_theme(fig_scores, 280)
-    fig_scores.update_layout(title=dict(text="Satisfaction Scores by Buyer", font=dict(color="#86efac",size=13)))
+    fig_scores.update_layout(title=dict(text="Satisfaction Scores by Buyer", font=dict(color="#86efac", size=13)))
 
-    # Revenue vs satisfaction scatter
     fig_scatter = go.Figure(go.Scatter(
         x=by_buyer["revenue"], y=by_buyer["overall"],
         mode="markers+text",
-        marker=dict(size=16, color=by_buyer["overall"], colorscale=[[0,"#7f1d1d"],[1,"#22c55e"]], showscale=False),
+        marker=dict(size=16, color=by_buyer["overall"], colorscale=[[0, "#7f1d1d"], [1, "#22c55e"]], showscale=False),
         text=by_buyer["buyer"].str[:14],
         textposition="top center",
         textfont=dict(color="#86efac", size=9),
     ))
     apply_theme(fig_scatter, 280)
     fig_scatter.update_layout(
-        title=dict(text="Revenue vs Satisfaction Score", font=dict(color="#86efac",size=13)),
+        title=dict(text="Revenue vs Satisfaction Score", font=dict(color="#86efac", size=13)),
         xaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)"),
         yaxis=dict(title="Score /5", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)"),
     )
 
-    # Complaints trend (monthly)
-    trend = bs.groupby("month_label")["complaints"].sum().reset_index()
-    fig_complaints = go.Figure(go.Bar(
-        x=trend["month_label"], y=trend["complaints"],
-        marker=dict(color=[RED if v > 20 else AMBER if v > 10 else GREEN for v in trend["complaints"]]),
-    ))
-    apply_theme(fig_complaints, 240)
-    fig_complaints.update_layout(title=dict(text="Monthly Complaints Across All Buyers", font=dict(color="#86efac",size=13)), xaxis_tickangle=-25)
+    if "month_label" in bs.columns:
+        trend = bs.groupby("month_label")["complaints"].sum().reset_index()
+        fig_complaints = go.Figure(go.Bar(
+            x=trend["month_label"], y=trend["complaints"],
+            marker=dict(color=[RED if v > 20 else AMBER if v > 10 else GREEN for v in trend["complaints"]]),
+        ))
+        apply_theme(fig_complaints, 240)
+        fig_complaints.update_layout(title=dict(text="Monthly Complaints Across All Buyers", font=dict(color="#86efac", size=13)), xaxis_tickangle=-25)
+    else:
+        fig_complaints = go.Figure()
 
-    # Summary table
     rows = []
     for _, row in by_buyer.iterrows():
         score_color = GREEN if row["overall"] >= 4.2 else AMBER if row["overall"] >= 3.5 else RED
         rows.append(html.Tr([
-            html.Td(row["buyer"], style={"color":"#f0fdf4","fontSize":"0.82rem","fontWeight":"500","padding":"9px 6px"}),
-            html.Td(f"{row['overall']:.1f} / 5", style={"color":score_color,"fontSize":"0.82rem","fontWeight":"700","padding":"9px 6px"}),
-            html.Td(f"{row['quality']:.1f}", style={"color":"#86efac","fontSize":"0.8rem","padding":"9px 6px"}),
-            html.Td(f"{row['delivery']:.1f}", style={"color":"#86efac","fontSize":"0.8rem","padding":"9px 6px"}),
-            html.Td(str(int(row["complaints"])), style={"color":RED if row["complaints"]>15 else "#f0fdf4","fontSize":"0.8rem","fontWeight":"600","padding":"9px 6px"}),
-            html.Td(fmt_usd(row["revenue"]), style={"color":GREEN,"fontSize":"0.8rem","padding":"9px 6px"}),
-            html.Td(fmt_tons(row["volume"]), style={"color":"#6b7280","fontSize":"0.8rem","padding":"9px 6px"}),
-        ], style={"borderBottom":"1px solid rgba(34,197,94,0.07)"}))
+            html.Td(row["buyer"], style={"color": "#f0fdf4", "fontSize": "0.82rem", "fontWeight": "500", "padding": "9px 6px"}),
+            html.Td(f"{row['overall']:.1f} / 5", style={"color": score_color, "fontSize": "0.82rem", "fontWeight": "700", "padding": "9px 6px"}),
+            html.Td(f"{row['quality']:.1f}", style={"color": "#86efac", "fontSize": "0.8rem", "padding": "9px 6px"}),
+            html.Td(f"{row['delivery']:.1f}", style={"color": "#86efac", "fontSize": "0.8rem", "padding": "9px 6px"}),
+            html.Td(str(int(row["complaints"])), style={"color": RED if row["complaints"] > 15 else "#f0fdf4", "fontSize": "0.8rem", "fontWeight": "600", "padding": "9px 6px"}),
+            html.Td(fmt_usd(row["revenue"]), style={"color": GREEN, "fontSize": "0.8rem", "padding": "9px 6px"}),
+            html.Td(fmt_tons(row["volume"]), style={"color": "#6b7280", "fontSize": "0.8rem", "padding": "9px 6px"}),
+        ], style={"borderBottom": "1px solid rgba(34,197,94,0.07)"}))
 
     table = html.Table([
-        html.Thead(html.Tr([html.Th(h, style={"color":"#4ade80","fontSize":"0.70rem","fontWeight":"600","textTransform":"uppercase","padding":"8px 6px","letterSpacing":"0.06em"})
-                             for h in ["Buyer","Overall Score","Quality","Delivery","Complaints","Revenue","Volume"]])),
+        html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px", "letterSpacing": "0.06em"})
+                             for h in ["Buyer", "Overall Score", "Quality", "Delivery", "Complaints", "Revenue", "Volume"]])),
         html.Tbody(rows),
-    ], style={"width":"100%","borderCollapse":"collapse"})
+    ], style={"width": "100%", "borderCollapse": "collapse"})
 
     return html.Div([
         page_header("Buyer Satisfaction", "Customer feedback · Quality ratings · Complaint tracking · Repeat orders"),
@@ -104,19 +111,20 @@ def layout():
             kpi(str(int(bs["complaints"].sum())), "Total Complaints", "All buyers, all months", False, RED),
             kpi(fmt_usd(bs["revenue_usd"].sum()), "Total Buyer Revenue", None, True, LIME),
             kpi(by_buyer.iloc[0]["buyer"][:16], "Highest Rated Buyer", f"{by_buyer.iloc[0]['overall']:.1f}/5", True, AMBER),
-        ], style={"display":"grid","gridTemplateColumns":"repeat(4,1fr)","gap":"14px","marginBottom":"24px"}),
+        ], style={"display": "grid", "gridTemplateColumns": "repeat(4,1fr)", "gap": "14px", "marginBottom": "24px"}),
         html.Div([
-            card([dcc.Graph(figure=fig_radar, config={"displayModeBar":False})]),
-            card([dcc.Graph(figure=fig_scores, config={"displayModeBar":False})]),
-        ], style={"display":"grid","gridTemplateColumns":"1fr 1.2fr","gap":"16px","marginBottom":"16px"}),
+            card([dcc.Graph(figure=fig_radar, config={"displayModeBar": False})]),
+            card([dcc.Graph(figure=fig_scores, config={"displayModeBar": False})]),
+        ], style={"display": "grid", "gridTemplateColumns": "1fr 1.2fr", "gap": "16px", "marginBottom": "16px"}),
         html.Div([
-            card([dcc.Graph(figure=fig_scatter, config={"displayModeBar":False})]),
-            card([dcc.Graph(figure=fig_complaints, config={"displayModeBar":False})]),
-        ], style={"display":"grid","gridTemplateColumns":"1fr 1fr","gap":"16px","marginBottom":"16px"}),
+            card([dcc.Graph(figure=fig_scatter, config={"displayModeBar": False})]),
+            card([dcc.Graph(figure=fig_complaints, config={"displayModeBar": False})]) if fig_complaints.data else None,
+        ], style={"display": "grid", "gridTemplateColumns": "1fr 1fr", "gap": "16px", "marginBottom": "16px"}),
         card([
-            html.Div("⭐  Buyer Satisfaction Summary", style={"color":"#86efac","fontWeight":"600","marginBottom":"14px","fontSize":"0.9rem"}),
-            html.Div(table, style={"overflowX":"auto"}),
+            html.Div("⭐  Buyer Satisfaction Summary", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}),
+            html.Div(table, style={"overflowX": "auto"}),
         ]),
     ])
 
-def register_callbacks(app): pass
+def register_callbacks(app): 
+    pass
