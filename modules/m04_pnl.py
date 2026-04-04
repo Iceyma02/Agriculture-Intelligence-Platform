@@ -3,14 +3,25 @@
 from dash import html, dcc
 import plotly.graph_objects as go
 import sys, os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.helpers import *
+from utils import pnl
+from utils import GREEN, RED, LIME, AMBER, BLUE, PALETTE, fmt_usd, apply_theme, page_header, card, kpi
 
 def layout():
     p = pnl()
+    
+    if p.empty:
+        return html.Div([
+            page_header("Farm P&L Engine", "True profitability per farm · Season: 2025 Summer"),
+            card([html.Div("⚠️ No P&L data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
+        ])
+    
     latest = p[p["season"] == "2025 Summer"]
+    
+    if latest.empty:
+        latest = p
 
-    # Waterfall for first farm
     first = latest.iloc[0]
     fig_waterfall = go.Figure(go.Waterfall(
         name="P&L",
@@ -34,7 +45,6 @@ def layout():
     apply_theme(fig_waterfall, 320)
     fig_waterfall.update_layout(title=dict(text=f"P&L Waterfall — {first['farm_name']} · 2025 Summer", font=dict(color="#86efac", size=13)))
 
-    # Cost breakdown stacked bar all farms
     cost_cols = ["seeds_usd","fertilizer_usd","labour_usd","irrigation_usd","equipment_usd","transport_usd","chemicals_usd","storage_usd"]
     cost_labels = ["Seeds","Fertilizer","Labour","Irrigation","Equipment","Transport","Chemicals","Storage"]
     fig_costs = go.Figure()
@@ -44,7 +54,6 @@ def layout():
     apply_theme(fig_costs, 320)
     fig_costs.update_layout(title=dict(text="Cost Breakdown by Farm — 2025 Summer", font=dict(color="#86efac", size=13)))
 
-    # Margin scatter
     fig_margin = go.Figure(go.Scatter(
         x=latest["revenue_usd"], y=latest["profit_margin_pct"],
         mode="markers+text",
@@ -60,7 +69,6 @@ def layout():
         yaxis=dict(title="Margin %", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)"),
     )
 
-    # Summary table
     rows = []
     for _, row in latest.sort_values("gross_profit_usd", ascending=False).iterrows():
         rows.append(html.Tr([
