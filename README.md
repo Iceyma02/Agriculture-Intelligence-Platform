@@ -303,9 +303,6 @@ For issues or questions about the live deployment:
 - Open an issue on GitHub
 - Contact: manjengwap10@gmail.com
 
-git add screenshots/
-git commit -m "Add README screenshots"
-git push
 ```
 
 The README now accurately reflects your current repository structure with the `utils/` folder, all 17 modules, and includes screenshot placeholders!
