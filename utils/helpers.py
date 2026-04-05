@@ -1,134 +1,218 @@
-"""Enhanced helper functions for loading states, exports, and refresh"""
+"""Shared helper functions for all modules"""
 
 import pandas as pd
-import json
-from datetime import datetime
-from dash import html, dcc
-import dash_bootstrap_components as dbc
+import plotly.graph_objects as go
+from dash import html
 
-def create_loading_spinner():
-    """Create a loading spinner component"""
-    return html.Div([
-        dcc.Loading(
-            id="loading-spinner",
-            type="circle",
-            color="#22c55e",
-            children=html.Div(id="loading-output"),
-            style={"position": "fixed", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)", "zIndex": 9999}
-        )
-    ])
+# ============================================================================
+# COLOR DEFINITIONS
+# ============================================================================
 
-def create_date_range_picker(id="date-range-picker"):
-    """Create a date range picker component"""
-    return html.Div([
-        html.Label("Date Range:", style={"color": "#86efac", "fontSize": "0.8rem", "marginBottom": "5px"}),
-        dcc.DatePickerRange(
-            id=id,
-            min_date_allowed=datetime(2023, 1, 1),
-            max_date_allowed=datetime.now(),
-            initial_visible_month=datetime.now(),
-            start_date=datetime(2024, 1, 1),
-            end_date=datetime.now(),
-            display_format="YYYY-MM-DD",
-            style={"backgroundColor": "#111811", "color": "#f0fdf4"},
-            className="date-picker"
-        )
-    ], style={"marginBottom": "15px"})
+GREEN = '#22c55e'
+BLUE = '#3b82f6'
+AMBER = '#f59e0b'
+RED = '#ef4444'
+LIME = '#a3e635'
+PURPLE = '#a855f7'
+PINK = '#ec4899'
 
-def create_season_filter(id="season-dropdown", data=None):
-    """Create a season filter dropdown"""
-    if data is not None and 'season' in data.columns:
-        seasons = sorted(data['season'].unique())
+# Color palette for charts
+PALETTE = [LIME, BLUE, AMBER, PURPLE, GREEN, PINK]
+
+# ============================================================================
+# FORMATTING FUNCTIONS
+# ============================================================================
+
+def fmt_usd(value):
+    """Format number as USD currency"""
+    if pd.isna(value):
+        return "$0"
+    return f"${value:,.0f}"
+
+def fmt_tons(value):
+    """Format tons with units"""
+    if pd.isna(value):
+        return "0 t"
+    return f"{value:,.0f} t"
+
+def fmt_percent(value):
+    """Format as percentage"""
+    if pd.isna(value):
+        return "0%"
+    return f"{value:.1f}%"
+
+def fmt_number(value):
+    """Format large numbers with K/M/B suffixes"""
+    if pd.isna(value):
+        return "0"
+    if value >= 1e9:
+        return f"{value/1e9:.1f}B"
+    elif value >= 1e6:
+        return f"{value/1e6:.1f}M"
+    elif value >= 1e3:
+        return f"{value/1e3:.1f}K"
     else:
-        seasons = ["2024 Summer", "2024 Winter", "2025 Summer", "2025 Winter"]
+        return f"{value:.0f}"
+
+# ============================================================================
+# PLOTLY THEME FUNCTIONS
+# ============================================================================
+
+def apply_theme(fig, height=300):
+    """Apply dark theme to plotly figures"""
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#86efac", size=11),
+        height=height,
+        margin=dict(l=10, r=10, t=40, b=10),
+        hovermode="x unified",
+        legend=dict(
+            bgcolor="rgba(0,0,0,0)",
+            font=dict(color="#86efac", size=10),
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+    fig.update_xaxes(
+        gridcolor="rgba(34,197,94,0.1)", 
+        zerolinecolor="rgba(34,197,94,0.2)",
+        tickfont=dict(color="#6b7280")
+    )
+    fig.update_yaxes(
+        gridcolor="rgba(34,197,94,0.1)", 
+        zerolinecolor="rgba(34,197,94,0.2)",
+        tickfont=dict(color="#6b7280")
+    )
+    return fig
+
+def create_empty_chart(message="No data available", title="Data Not Available"):
+    """Create an empty chart with a message"""
+    fig = go.Figure()
+    fig.add_annotation(
+        text=message,
+        x=0.5, y=0.5,
+        showarrow=False,
+        font=dict(color="#86efac", size=14)
+    )
+    apply_theme(fig, 300)
+    fig.update_layout(
+        title=dict(text=title, font=dict(color="#86efac", size=13)),
+        xaxis=dict(visible=False),
+        yaxis=dict(visible=False)
+    )
+    return fig
+
+# ============================================================================
+# DASH COMPONENT FUNCTIONS
+# ============================================================================
+
+def page_header(title, subtitle):
+    """Create page header"""
+    return html.Div([
+        html.H1(title, className="page-title"),
+        html.P(subtitle, className="page-subtitle"),
+    ], className="page-header")
+
+def card(children, style=None):
+    """Create a card component"""
+    card_style = {
+        "background": "#111811", 
+        "border": "1px solid rgba(34,197,94,0.15)", 
+        "borderRadius": "12px", 
+        "padding": "20px",
+        "transition": "all 0.3s ease"
+    }
+    if style:
+        card_style.update(style)
+    return html.Div(children, style=card_style)
+
+def kpi(value, label, delta=None, is_up=None, color=None):
+    """Create a KPI card"""
+    delta_style = {"color": GREEN if is_up else RED} if delta else {}
+    return html.Div([
+        html.Div(value, className="kpi-value", style={"color": color} if color else {}),
+        html.Div(label, className="kpi-label"),
+        html.Div(delta, className="kpi-delta", style=delta_style) if delta else None,
+    ], className="kpi-card")
+
+def status_badge(status):
+    """Create a status badge HTML component"""
+    status_map = {
+        "Active": ("● Active", "badge-ok"),
+        "OK": ("● OK", "badge-ok"),
+        "On time": ("● On time", "badge-ok"),
+        "Delivered": ("● Delivered", "badge-ok"),
+        "Warning": ("⚠ Warning", "badge-low"),
+        "Low": ("⚠ Low", "badge-low"),
+        "Delayed": ("⚠ Delayed", "badge-low"),
+        "In Transit": ("⚠ In Transit", "badge-low"),
+        "Suspended": ("● Suspended", "badge-critical"),
+        "Critical": ("● Critical", "badge-critical"),
+        "Pending": ("● Pending", "badge-critical"),
+    }
     
-    return html.Div([
-        html.Label("Season:", style={"color": "#86efac", "fontSize": "0.8rem", "marginBottom": "5px"}),
-        dcc.Dropdown(
-            id=id,
-            options=[{"label": s, "value": s} for s in seasons],
-            value=seasons[-1] if seasons else None,
-            style={"backgroundColor": "#111811", "color": "#f0fdf4"},
-            className="season-dropdown"
-        )
-    ], style={"marginBottom": "15px"})
+    if status in status_map:
+        text, class_name = status_map[status]
+        return html.Span(text, className=class_name)
+    else:
+        return html.Span(status, style={"color": "#6b7280", "fontSize": "0.72rem"})
 
-def create_export_button(data, filename="export", button_text="📥 Export Data"):
-    """Create an export button that downloads data as CSV"""
-    return html.Div([
-        html.Button(
-            button_text,
-            id={"type": "export-button", "index": filename},
-            className="export-btn",
-            style={
-                "backgroundColor": "#22c55e",
-                "color": "#0a0f0a",
-                "border": "none",
-                "padding": "8px 16px",
-                "borderRadius": "6px",
-                "cursor": "pointer",
-                "fontWeight": "600",
-                "fontSize": "0.8rem",
-                "marginBottom": "10px"
-            }
-        ),
-        dcc.Download(id={"type": "download", "index": filename})
-    ])
+# ============================================================================
+# COLOR UTILITIES
+# ============================================================================
 
-def create_refresh_button():
-    """Create a refresh button for real-time updates"""
-    return html.Div([
-        html.Button(
-            "🔄 Refresh Data",
-            id="refresh-button",
-            style={
-                "backgroundColor": "#3b82f6",
-                "color": "#f0fdf4",
-                "border": "none",
-                "padding": "8px 16px",
-                "borderRadius": "6px",
-                "cursor": "pointer",
-                "fontWeight": "600",
-                "fontSize": "0.8rem"
-            }
-        ),
-        dcc.Interval(
-            id="refresh-interval",
-            interval=300000,  # 5 minutes in milliseconds
-            n_intervals=0
-        )
-    ])
+def hex_to_rgba(hex_color, opacity=0.1):
+    """Convert hex color to rgba with opacity"""
+    hex_color = hex_color.lstrip('#')
+    r = int(hex_color[0:2], 16)
+    g = int(hex_color[2:4], 16)
+    b = int(hex_color[4:6], 16)
+    return f"rgba({r}, {g}, {b}, {opacity})"
 
-def create_search_bar(id="search-input", placeholder="Search farms..."):
-    """Create a search bar for filtering tables"""
-    return html.Div([
-        html.I(className="fas fa-search", style={"color": "#6b7280", "position": "absolute", "left": "12px", "top": "50%", "transform": "translateY(-50%)"}),
-        dcc.Input(
-            id=id,
-            type="text",
-            placeholder=placeholder,
-            style={
-                "width": "100%",
-                "padding": "10px 10px 10px 35px",
-                "backgroundColor": "#111811",
-                "border": "1px solid rgba(34,197,94,0.15)",
-                "borderRadius": "8px",
-                "color": "#f0fdf4",
-                "fontSize": "0.85rem"
-            }
-        )
-    ], style={"position": "relative", "marginBottom": "15px"})
+def get_color_gradient(value, min_val=0, max_val=100):
+    """Get color based on value (green to red gradient)"""
+    if value <= min_val:
+        return GREEN
+    elif value >= max_val:
+        return RED
+    else:
+        # Interpolate between green and red
+        ratio = (value - min_val) / (max_val - min_val)
+        r = int(34 + (239 - 34) * ratio)  # 34->239
+        g = int(197 + (68 - 197) * ratio)  # 197->68
+        b = int(94 + (68 - 94) * ratio)    # 94->68
+        return f"rgb({r}, {g}, {b})"
 
-def create_compare_selector(farms_list):
-    """Create a multi-select dropdown for farm comparison"""
-    return html.Div([
-        html.Label("Compare Farms:", style={"color": "#86efac", "fontSize": "0.8rem", "marginBottom": "5px"}),
-        dcc.Dropdown(
-            id="compare-farms",
-            options=[{"label": farm, "value": farm} for farm in farms_list],
-            multi=True,
-            placeholder="Select up to 4 farms to compare",
-            max=4,
-            style={"backgroundColor": "#111811", "color": "#f0fdf4"}
-        )
-    ], style={"marginBottom": "15px"})
+# ============================================================================
+# DATA VALIDATION FUNCTIONS
+# ============================================================================
+
+def validate_dataframe(df, required_columns, df_name="DataFrame"):
+    """Validate that a DataFrame has required columns"""
+    if df.empty:
+        return False, f"{df_name} is empty"
+    
+    missing_cols = [col for col in required_columns if col not in df.columns]
+    if missing_cols:
+        return False, f"{df_name} missing columns: {missing_cols}"
+    
+    return True, "Valid"
+
+def safe_merge(df1, df2, on, how='left'):
+    """Safely merge two dataframes with type conversion"""
+    try:
+        # Convert join keys to string to avoid type mismatches
+        if on in df1.columns:
+            df1[on] = df1[on].astype(str)
+        if on in df2.columns:
+            df2[on] = df2[on].astype(str)
+        
+        return df1.merge(df2, on=on, how=how)
+    except Exception as e:
+        print(f"Error merging dataframes: {e}")
+        return pd.DataFrame()
