@@ -202,6 +202,39 @@ def validate_dataframe(df, required_columns, df_name="DataFrame"):
         return False, f"{df_name} missing columns: {missing_cols}"
     
     return True, "Valid"
+    def create_export_button(data, filename="export", button_text="📥 Export to CSV"):
+    """Create a working export button"""
+    import base64
+    import io
+    
+    if data is None or data.empty:
+        return html.Div("No data to export", style={"color": "#6b7280"})
+    
+    # Convert dataframe to CSV
+    csv_buffer = io.StringIO()
+    data.to_csv(csv_buffer, index=False)
+    csv_string = csv_buffer.getvalue()
+    csv_base64 = base64.b64encode(csv_string.encode()).decode()
+    
+    return html.Div([
+        html.A(
+            button_text,
+            href=f"data:text/csv;base64,{csv_base64}",
+            download=f"{filename}.csv",
+            style={
+                "backgroundColor": "#22c55e",
+                "color": "#0a0f0a",
+                "border": "none",
+                "padding": "8px 16px",
+                "borderRadius": "6px",
+                "cursor": "pointer",
+                "fontWeight": "600",
+                "fontSize": "0.8rem",
+                "textDecoration": "none",
+                "display": "inline-block"
+            }
+        )
+    ])
 
 def safe_merge(df1, df2, on, how='left'):
     """Safely merge two dataframes with type conversion"""
