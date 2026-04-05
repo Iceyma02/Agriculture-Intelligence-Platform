@@ -1,12 +1,41 @@
 """
 AgriIQ — Agriculture Intelligence Platform
-Main application entry point
+Main application entry point with enhanced features
 """
 
 import dash
-from dash import dcc, html, Input, Output
+from dash import dcc, html, Input, Output, State, callback_context
 import dash_bootstrap_components as dbc
+import pandas as pd
+from datetime import datetime
+import sys
+import os
 
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Import all modules
+from modules import (
+    m01_overview, m02_farm_map, m03_performance, m04_pnl,
+    m05_inventory, m06_harvest_movement, m07_yield_forecast, m08_reorder,
+    m09_supply_chain, m10_supplier_credit, m11_marketing_roi, m12_market_prices,
+    m13_buyer_satisfaction, m14_labour, m15_losses, m16_economic_watch, m17_board_reports
+)
+
+# Import enhanced features
+from utils.data_loader import farms, pnl, monthly, inventory
+from utils.enhanced_helpers import (
+    create_loading_spinner, create_date_range_picker, create_season_filter,
+    create_export_button, create_refresh_button, create_search_bar,
+    create_compare_selector
+)
+from components.alerts_system import AlertSystem, create_alerts_panel
+from components.responsive_sidebar import add_mobile_css
+
+# Initialize alert system
+alert_system = AlertSystem()
+
+# Create Dash app
 app = dash.Dash(
     __name__,
     external_stylesheets=[
@@ -16,19 +45,14 @@ app = dash.Dash(
     ],
     suppress_callback_exceptions=True,
     title="AgriIQ — Agriculture Intelligence Platform",
-    meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
+    meta_tags=[
+        {"name": "viewport", "content": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"},
+        {"name": "description", "content": "Agriculture Intelligence Platform - Farm Management Dashboard"}
+    ],
     use_pages=False
 )
 
 server = app.server
-
-# ── Import all modules ────────────────────────────────────────────────────────
-from modules import (
-    m01_overview, m02_farm_map, m03_performance, m04_pnl,
-    m05_inventory, m06_harvest_movement, m07_yield_forecast, m08_reorder,
-    m09_supply_chain, m10_supplier_credit, m11_marketing_roi, m12_market_prices,
-    m13_buyer_satisfaction, m14_labour, m15_losses, m16_economic_watch, m17_board_reports
-)
 
 # ── Design tokens ─────────────────────────────────────────────────────────────
 CUSTOM_CSS = """
@@ -55,10 +79,11 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 
 /* Sidebar */
 .sidebar {
-    position: fixed; top: 0; left: 0; height: 100vh; width: 240px;
+    position: fixed; top: 0; left: 0; height: 100vh; width: 260px;
     background: var(--bg-card); border-right: 1px solid var(--border);
-    display: flex; flex-direction: column; z-index: 100;
+    display: flex; flex-direction: column; z-index: 1000;
     overflow-y: auto; overflow-x: hidden;
+    transition: transform 0.3s ease;
 }
 .sidebar-logo {
     padding: 24px 20px 16px;
@@ -85,23 +110,26 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 }
 .nav-item:hover { color: var(--text-primary); background: rgba(34,197,94,0.06); }
 .nav-item.active { color: var(--accent-green); background: rgba(34,197,94,0.1); border-left-color: var(--accent-green); }
-.nav-item i { width: 16px; text-align: center; font-size: 0.8rem; }
+.nav-item i { width: 20px; text-align: center; font-size: 0.9rem; }
 
 /* Main content */
-.main-content { margin-left: 240px; min-height: 100vh; padding: 28px 32px; }
+.main-content { margin-left: 260px; min-height: 100vh; padding: 28px 32px; transition: margin-left 0.3s ease; }
 
 /* Cards */
 .card-agri {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 12px; padding: 20px;
+    transition: all 0.3s ease;
 }
-.card-agri:hover { border-color: var(--border-strong); }
+.card-agri:hover { border-color: var(--border-strong); transform: translateY(-2px); }
 
 /* KPI cards */
 .kpi-card {
     background: var(--bg-card2); border: 1px solid var(--border);
     border-radius: 10px; padding: 18px 20px;
+    transition: all 0.3s ease;
 }
+.kpi-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
 .kpi-value { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
 .kpi-label { color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
 .kpi-delta { font-size: 0.78rem; margin-top: 6px; }
@@ -118,14 +146,82 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 .badge-low { background: rgba(245,158,11,0.15); color: #f59e0b; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
 .badge-critical { background: rgba(239,68,68,0.15); color: #ef4444; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
 
+/* Export button */
+.export-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #0a0f0a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34,197,94,0.3);
+}
+
 /* Scrollbar */
-::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: #22c55e40; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #22c55e80; }
 
 /* Plotly charts dark override */
 .js-plotly-plot .plotly .bg { fill: transparent !important; }
 .modebar { display: none !important; }
+
+/* Loading spinner */
+._dash-loading-callback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    color: #22c55e;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0 !important;
+        padding: 15px !important;
+    }
+    .kpi-card {
+        padding: 12px;
+    }
+    .kpi-value {
+        font-size: 1.3rem;
+    }
+    .page-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-content {
+        margin-left: 260px;
+        padding: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
 """
 
 # Inject CSS into the app's HTML head
@@ -205,18 +301,54 @@ def build_sidebar(active_id="overview"):
             )
     children.append(html.Div(nav_children, className="nav-section"))
 
-    # Footer
+    # Footer with version
     children.append(html.Div([
-        html.P("© 2026 Anesu Manjengwa", style={"color": "#374151", "fontSize": "0.68rem", "padding": "16px 20px"}),
-    ], style={"marginTop": "auto"}))
+        html.P("© 2026 Anesu Manjengwa", style={"color": "#374151", "fontSize": "0.68rem"}),
+        html.P("Version 2.0 | Enterprise", style={"color": "#374151", "fontSize": "0.6rem", "marginTop": "5px"})
+    ], style={"marginTop": "auto", "padding": "16px 20px"}))
 
     return html.Div(children, className="sidebar")
 
-# ── App layout ────────────────────────────────────────────────────────────────
+# ── App layout with enhanced features ─────────────────────────────────────────
 app.layout = html.Div([
+    # Storage components
     dcc.Store(id="active-page", data="overview"),
+    dcc.Store(id="refresh-trigger", data=0),
+    dcc.Store(id="last-update", data=datetime.now().isoformat()),
+    
+    # Interval for auto-refresh (5 minutes)
+    dcc.Interval(id="auto-refresh-interval", interval=300000, n_intervals=0),
+    
+    # Mobile menu button
+    html.Button(
+        html.I(className="fas fa-bars", style={"fontSize": "1.2rem"}),
+        id="mobile-menu-btn",
+        style={
+            "position": "fixed",
+            "top": "15px",
+            "left": "15px",
+            "zIndex": 1001,
+            "backgroundColor": "#22c55e",
+            "border": "none",
+            "borderRadius": "8px",
+            "padding": "10px 15px",
+            "cursor": "pointer",
+            "display": "none",
+            "color": "#0a0f0a",
+            "fontWeight": "600"
+        }
+    ),
+    
+    # Sidebar and main content
     html.Div(id="sidebar-container"),
     html.Div(id="page-content", className="main-content"),
+    
+    # Global loading spinner
+    create_loading_spinner(),
+    
+    # Global export component
+    html.Div(id="export-container", style={"display": "none"}),
+    dcc.Download(id="global-download"),
 ])
 
 # ── Callbacks ─────────────────────────────────────────────────────────────────
@@ -235,9 +367,8 @@ PAGE_MODULES = {
     "market-prices":   m12_market_prices,
     "buyer-sat":       m13_buyer_satisfaction,
     "labour":          m14_labour,
-    "losses":          m15_losses,
-    "economic-watch":  m16_economic_watch,
-    "board-reports":   m17_board_reports,
+    "mobile-menu":     m01_overview,
+    "performance":     m03_performance,
 }
 
 @app.callback(
@@ -246,7 +377,7 @@ PAGE_MODULES = {
     prevent_initial_call=True,
 )
 def set_active_page(n_clicks_list):
-    ctx = dash.callback_context
+    ctx = callback_context
     if not ctx.triggered:
         return "overview"
     triggered_id = ctx.triggered[0]["prop_id"]
@@ -258,17 +389,115 @@ def set_active_page(n_clicks_list):
     Output("sidebar-container", "children"),
     Output("page-content", "children"),
     Input("active-page", "data"),
+    Input("refresh-trigger", "data"),
+    prevent_initial_call=True,
 )
-def render_page(page_id):
+def render_page(page_id, refresh_trigger):
     sidebar = build_sidebar(page_id)
     module = PAGE_MODULES.get(page_id, m01_overview)
-    content = module.layout()
+    try:
+        content = module.layout()
+    except Exception as e:
+        content = html.Div([
+            html.H3("Error Loading Page", style={"color": "#ef4444"}),
+            html.P(f"Error: {str(e)}", style={"color": "#86efac"}),
+            html.Button("Retry", id="retry-btn", n_clicks=0)
+        ], className="fade-in")
     return sidebar, content
+
+# Auto-refresh callback
+@app.callback(
+    Output("refresh-trigger", "data", allow_duplicate=True),
+    Input("auto-refresh-interval", "n_intervals"),
+    prevent_initial_call=True,
+)
+def auto_refresh_data(n_intervals):
+    """Auto-refresh data every 5 minutes"""
+    return n_intervals
+
+# Mobile sidebar toggle
+@app.callback(
+    Output("sidebar-container", "className"),
+    Input("mobile-menu-btn", "n_clicks"),
+    State("sidebar-container", "className"),
+    prevent_initial_call=True,
+)
+def toggle_sidebar(n_clicks, current_class):
+    if n_clicks and n_clicks > 0:
+        sidebar_elem = html.Div(id="sidebar-temp")
+        return "sidebar open" if "open" not in str(current_class) else "sidebar"
+    return current_class or "sidebar"
+
+# Export all data callback
+@app.callback(
+    Output("global-download", "data"),
+    Input("export-all-btn", "n_clicks"),
+    prevent_initial_call=True,
+)
+def export_all_data(n_clicks):
+    """Export all dashboard data to Excel"""
+    if n_clicks and n_clicks > 0:
+        import io
+        output = io.BytesIO()
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
+            farms_df = farms()
+            if not farms_df.empty:
+                farms_df.to_excel(writer, sheet_name="Farms", index=False)
+            
+            pnl_df = pnl()
+            if not pnl_df.empty:
+                pnl_df.to_excel(writer, sheet_name="PNL", index=False)
+            
+            monthly_df = monthly()
+            if not monthly_df.empty:
+                monthly_df.to_excel(writer, sheet_name="Monthly_Performance", index=False)
+            
+            inventory_df = inventory()
+            if not inventory_df.empty:
+                inventory_df.to_excel(writer, sheet_name="Inventory", index=False)
+        
+        output.seek(0)
+        return dcc.send_bytes(output.getvalue(), filename=f"agriiq_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx")
+    return None
+
+# Update last update time
+@app.callback(
+    Output("last-update", "data"),
+    Input("refresh-trigger", "data"),
+    prevent_initial_call=True,
+)
+def update_timestamp(trigger):
+    return datetime.now().isoformat()
+
+# Retry callback for error pages
+@app.callback(
+    Output("active-page", "data", allow_duplicate=True),
+    Input("retry-btn", "n_clicks"),
+    State("active-page", "data"),
+    prevent_initial_call=True,
+)
+def retry_page(n_clicks, current_page):
+    if n_clicks and n_clicks > 0:
+        return current_page
+    return current_page
 
 # Register all module callbacks
 for module in PAGE_MODULES.values():
     if hasattr(module, "register_callbacks"):
-        module.register_callbacks(app)
+        try:
+            module.register_callbacks(app)
+        except Exception as e:
+            print(f"Error registering callbacks for module: {e}")
 
+# Register enhanced callbacks
+try:
+    from callbacks.enhanced_callbacks import register_enhanced_callbacks
+    register_enhanced_callbacks(app)
+except ImportError:
+    print("Enhanced callbacks not available - using basic mode")
+except Exception as e:
+    print(f"Error registering enhanced callbacks: {e}")
+
+# Run the app
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=8050)
