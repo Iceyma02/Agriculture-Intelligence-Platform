@@ -6,7 +6,7 @@ import sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.data_loader import farms
-from utils.helpers import GREEN, AMBER, page_header, card, status_badge, add_export_section
+from utils.helpers import GREEN, AMBER, page_header, card, status_badge, add_export_section, create_empty_chart
 
 def layout():
     f = farms()
@@ -20,6 +20,10 @@ def layout():
             card([html.Div("⚠️ No farm data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
         ])
 
+    # Check for required columns and use correct column names
+    # Use 'id' or 'farm_id' depending on what's available
+    id_column = 'farm_id' if 'farm_id' in f.columns else 'id' if 'id' in f.columns else None
+    
     fig = go.Figure()
     fig.add_trace(go.Scattermapbox(
         lat=f["lat"], lon=f["lon"],
@@ -50,8 +54,10 @@ def layout():
 
     rows = []
     for _, row in f.iterrows():
+        # Use the correct ID column
+        farm_id_value = row[id_column] if id_column else row.get('name', 'N/A')
         rows.append(html.Tr([
-            html.Td(row["farm_id"], style={"color": "#4ade80", "fontSize": "0.78rem"}),
+            html.Td(farm_id_value, style={"color": "#4ade80", "fontSize": "0.78rem"}),
             html.Td(row["name"], style={"color": "#f0fdf4", "fontSize": "0.82rem", "fontWeight": "500"}),
             html.Td(row["province"], style={"color": "#6b7280", "fontSize": "0.8rem"}),
             html.Td(row["primary_crop"], style={"color": "#86efac", "fontSize": "0.8rem"}),
