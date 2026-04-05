@@ -5,18 +5,21 @@ import plotly.graph_objects as go
 import sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils import reorder
-from utils import GREEN, AMBER, RED, LIME, BLUE, fmt_usd, apply_theme, page_header, card, kpi
+from utils.data_loader import reorder
+from utils.helpers import GREEN, AMBER, RED, LIME, BLUE, fmt_usd, apply_theme, page_header, card, kpi, add_export_section, create_empty_chart
 
 def layout():
     r = reorder()
     
+    export_section = add_export_section({"Reorder_Queue": r})
+    
     if r.empty:
         return html.Div([
+            export_section,
             page_header("Reorder Optimizer", "Smart purchasing schedule · Planting window aligned · Urgency ranked"),
             card([html.Div("⚠️ No reorder data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
         ])
-    
+
     critical = r[r["urgency"] == "CRITICAL"]
     high = r[r["urgency"] == "HIGH"]
 
@@ -46,12 +49,12 @@ def layout():
         ], style={"borderBottom": "1px solid rgba(34,197,94,0.07)"}))
 
     table = html.Table([
-        html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px", "letterSpacing": "0.06em"})
-                             for h in ["Farm", "Supplier", "Category", "Est Cost", "Days to Plant", "Lead Days", "Urgency", "Order By"]])),
+        html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px"}) for h in ["Farm", "Supplier", "Category", "Est Cost", "Days to Plant", "Lead Days", "Urgency", "Order By"]])),
         html.Tbody(rows),
     ], style={"width": "100%", "borderCollapse": "collapse"})
 
     return html.Div([
+        export_section,
         page_header("Reorder Optimizer", "Smart purchasing schedule · Planting window aligned · Urgency ranked"),
         html.Div([
             kpi(str(len(critical)), "CRITICAL Orders", "Order today", False, RED),
@@ -60,11 +63,7 @@ def layout():
             kpi(f"{r['supplier_lead_days'].mean():.0f} days", "Avg Supplier Lead", None),
         ], style={"display": "grid", "gridTemplateColumns": "repeat(4,1fr)", "gap": "14px", "marginBottom": "24px"}),
         card([dcc.Graph(figure=fig_urg, config={"displayModeBar": False})], {"marginBottom": "16px"}),
-        card([
-            html.Div("🔄  Reorder Queue — Prioritized", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}),
-            html.Div(table, style={"overflowX": "auto", "maxHeight": "420px", "overflowY": "auto"}),
-        ]),
+        card([html.Div("🔄 Reorder Queue — Prioritized", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}), html.Div(table, style={"overflowX": "auto", "maxHeight": "420px", "overflowY": "auto"})]),
     ])
 
-def register_callbacks(app): 
-    pass
+def register_callbacks(app): pass
