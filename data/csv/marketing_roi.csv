@@ -1,0 +1,73 @@
+farm_id,farm_name,campaign,spend_usd,revenue_lift_usd,roi_pct,new_buyers,channel
+1,Mazowe Valley Farm,Summer Campaign,15170,23215,53.0,79,Trade Show
+1,Mazowe Valley Farm,Winter Sale,30792,83667,171.7,69,Print
+1,Mazowe Valley Farm,Export Promotion,21052,84198,300.0,27,Radio
+1,Mazowe Valley Farm,Digital Ads,15567,47952,208.0,68,Print
+1,Mazowe Valley Farm,Farmer Field Days,25584,82076,220.8,78,Direct Sales
+1,Mazowe Valley Farm,Trade Show,49078,130182,165.3,57,Social Media
+2,Headlands Cotton Block,Summer Campaign,29509,85006,188.1,16,Radio
+2,Headlands Cotton Block,Winter Sale,27554,90657,229.0,50,Trade Show
+2,Headlands Cotton Block,Export Promotion,28804,143618,398.6,96,Social Media
+2,Headlands Cotton Block,Digital Ads,7611,33635,341.9,97,Social Media
+2,Headlands Cotton Block,Farmer Field Days,19610,61484,213.5,26,Trade Show
+2,Headlands Cotton Block,Trade Show,44328,150667,239.9,39,Print
+3,Bindura Soya Farm,Summer Campaign,49159,211446,330.1,14,Print
+3,Bindura Soya Farm,Winter Sale,30230,139205,360.5,94,Print
+3,Bindura Soya Farm,Export Promotion,45159,111274,146.4,17,Social Media
+3,Bindura Soya Farm,Digital Ads,29673,76289,157.1,52,Social Media
+3,Bindura Soya Farm,Farmer Field Days,32195,94237,192.7,25,Print
+3,Bindura Soya Farm,Trade Show,35763,105309,194.5,48,Radio
+4,Karoi Maize Cooperative,Summer Campaign,19497,59323,204.3,8,Direct Sales
+4,Karoi Maize Cooperative,Winter Sale,48481,99149,104.5,70,Print
+4,Karoi Maize Cooperative,Export Promotion,49498,145639,194.2,63,Trade Show
+4,Karoi Maize Cooperative,Digital Ads,29563,140687,375.9,82,Radio
+4,Karoi Maize Cooperative,Farmer Field Days,43428,92118,112.1,27,Radio
+4,Karoi Maize Cooperative,Trade Show,7093,12218,72.3,30,Radio
+5,Mvurwi Mixed Farm,Summer Campaign,21558,69886,224.2,70,Print
+5,Mvurwi Mixed Farm,Winter Sale,17342,45770,163.9,78,Print
+5,Mvurwi Mixed Farm,Export Promotion,16419,33156,101.9,23,Trade Show
+5,Mvurwi Mixed Farm,Digital Ads,48027,239949,399.6,47,Print
+5,Mvurwi Mixed Farm,Farmer Field Days,32567,117949,262.2,58,Radio
+5,Mvurwi Mixed Farm,Trade Show,31651,93625,195.8,26,Trade Show
+6,Chiredzi Sugar Estate,Summer Campaign,9646,20818,115.8,48,Radio
+6,Chiredzi Sugar Estate,Winter Sale,23727,101254,326.7,6,Print
+6,Chiredzi Sugar Estate,Export Promotion,22563,74825,231.6,85,Radio
+6,Chiredzi Sugar Estate,Digital Ads,49610,85381,72.1,76,Direct Sales
+6,Chiredzi Sugar Estate,Farmer Field Days,34410,106954,210.8,14,Social Media
+6,Chiredzi Sugar Estate,Trade Show,37875,123679,226.5,95,Print
+7,Beitbridge Citrus Farm,Summer Campaign,43311,161634,273.2,64,Radio
+7,Beitbridge Citrus Farm,Winter Sale,14465,63866,341.5,23,Social Media
+7,Beitbridge Citrus Farm,Export Promotion,21427,83999,292.0,41,Social Media
+7,Beitbridge Citrus Farm,Digital Ads,26795,69569,159.6,25,Radio
+7,Beitbridge Citrus Farm,Farmer Field Days,22182,89689,304.3,34,Direct Sales
+7,Beitbridge Citrus Farm,Trade Show,36403,146903,303.5,53,Direct Sales
+8,Marondera Dairy,Summer Campaign,49695,136456,174.6,64,Print
+8,Marondera Dairy,Winter Sale,17300,35211,103.5,78,Direct Sales
+8,Marondera Dairy,Export Promotion,49871,123973,148.6,82,Direct Sales
+8,Marondera Dairy,Digital Ads,31666,57454,81.4,89,Direct Sales
+8,Marondera Dairy,Farmer Field Days,27829,83805,201.1,6,Trade Show
+8,Marondera Dairy,Trade Show,30714,49379,60.8,56,Direct Sales
+9,Kwekwe Grain Farm,Summer Campaign,19274,61340,218.3,51,Print
+9,Kwekwe Grain Farm,Winter Sale,20295,48302,138.0,82,Direct Sales
+9,Kwekwe Grain Farm,Export Promotion,18769,42169,124.7,67,Social Media
+9,Kwekwe Grain Farm,Digital Ads,30557,98441,222.2,51,Trade Show
+9,Kwekwe Grain Farm,Farmer Field Days,18470,85797,364.5,30,Print
+9,Kwekwe Grain Farm,Trade Show,11805,20604,74.5,41,Trade Show
+10,Mutare Tea Estate,Summer Campaign,13080,61170,367.7,99,Print
+10,Mutare Tea Estate,Winter Sale,38333,62470,63.0,68,Trade Show
+10,Mutare Tea Estate,Export Promotion,36887,181038,390.8,77,Direct Sales
+10,Mutare Tea Estate,Digital Ads,12614,25237,100.1,56,Direct Sales
+10,Mutare Tea Estate,Farmer Field Days,38305,79384,107.2,33,Print
+10,Mutare Tea Estate,Trade Show,22198,69949,215.1,39,Trade Show
+11,Gweru Livestock Ranch,Summer Campaign,8810,33818,283.9,9,Social Media
+11,Gweru Livestock Ranch,Winter Sale,31783,63320,99.2,56,Direct Sales
+11,Gweru Livestock Ranch,Export Promotion,21065,68485,225.1,86,Social Media
+11,Gweru Livestock Ranch,Digital Ads,43969,139301,216.8,87,Direct Sales
+11,Gweru Livestock Ranch,Farmer Field Days,45167,121340,168.6,54,Direct Sales
+11,Gweru Livestock Ranch,Trade Show,34685,78588,126.6,45,Radio
+12,Harare Peri-Urban Veg,Summer Campaign,12035,46131,283.3,75,Print
+12,Harare Peri-Urban Veg,Winter Sale,31189,84582,171.2,37,Social Media
+12,Harare Peri-Urban Veg,Export Promotion,45747,82461,80.3,40,Print
+12,Harare Peri-Urban Veg,Digital Ads,31325,80041,155.5,92,Radio
+12,Harare Peri-Urban Veg,Farmer Field Days,38615,145811,277.6,49,Trade Show
+12,Harare Peri-Urban Veg,Trade Show,27725,123286,344.7,57,Print

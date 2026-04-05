@@ -1,0 +1,128 @@
+farm_id,farm_name,item_name,category,qty_current,qty_max,unit,status,supplier,last_ordered
+1,Mazowe Valley Farm,Spare Parts A-928,Fuel,119,497,Bags,Low,AgriSupply Co.,2026-03-02
+1,Mazowe Valley Farm,Fertilizer A-753,Chemicals,319,364,kg,OK,SeedCo,2026-02-01
+1,Mazowe Valley Farm,Fertilizer C-167,Fuel,221,433,Bags,OK,Zim Fert,2026-02-19
+1,Mazowe Valley Farm,Equipment B-980,Spare Parts,1150,1755,Bags,OK,SeedCo,2026-03-21
+1,Mazowe Valley Farm,Seeds A-866,Equipment,493,1699,kg,Low,ChemTech,2026-01-24
+1,Mazowe Valley Farm,Equipment A-544,Fertilizer,1012,1807,Bags,OK,SeedCo,2026-01-10
+1,Mazowe Valley Farm,Fertilizer A-442,Fuel,479,581,L,OK,ChemTech,2026-02-14
+1,Mazowe Valley Farm,Fertilizer C-125,Fuel,526,658,kg,OK,FarmEquip,2026-03-11
+1,Mazowe Valley Farm,Fuel A-768,Chemicals,1573,1942,Bags,OK,Tractor Centre,2026-01-20
+1,Mazowe Valley Farm,Fuel B-175,Equipment,27,447,Units,Critical,FarmEquip,2026-01-25
+1,Mazowe Valley Farm,Fertilizer A-683,Spare Parts,346,1285,L,Low,FarmEquip,2026-03-07
+2,Headlands Cotton Block,Seeds C-747,Chemicals,261,672,Bags,Low,Zim Fert,2026-01-26
+2,Headlands Cotton Block,Equipment A-966,Spare Parts,92,540,Units,Critical,Total Energies,2026-01-07
+2,Headlands Cotton Block,Equipment A-148,Spare Parts,1712,1947,kg,OK,FarmEquip,2026-03-24
+2,Headlands Cotton Block,Fuel A-701,Equipment,403,654,kg,OK,AgriSupply Co.,2026-01-27
+2,Headlands Cotton Block,Chemicals B-481,Fertilizer,105,417,kg,Low,Total Energies,2026-02-11
+2,Headlands Cotton Block,Equipment C-670,Fertilizer,528,652,Units,OK,Total Energies,2026-01-27
+2,Headlands Cotton Block,Chemicals C-432,Spare Parts,493,878,kg,OK,AgriSupply Co.,2026-02-20
+2,Headlands Cotton Block,Fuel A-208,Fuel,18,1743,kg,Critical,AgriSupply Co.,2026-02-15
+2,Headlands Cotton Block,Fuel B-552,Fertilizer,102,701,Units,Critical,FarmEquip,2026-03-02
+3,Bindura Soya Farm,Spare Parts A-738,Fuel,323,530,L,OK,Total Energies,2026-03-13
+3,Bindura Soya Farm,Fuel A-836,Fuel,411,1874,L,Low,SeedCo,2026-03-17
+3,Bindura Soya Farm,Equipment A-301,Seeds,1,140,Units,Critical,SeedCo,2026-01-14
+3,Bindura Soya Farm,Seeds C-217,Fertilizer,909,1389,kg,OK,Tractor Centre,2026-03-04
+3,Bindura Soya Farm,Spare Parts C-728,Seeds,83,870,kg,Critical,FarmEquip,2026-03-29
+3,Bindura Soya Farm,Seeds A-367,Chemicals,295,1473,Units,Low,AgriSupply Co.,2026-02-05
+3,Bindura Soya Farm,Equipment A-673,Fertilizer,985,1936,Units,OK,Tractor Centre,2026-03-07
+3,Bindura Soya Farm,Fuel A-537,Chemicals,1317,1402,L,OK,ChemTech,2026-02-15
+3,Bindura Soya Farm,Equipment B-733,Spare Parts,72,474,Bags,Critical,ChemTech,2026-02-28
+3,Bindura Soya Farm,Fuel C-140,Chemicals,194,1574,Bags,Critical,Zim Fert,2026-02-03
+3,Bindura Soya Farm,Seeds A-106,Fuel,678,1241,kg,OK,AgriSupply Co.,2026-01-26
+3,Bindura Soya Farm,Chemicals A-301,Fuel,147,658,L,Low,ChemTech,2026-02-25
+4,Karoi Maize Cooperative,Chemicals A-980,Spare Parts,125,1106,Bags,Critical,Total Energies,2026-03-24
+4,Karoi Maize Cooperative,Fuel A-976,Seeds,832,1029,kg,OK,FarmEquip,2026-02-01
+4,Karoi Maize Cooperative,Equipment B-254,Spare Parts,74,1702,L,Critical,SeedCo,2026-01-27
+4,Karoi Maize Cooperative,Chemicals A-344,Spare Parts,261,1357,L,Critical,Total Energies,2026-02-23
+4,Karoi Maize Cooperative,Equipment C-186,Spare Parts,123,269,Bags,Low,Zim Fert,2026-01-18
+4,Karoi Maize Cooperative,Equipment C-530,Spare Parts,284,468,Bags,OK,AgriSupply Co.,2026-03-10
+4,Karoi Maize Cooperative,Equipment A-404,Equipment,68,167,L,Low,Total Energies,2026-02-07
+4,Karoi Maize Cooperative,Chemicals C-653,Seeds,342,1502,Bags,Low,Total Energies,2026-02-09
+4,Karoi Maize Cooperative,Equipment B-482,Fuel,496,861,kg,OK,ChemTech,2026-03-21
+4,Karoi Maize Cooperative,Chemicals A-703,Equipment,323,458,Units,OK,Total Energies,2026-03-21
+5,Mvurwi Mixed Farm,Fertilizer C-863,Seeds,508,534,Bags,OK,FarmEquip,2026-03-08
+5,Mvurwi Mixed Farm,Equipment C-952,Fuel,786,861,kg,OK,AgriSupply Co.,2026-02-24
+5,Mvurwi Mixed Farm,Chemicals A-965,Chemicals,63,1782,L,Critical,Total Energies,2026-02-13
+5,Mvurwi Mixed Farm,Equipment B-494,Fuel,245,1263,kg,Critical,AgriSupply Co.,2026-02-04
+5,Mvurwi Mixed Farm,Seeds B-628,Chemicals,557,1143,Units,Low,Zim Fert,2026-02-12
+5,Mvurwi Mixed Farm,Seeds B-686,Fertilizer,581,719,L,OK,Tractor Centre,2026-03-17
+5,Mvurwi Mixed Farm,Fertilizer C-853,Fertilizer,703,814,Units,OK,Total Energies,2026-01-13
+5,Mvurwi Mixed Farm,Fuel C-786,Fuel,81,1854,Units,Critical,Total Energies,2026-02-25
+5,Mvurwi Mixed Farm,Fertilizer A-948,Fertilizer,510,1171,kg,Low,AgriSupply Co.,2026-01-19
+5,Mvurwi Mixed Farm,Spare Parts C-542,Equipment,62,246,kg,Low,Tractor Centre,2026-01-30
+5,Mvurwi Mixed Farm,Seeds B-448,Spare Parts,207,386,Units,OK,SeedCo,2026-02-06
+6,Chiredzi Sugar Estate,Spare Parts A-303,Seeds,319,1933,kg,Critical,SeedCo,2026-02-04
+6,Chiredzi Sugar Estate,Spare Parts C-262,Chemicals,56,1409,L,Critical,Zim Fert,2026-01-20
+6,Chiredzi Sugar Estate,Fertilizer A-648,Fertilizer,578,641,Units,OK,Total Energies,2026-03-19
+6,Chiredzi Sugar Estate,Equipment A-226,Fertilizer,647,1867,Bags,Low,SeedCo,2026-01-25
+6,Chiredzi Sugar Estate,Fertilizer B-483,Fuel,103,802,L,Critical,Tractor Centre,2026-01-16
+6,Chiredzi Sugar Estate,Fuel A-784,Seeds,909,1478,kg,OK,Total Energies,2026-01-08
+6,Chiredzi Sugar Estate,Seeds A-474,Seeds,357,1246,L,Low,ChemTech,2026-03-16
+6,Chiredzi Sugar Estate,Seeds B-573,Equipment,1211,1481,Bags,OK,Tractor Centre,2026-03-01
+6,Chiredzi Sugar Estate,Chemicals C-731,Spare Parts,289,607,Units,Low,SeedCo,2026-02-07
+7,Beitbridge Citrus Farm,Fertilizer B-536,Equipment,400,420,kg,OK,SeedCo,2026-02-07
+7,Beitbridge Citrus Farm,Fertilizer B-130,Fertilizer,1336,1910,Units,OK,Tractor Centre,2026-02-28
+7,Beitbridge Citrus Farm,Seeds B-663,Fuel,1097,1569,Bags,OK,Zim Fert,2026-03-18
+7,Beitbridge Citrus Farm,Spare Parts A-507,Spare Parts,411,1301,L,Low,Tractor Centre,2026-03-28
+7,Beitbridge Citrus Farm,Seeds C-389,Seeds,1082,1328,Bags,OK,Zim Fert,2026-01-16
+7,Beitbridge Citrus Farm,Fertilizer C-540,Fertilizer,715,972,L,OK,Total Energies,2026-03-06
+7,Beitbridge Citrus Farm,Spare Parts B-308,Seeds,1119,1909,Bags,OK,AgriSupply Co.,2026-03-26
+7,Beitbridge Citrus Farm,Equipment C-732,Fertilizer,376,424,Units,OK,SeedCo,2026-03-23
+7,Beitbridge Citrus Farm,Fuel B-918,Equipment,427,1797,Units,Low,AgriSupply Co.,2026-01-21
+7,Beitbridge Citrus Farm,Fuel C-520,Fertilizer,567,723,L,OK,Tractor Centre,2026-03-03
+7,Beitbridge Citrus Farm,Seeds C-122,Equipment,631,1028,kg,OK,SeedCo,2026-03-19
+7,Beitbridge Citrus Farm,Fuel C-884,Fuel,928,1224,Units,OK,AgriSupply Co.,2026-01-18
+7,Beitbridge Citrus Farm,Seeds A-200,Spare Parts,292,632,Bags,Low,Tractor Centre,2026-03-04
+7,Beitbridge Citrus Farm,Fuel A-991,Fertilizer,226,1123,kg,Low,Zim Fert,2026-03-19
+8,Marondera Dairy,Fertilizer A-265,Chemicals,129,130,L,OK,FarmEquip,2026-02-15
+8,Marondera Dairy,Fertilizer C-903,Seeds,161,1872,Units,Critical,ChemTech,2026-01-21
+8,Marondera Dairy,Spare Parts B-164,Fuel,539,1039,kg,OK,ChemTech,2026-03-19
+8,Marondera Dairy,Spare Parts B-749,Equipment,48,1436,Bags,Critical,Tractor Centre,2026-02-07
+8,Marondera Dairy,Equipment A-201,Seeds,557,1709,L,Low,AgriSupply Co.,2026-03-18
+8,Marondera Dairy,Fertilizer C-210,Spare Parts,674,1261,kg,OK,ChemTech,2026-02-06
+8,Marondera Dairy,Equipment C-508,Fuel,535,983,L,OK,ChemTech,2026-01-26
+8,Marondera Dairy,Fuel C-564,Fuel,118,1975,L,Critical,ChemTech,2026-03-05
+8,Marondera Dairy,Spare Parts A-773,Equipment,174,1625,L,Critical,Tractor Centre,2026-03-07
+8,Marondera Dairy,Seeds C-855,Fertilizer,54,132,L,Low,ChemTech,2026-03-16
+8,Marondera Dairy,Equipment A-746,Fuel,554,819,Units,OK,SeedCo,2026-01-18
+9,Kwekwe Grain Farm,Fertilizer A-313,Chemicals,224,875,Bags,Low,SeedCo,2026-03-03
+9,Kwekwe Grain Farm,Seeds B-511,Equipment,156,588,Units,Low,ChemTech,2026-02-16
+9,Kwekwe Grain Farm,Seeds A-730,Equipment,515,1341,Bags,Low,ChemTech,2026-02-10
+9,Kwekwe Grain Farm,Fuel B-332,Fertilizer,1166,1454,Units,OK,Zim Fert,2026-01-20
+9,Kwekwe Grain Farm,Seeds A-493,Chemicals,440,461,kg,OK,SeedCo,2026-03-21
+9,Kwekwe Grain Farm,Fuel C-962,Fuel,455,560,Units,OK,SeedCo,2026-01-26
+9,Kwekwe Grain Farm,Spare Parts B-799,Fertilizer,563,1172,Units,Low,Tractor Centre,2026-02-14
+9,Kwekwe Grain Farm,Fertilizer B-104,Fuel,793,1365,Bags,OK,AgriSupply Co.,2026-01-16
+9,Kwekwe Grain Farm,Fertilizer B-521,Chemicals,53,347,L,Critical,Tractor Centre,2026-01-30
+9,Kwekwe Grain Farm,Spare Parts A-489,Spare Parts,276,1245,L,Low,FarmEquip,2026-01-29
+10,Mutare Tea Estate,Spare Parts A-322,Spare Parts,713,1713,Units,Low,FarmEquip,2026-03-26
+10,Mutare Tea Estate,Fuel A-334,Fuel,519,1216,kg,Low,AgriSupply Co.,2026-01-16
+10,Mutare Tea Estate,Chemicals C-767,Fuel,49,432,L,Critical,AgriSupply Co.,2026-03-16
+10,Mutare Tea Estate,Chemicals B-545,Fertilizer,251,679,Bags,Low,SeedCo,2026-03-14
+10,Mutare Tea Estate,Spare Parts B-253,Spare Parts,310,1142,Bags,Low,ChemTech,2026-03-03
+10,Mutare Tea Estate,Seeds A-718,Chemicals,124,1694,kg,Critical,Zim Fert,2026-02-26
+10,Mutare Tea Estate,Equipment B-107,Spare Parts,519,1370,Bags,Low,ChemTech,2026-01-26
+10,Mutare Tea Estate,Fertilizer C-695,Seeds,1062,1550,L,OK,Total Energies,2026-02-16
+10,Mutare Tea Estate,Seeds A-611,Fuel,164,236,L,OK,Tractor Centre,2026-02-17
+11,Gweru Livestock Ranch,Fuel B-666,Chemicals,169,1851,L,Critical,Total Energies,2026-03-05
+11,Gweru Livestock Ranch,Chemicals A-272,Seeds,348,988,Bags,Low,AgriSupply Co.,2026-02-06
+11,Gweru Livestock Ranch,Chemicals B-598,Fertilizer,1270,1883,Bags,OK,AgriSupply Co.,2026-01-20
+11,Gweru Livestock Ranch,Fuel A-705,Chemicals,1858,1876,Units,OK,AgriSupply Co.,2026-01-13
+11,Gweru Livestock Ranch,Equipment A-792,Chemicals,273,1140,L,Low,ChemTech,2026-01-26
+11,Gweru Livestock Ranch,Seeds B-976,Fuel,0,213,Bags,Critical,Tractor Centre,2026-03-22
+11,Gweru Livestock Ranch,Fertilizer A-989,Fertilizer,202,414,kg,Low,FarmEquip,2026-02-19
+11,Gweru Livestock Ranch,Equipment C-923,Chemicals,579,832,kg,OK,SeedCo,2026-01-15
+11,Gweru Livestock Ranch,Chemicals A-799,Seeds,370,381,Bags,OK,Total Energies,2026-03-11
+11,Gweru Livestock Ranch,Seeds C-853,Fuel,131,561,kg,Low,Total Energies,2026-03-24
+11,Gweru Livestock Ranch,Chemicals C-657,Fuel,367,652,L,OK,AgriSupply Co.,2026-01-23
+11,Gweru Livestock Ranch,Chemicals C-288,Fuel,194,370,L,OK,Total Energies,2026-03-08
+12,Harare Peri-Urban Veg,Fertilizer A-570,Equipment,289,1127,Bags,Low,ChemTech,2026-03-09
+12,Harare Peri-Urban Veg,Spare Parts A-929,Fertilizer,580,976,kg,OK,Total Energies,2026-01-31
+12,Harare Peri-Urban Veg,Equipment A-749,Spare Parts,325,665,kg,Low,Total Energies,2026-01-07
+12,Harare Peri-Urban Veg,Chemicals B-914,Fuel,383,1638,Bags,Low,ChemTech,2026-02-22
+12,Harare Peri-Urban Veg,Fertilizer A-442,Seeds,419,1634,L,Low,FarmEquip,2026-01-29
+12,Harare Peri-Urban Veg,Chemicals C-305,Fertilizer,536,968,L,OK,SeedCo,2026-02-13
+12,Harare Peri-Urban Veg,Spare Parts A-409,Equipment,1574,1863,Bags,OK,AgriSupply Co.,2026-03-16
+12,Harare Peri-Urban Veg,Seeds C-261,Spare Parts,937,1694,kg,OK,AgriSupply Co.,2026-03-21
+12,Harare Peri-Urban Veg,Spare Parts A-884,Fuel,9,1603,Bags,Critical,ChemTech,2026-03-07

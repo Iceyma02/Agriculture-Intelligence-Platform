@@ -1,0 +1,13 @@
+farm_id,name,province,lat,lon,size_ha,owner,type,primary_crop,secondary_crop,irrigation_type,yield_tons_ha,revenue_usd,cost_usd,profit_usd,profit_margin_pct,workers_permanent,workers_seasonal,harvest_date,status,certification,water_source
+1,Mazowe Valley Farm,Mashonaland Central,-17.0,30.5,1326,Private,Arable,Maize,Soybeans,Centre Pivot,4.3,2419486,828178,168148,41.5,59,394,2025-03-27,Inactive,Fair Trade,Dam
+2,Headlands Cotton Block,Mashonaland East,-17.5,31.5,1060,Cooperative,Cotton,Cotton,Maize,Drip,8.9,1154811,865894,748531,27.5,101,376,2025-03-10,Active,None,River
+3,Bindura Soya Farm,Mashonaland Central,-17.2,31.0,1494,Private,Oilseeds,Soybeans,Wheat,Drip,3.5,1027035,789492,1400571,35.8,130,58,2025-05-26,Active,Organic,Municipal
+4,Karoi Maize Cooperative,Mashonaland West,-16.8,29.5,1330,Cooperative,Grains,Maize,Soybeans,Centre Pivot,9.5,1148143,1605416,1006606,36.9,72,393,2025-03-7,Active,None,Municipal
+5,Mvurwi Mixed Farm,Mashonaland Central,-17.3,30.8,1295,Private,Mixed,Tobacco,Maize,Drip,11.4,2000942,773254,778843,22.4,43,178,2025-03-8,Active,Fair Trade,Municipal
+6,Chiredzi Sugar Estate,Masvingo,-21.0,31.5,1244,Estate,Sugar,Sugarcane,None,Flood,3.0,565725,649457,672843,53.8,173,185,2025-04-1,Active,GlobalGAP,Municipal
+7,Beitbridge Citrus Farm,Matabeleland South,-22.0,29.0,321,Private,Citrus,Citrus,None,Drip,11.9,584654,965987,356508,46.0,143,112,2025-05-23,Active,None,Municipal
+8,Marondera Dairy,Mashonaland East,-18.0,31.5,666,Corporate,Dairy,Dairy,Maize,None,8.6,1453277,1619512,903591,52.6,60,188,2025-04-24,Active,Fair Trade,River
+9,Kwekwe Grain Farm,Midlands,-19.0,29.5,1438,Cooperative,Grains,Wheat,Barley,Centre Pivot,8.5,2454354,1588507,996942,50.8,176,130,2025-03-3,Active,None,River
+10,Mutare Tea Estate,Manicaland,-18.5,32.5,530,Estate,Tea,Tea,None,Drip,3.1,2916182,1588205,206530,38.9,34,441,2025-04-27,Active,None,Borehole
+11,Gweru Livestock Ranch,Midlands,-19.5,29.5,287,Private,Livestock,Cattle,Goats,None,3.2,2870690,1553617,704365,51.9,64,212,2025-05-1,Active,None,Municipal
+12,Harare Peri-Urban Veg,Harare Metropolitan,-17.8,31.0,1323,Smallholder,Vegetables,Vegetables,Maize,Drip,7.7,2928388,998361,560337,18.5,84,468,2025-05-5,Active,GlobalGAP,River

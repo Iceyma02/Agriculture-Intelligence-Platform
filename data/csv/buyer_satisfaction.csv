@@ -1,0 +1,865 @@
+farm_id,farm_name,buyer,month_label,overall_score,quality_score,delivery_score,payment_score,complaints,revenue_usd,volume_tons
+1,Mazowe Valley Farm,AgriProcessors Ltd,Apr 2026,4.3,4.7,4.5,4.5,0,92561,89.3
+1,Mazowe Valley Farm,AgriProcessors Ltd,Mar 2026,4.4,4.8,4.5,3.8,1,148118,411.3
+1,Mazowe Valley Farm,AgriProcessors Ltd,Feb 2026,3.2,3.6,3.7,3.8,1,177796,183.9
+1,Mazowe Valley Farm,AgriProcessors Ltd,Jan 2026,4.4,4.1,3.9,4.2,0,130791,18.7
+1,Mazowe Valley Farm,AgriProcessors Ltd,Dec 2025,4.5,4.6,3.9,5.3,0,117727,390.4
+1,Mazowe Valley Farm,AgriProcessors Ltd,Nov 2025,4.6,4.1,5.1,5.3,0,128249,334.2
+1,Mazowe Valley Farm,AgriProcessors Ltd,Oct 2025,4.9,4.7,4.5,4.3,1,86008,360.2
+1,Mazowe Valley Farm,AgriProcessors Ltd,Sep 2025,3.7,3.5,3.8,3.4,2,77002,77.1
+1,Mazowe Valley Farm,AgriProcessors Ltd,Aug 2025,4.1,3.8,4.3,4.2,0,101580,308.6
+1,Mazowe Valley Farm,AgriProcessors Ltd,Jul 2025,4.6,4.7,4.6,5.0,1,52417,207.0
+1,Mazowe Valley Farm,AgriProcessors Ltd,Jun 2025,4.0,4.2,3.6,4.4,0,152346,262.5
+1,Mazowe Valley Farm,AgriProcessors Ltd,May 2025,4.1,4.4,4.1,4.4,0,194028,345.5
+1,Mazowe Valley Farm,Export Trading Co,Apr 2026,4.8,4.7,4.4,5.5,0,37156,482.4
+1,Mazowe Valley Farm,Export Trading Co,Mar 2026,4.4,4.3,4.6,3.5,0,159631,88.0
+1,Mazowe Valley Farm,Export Trading Co,Feb 2026,4.6,4.5,5.2,5.2,1,14616,153.9
+1,Mazowe Valley Farm,Export Trading Co,Jan 2026,5.0,4.9,4.9,5.0,1,63603,401.2
+1,Mazowe Valley Farm,Export Trading Co,Dec 2025,4.9,4.5,4.7,5.7,0,74206,409.5
+1,Mazowe Valley Farm,Export Trading Co,Nov 2025,4.4,4.7,4.5,3.7,0,192411,158.5
+1,Mazowe Valley Farm,Export Trading Co,Oct 2025,4.1,4.4,4.5,3.4,1,26471,104.7
+1,Mazowe Valley Farm,Export Trading Co,Sep 2025,4.7,4.3,4.4,3.8,1,112061,408.4
+1,Mazowe Valley Farm,Export Trading Co,Aug 2025,4.5,4.8,4.5,3.7,0,132225,131.9
+1,Mazowe Valley Farm,Export Trading Co,Jul 2025,3.3,3.5,3.4,3.0,4,130127,339.9
+1,Mazowe Valley Farm,Export Trading Co,Jun 2025,3.1,3.3,3.3,2.7,2,119344,71.2
+1,Mazowe Valley Farm,Export Trading Co,May 2025,3.8,3.5,3.5,3.7,2,143483,295.2
+1,Mazowe Valley Farm,Local Markets,Apr 2026,4.7,4.8,4.2,4.3,1,49651,491.5
+1,Mazowe Valley Farm,Local Markets,Mar 2026,4.4,4.3,4.1,4.7,2,18000,398.2
+1,Mazowe Valley Farm,Local Markets,Feb 2026,3.2,3.2,2.8,3.1,2,88498,280.3
+1,Mazowe Valley Farm,Local Markets,Jan 2026,3.5,3.5,3.5,2.9,1,55052,262.5
+1,Mazowe Valley Farm,Local Markets,Dec 2025,3.0,3.1,3.5,2.8,1,85285,437.5
+1,Mazowe Valley Farm,Local Markets,Nov 2025,4.5,4.3,5.2,4.5,1,60627,469.3
+1,Mazowe Valley Farm,Local Markets,Oct 2025,3.0,3.2,2.9,3.1,1,136677,435.0
+1,Mazowe Valley Farm,Local Markets,Sep 2025,4.2,4.4,4.8,4.4,1,61862,207.6
+1,Mazowe Valley Farm,Local Markets,Aug 2025,3.9,4.3,4.0,3.6,2,171333,184.4
+1,Mazowe Valley Farm,Local Markets,Jul 2025,3.1,2.9,2.9,3.5,2,39825,125.4
+1,Mazowe Valley Farm,Local Markets,Jun 2025,4.9,5.2,5.1,4.2,0,49279,34.6
+1,Mazowe Valley Farm,Local Markets,May 2025,3.8,4.2,3.4,3.9,0,105502,358.7
+1,Mazowe Valley Farm,Supermarket Chain,Apr 2026,4.9,5.3,4.2,4.2,1,181324,19.5
+1,Mazowe Valley Farm,Supermarket Chain,Mar 2026,4.0,4.2,3.5,4.7,0,54420,311.8
+1,Mazowe Valley Farm,Supermarket Chain,Feb 2026,3.6,3.8,3.9,4.3,3,162975,76.1
+1,Mazowe Valley Farm,Supermarket Chain,Jan 2026,4.4,4.7,3.9,4.4,0,176447,396.8
+1,Mazowe Valley Farm,Supermarket Chain,Dec 2025,3.2,3.0,2.7,3.0,3,161023,148.0
+1,Mazowe Valley Farm,Supermarket Chain,Nov 2025,3.0,2.8,2.8,3.4,3,118407,496.8
+1,Mazowe Valley Farm,Supermarket Chain,Oct 2025,4.8,4.8,5.5,5.1,0,85578,426.6
+1,Mazowe Valley Farm,Supermarket Chain,Sep 2025,3.6,3.5,3.7,3.9,2,180673,477.6
+1,Mazowe Valley Farm,Supermarket Chain,Aug 2025,4.9,5.2,4.5,4.9,0,147006,336.6
+1,Mazowe Valley Farm,Supermarket Chain,Jul 2025,3.8,4.0,3.5,4.6,4,22343,476.0
+1,Mazowe Valley Farm,Supermarket Chain,Jun 2025,4.3,4.4,3.8,4.2,1,151448,260.4
+1,Mazowe Valley Farm,Supermarket Chain,May 2025,4.3,4.4,3.8,4.5,0,165642,372.3
+1,Mazowe Valley Farm,Food Processing Inc,Apr 2026,3.7,3.6,3.9,3.6,1,96462,255.7
+1,Mazowe Valley Farm,Food Processing Inc,Mar 2026,4.8,4.3,5.4,4.2,1,122255,339.1
+1,Mazowe Valley Farm,Food Processing Inc,Feb 2026,3.4,3.6,3.1,3.0,1,64780,256.8
+1,Mazowe Valley Farm,Food Processing Inc,Jan 2026,4.7,4.3,4.7,5.1,3,123094,336.3
+1,Mazowe Valley Farm,Food Processing Inc,Dec 2025,3.4,3.3,3.4,2.8,0,107103,272.0
+1,Mazowe Valley Farm,Food Processing Inc,Nov 2025,3.7,3.6,4.2,3.5,0,182525,126.1
+1,Mazowe Valley Farm,Food Processing Inc,Oct 2025,3.6,4.0,4.1,3.5,0,162287,336.8
+1,Mazowe Valley Farm,Food Processing Inc,Sep 2025,4.9,5.3,5.1,4.9,2,48779,85.9
+1,Mazowe Valley Farm,Food Processing Inc,Aug 2025,3.2,3.2,3.4,3.5,3,126305,262.7
+1,Mazowe Valley Farm,Food Processing Inc,Jul 2025,5.0,5.0,5.5,5.6,0,146025,318.2
+1,Mazowe Valley Farm,Food Processing Inc,Jun 2025,4.0,4.4,4.3,4.8,0,158427,148.2
+1,Mazowe Valley Farm,Food Processing Inc,May 2025,3.2,3.5,3.1,3.7,4,68263,439.7
+1,Mazowe Valley Farm,Wholesale Distributor,Apr 2026,3.1,3.4,3.2,3.0,1,16044,150.2
+1,Mazowe Valley Farm,Wholesale Distributor,Mar 2026,3.5,3.8,3.8,3.0,2,94533,366.5
+1,Mazowe Valley Farm,Wholesale Distributor,Feb 2026,4.2,4.0,4.4,4.5,0,89459,191.2
+1,Mazowe Valley Farm,Wholesale Distributor,Jan 2026,3.2,3.2,3.1,3.4,4,176852,103.9
+1,Mazowe Valley Farm,Wholesale Distributor,Dec 2025,4.1,4.5,3.6,3.4,0,181162,135.3
+1,Mazowe Valley Farm,Wholesale Distributor,Nov 2025,4.5,4.7,4.1,4.5,0,70539,70.9
+1,Mazowe Valley Farm,Wholesale Distributor,Oct 2025,4.9,4.7,5.2,4.9,0,168539,449.9
+1,Mazowe Valley Farm,Wholesale Distributor,Sep 2025,3.2,3.1,3.5,2.7,4,58526,103.6
+1,Mazowe Valley Farm,Wholesale Distributor,Aug 2025,4.0,3.8,4.3,3.6,1,198096,488.2
+1,Mazowe Valley Farm,Wholesale Distributor,Jul 2025,3.7,3.6,3.3,4.3,1,10533,273.6
+1,Mazowe Valley Farm,Wholesale Distributor,Jun 2025,3.4,3.5,3.4,3.5,4,76681,487.9
+1,Mazowe Valley Farm,Wholesale Distributor,May 2025,4.4,4.0,4.7,4.2,1,96858,309.7
+2,Headlands Cotton Block,AgriProcessors Ltd,Apr 2026,3.3,3.1,2.8,2.7,1,39768,330.9
+2,Headlands Cotton Block,AgriProcessors Ltd,Mar 2026,3.1,3.1,3.5,3.5,2,34610,90.0
+2,Headlands Cotton Block,AgriProcessors Ltd,Feb 2026,3.0,3.3,3.1,2.5,1,69853,240.1
+2,Headlands Cotton Block,AgriProcessors Ltd,Jan 2026,4.8,4.4,5.2,4.0,0,118433,346.5
+2,Headlands Cotton Block,AgriProcessors Ltd,Dec 2025,3.1,3.1,3.2,2.6,0,68986,284.8
+2,Headlands Cotton Block,AgriProcessors Ltd,Nov 2025,4.2,4.0,4.5,4.5,0,149097,46.1
+2,Headlands Cotton Block,AgriProcessors Ltd,Oct 2025,3.0,2.8,2.9,3.4,2,86574,360.8
+2,Headlands Cotton Block,AgriProcessors Ltd,Sep 2025,3.6,3.3,3.6,3.3,1,163275,371.8
+2,Headlands Cotton Block,AgriProcessors Ltd,Aug 2025,4.9,4.4,4.8,5.2,1,75738,207.0
+2,Headlands Cotton Block,AgriProcessors Ltd,Jul 2025,4.6,4.3,5.2,4.0,0,135762,291.7
+2,Headlands Cotton Block,AgriProcessors Ltd,Jun 2025,4.2,4.4,4.1,4.7,1,120326,319.0
+2,Headlands Cotton Block,AgriProcessors Ltd,May 2025,3.1,2.8,3.0,3.5,1,32736,498.4
+2,Headlands Cotton Block,Export Trading Co,Apr 2026,3.1,2.8,2.7,3.4,1,108300,80.2
+2,Headlands Cotton Block,Export Trading Co,Mar 2026,4.0,3.8,4.4,4.4,1,97743,93.7
+2,Headlands Cotton Block,Export Trading Co,Feb 2026,5.0,5.2,4.3,5.4,0,89229,354.0
+2,Headlands Cotton Block,Export Trading Co,Jan 2026,4.4,4.4,4.9,4.0,1,62268,157.5
+2,Headlands Cotton Block,Export Trading Co,Dec 2025,4.9,4.7,4.7,4.8,0,68438,89.5
+2,Headlands Cotton Block,Export Trading Co,Nov 2025,3.3,3.3,2.8,3.5,1,57188,296.4
+2,Headlands Cotton Block,Export Trading Co,Oct 2025,3.4,3.1,3.6,3.7,1,93126,267.1
+2,Headlands Cotton Block,Export Trading Co,Sep 2025,3.5,3.4,4.0,3.3,1,35658,233.7
+2,Headlands Cotton Block,Export Trading Co,Aug 2025,4.1,4.1,3.8,4.7,0,171439,301.2
+2,Headlands Cotton Block,Export Trading Co,Jul 2025,3.3,3.1,3.4,3.0,1,25454,401.7
+2,Headlands Cotton Block,Export Trading Co,Jun 2025,4.5,4.2,4.7,3.6,0,86518,413.3
+2,Headlands Cotton Block,Export Trading Co,May 2025,4.6,4.9,4.5,5.3,1,113445,98.6
+2,Headlands Cotton Block,Local Markets,Apr 2026,3.4,3.1,3.7,2.7,0,157176,131.3
+2,Headlands Cotton Block,Local Markets,Mar 2026,3.2,3.1,3.0,3.2,1,125210,466.7
+2,Headlands Cotton Block,Local Markets,Feb 2026,4.8,4.7,5.0,4.0,2,79178,354.4
+2,Headlands Cotton Block,Local Markets,Jan 2026,4.1,3.8,3.9,3.4,0,70245,301.5
+2,Headlands Cotton Block,Local Markets,Dec 2025,3.4,3.2,3.2,3.7,4,154815,56.7
+2,Headlands Cotton Block,Local Markets,Nov 2025,3.5,3.8,3.3,3.3,2,188104,360.2
+2,Headlands Cotton Block,Local Markets,Oct 2025,3.6,3.4,3.3,3.0,1,39036,401.8
+2,Headlands Cotton Block,Local Markets,Sep 2025,3.2,3.0,3.7,3.7,5,105559,385.7
+2,Headlands Cotton Block,Local Markets,Aug 2025,3.4,3.4,3.9,3.2,5,173048,357.3
+2,Headlands Cotton Block,Local Markets,Jul 2025,4.9,5.0,4.5,4.4,1,184430,346.2
+2,Headlands Cotton Block,Local Markets,Jun 2025,3.0,2.8,3.1,2.7,3,61363,347.2
+2,Headlands Cotton Block,Local Markets,May 2025,3.1,2.8,3.2,3.6,1,104932,113.8
+2,Headlands Cotton Block,Supermarket Chain,Apr 2026,3.5,3.3,3.8,3.4,0,57358,486.0
+2,Headlands Cotton Block,Supermarket Chain,Mar 2026,3.0,3.1,3.1,2.8,3,174265,154.3
+2,Headlands Cotton Block,Supermarket Chain,Feb 2026,4.1,4.3,3.5,3.4,0,78740,236.8
+2,Headlands Cotton Block,Supermarket Chain,Jan 2026,4.3,4.1,3.9,4.9,0,158133,51.0
+2,Headlands Cotton Block,Supermarket Chain,Dec 2025,4.1,4.2,4.0,4.7,0,172348,242.9
+2,Headlands Cotton Block,Supermarket Chain,Nov 2025,3.2,3.1,2.8,3.7,2,91657,17.0
+2,Headlands Cotton Block,Supermarket Chain,Oct 2025,4.7,4.9,4.7,5.1,0,140323,347.5
+2,Headlands Cotton Block,Supermarket Chain,Sep 2025,4.9,5.0,5.6,5.7,0,14258,129.1
+2,Headlands Cotton Block,Supermarket Chain,Aug 2025,4.1,4.4,4.5,4.5,0,103219,113.2
+2,Headlands Cotton Block,Supermarket Chain,Jul 2025,4.5,4.2,4.1,4.3,0,129571,156.7
+2,Headlands Cotton Block,Supermarket Chain,Jun 2025,3.4,3.5,3.3,4.0,3,184634,404.4
+2,Headlands Cotton Block,Supermarket Chain,May 2025,3.6,3.4,3.6,3.0,3,54449,190.1
+2,Headlands Cotton Block,Food Processing Inc,Apr 2026,4.0,3.8,3.9,4.1,0,160261,417.5
+2,Headlands Cotton Block,Food Processing Inc,Mar 2026,4.4,4.0,3.9,4.6,1,141238,154.3
+2,Headlands Cotton Block,Food Processing Inc,Feb 2026,4.8,4.8,5.3,4.3,0,152841,367.1
+2,Headlands Cotton Block,Food Processing Inc,Jan 2026,3.9,3.5,3.4,4.1,3,172557,32.1
+2,Headlands Cotton Block,Food Processing Inc,Dec 2025,4.1,3.9,4.8,3.5,0,169920,448.4
+2,Headlands Cotton Block,Food Processing Inc,Nov 2025,4.9,5.0,4.2,5.3,0,50139,347.3
+2,Headlands Cotton Block,Food Processing Inc,Oct 2025,4.5,4.3,4.8,4.0,0,165636,463.1
+2,Headlands Cotton Block,Food Processing Inc,Sep 2025,3.4,3.6,3.2,2.9,1,85287,138.5
+2,Headlands Cotton Block,Food Processing Inc,Aug 2025,4.8,5.0,5.0,4.5,0,52882,93.7
+2,Headlands Cotton Block,Food Processing Inc,Jul 2025,3.7,3.8,3.7,3.3,1,146628,59.4
+2,Headlands Cotton Block,Food Processing Inc,Jun 2025,4.9,4.6,5.3,4.0,1,184830,325.1
+2,Headlands Cotton Block,Food Processing Inc,May 2025,4.2,4.5,4.7,4.3,0,69031,64.2
+2,Headlands Cotton Block,Wholesale Distributor,Apr 2026,4.7,4.8,4.1,4.7,1,65330,298.1
+2,Headlands Cotton Block,Wholesale Distributor,Mar 2026,4.6,5.0,5.1,5.4,0,19703,276.5
+2,Headlands Cotton Block,Wholesale Distributor,Feb 2026,4.4,4.4,4.2,4.5,0,149950,498.0
+2,Headlands Cotton Block,Wholesale Distributor,Jan 2026,3.5,3.8,3.1,3.8,1,147948,218.0
+2,Headlands Cotton Block,Wholesale Distributor,Dec 2025,3.2,3.0,3.3,3.4,1,117014,157.1
+2,Headlands Cotton Block,Wholesale Distributor,Nov 2025,4.4,4.1,4.3,5.2,0,95148,290.8
+2,Headlands Cotton Block,Wholesale Distributor,Oct 2025,3.2,3.5,3.3,2.8,1,162997,436.7
+2,Headlands Cotton Block,Wholesale Distributor,Sep 2025,3.4,3.6,3.1,3.9,1,13888,293.2
+2,Headlands Cotton Block,Wholesale Distributor,Aug 2025,4.3,4.1,4.8,4.4,0,186186,478.6
+2,Headlands Cotton Block,Wholesale Distributor,Jul 2025,4.7,5.0,4.1,3.9,1,145233,201.3
+2,Headlands Cotton Block,Wholesale Distributor,Jun 2025,3.7,3.7,4.1,3.0,2,68926,457.0
+2,Headlands Cotton Block,Wholesale Distributor,May 2025,3.1,3.1,2.8,3.4,2,198568,416.0
+3,Bindura Soya Farm,AgriProcessors Ltd,Apr 2026,4.7,4.8,5.3,5.4,1,104994,142.7
+3,Bindura Soya Farm,AgriProcessors Ltd,Mar 2026,3.1,2.8,2.8,3.6,3,19271,117.4
+3,Bindura Soya Farm,AgriProcessors Ltd,Feb 2026,5.0,5.3,4.3,5.9,1,74747,295.9
+3,Bindura Soya Farm,AgriProcessors Ltd,Jan 2026,3.7,4.0,3.9,3.3,2,81991,88.7
+3,Bindura Soya Farm,AgriProcessors Ltd,Dec 2025,4.5,4.1,5.0,5.3,1,197720,272.3
+3,Bindura Soya Farm,AgriProcessors Ltd,Nov 2025,4.4,4.2,4.7,5.1,0,106416,49.9
+3,Bindura Soya Farm,AgriProcessors Ltd,Oct 2025,3.9,4.1,3.4,4.3,2,105688,260.1
+3,Bindura Soya Farm,AgriProcessors Ltd,Sep 2025,3.3,3.4,3.0,3.6,3,125982,137.0
+3,Bindura Soya Farm,AgriProcessors Ltd,Aug 2025,4.5,4.4,4.9,3.7,0,158862,63.4
+3,Bindura Soya Farm,AgriProcessors Ltd,Jul 2025,4.2,3.8,4.7,4.6,0,127083,238.1
+3,Bindura Soya Farm,AgriProcessors Ltd,Jun 2025,4.7,5.0,4.6,5.4,0,22221,487.5
+3,Bindura Soya Farm,AgriProcessors Ltd,May 2025,4.8,4.5,5.1,5.6,0,198756,95.9
+3,Bindura Soya Farm,Export Trading Co,Apr 2026,4.5,4.4,4.5,4.8,2,108834,494.8
+3,Bindura Soya Farm,Export Trading Co,Mar 2026,3.9,4.3,4.0,3.9,2,73496,205.2
+3,Bindura Soya Farm,Export Trading Co,Feb 2026,3.1,3.0,3.4,3.5,1,77713,226.1
+3,Bindura Soya Farm,Export Trading Co,Jan 2026,3.2,3.1,2.8,3.3,2,72976,107.6
+3,Bindura Soya Farm,Export Trading Co,Dec 2025,4.8,4.6,4.6,4.9,2,166783,302.1
+3,Bindura Soya Farm,Export Trading Co,Nov 2025,5.0,5.4,5.4,4.8,0,189861,189.2
+3,Bindura Soya Farm,Export Trading Co,Oct 2025,4.2,4.0,4.4,3.4,0,93048,266.3
+3,Bindura Soya Farm,Export Trading Co,Sep 2025,3.4,3.0,3.2,3.9,5,87538,152.5
+3,Bindura Soya Farm,Export Trading Co,Aug 2025,4.6,4.3,5.0,4.4,0,39107,19.1
+3,Bindura Soya Farm,Export Trading Co,Jul 2025,4.3,4.4,4.5,3.9,0,160684,238.0
+3,Bindura Soya Farm,Export Trading Co,Jun 2025,4.8,4.5,4.2,3.8,0,69542,408.6
+3,Bindura Soya Farm,Export Trading Co,May 2025,3.7,3.9,3.6,3.9,2,177831,243.4
+3,Bindura Soya Farm,Local Markets,Apr 2026,3.0,2.7,3.2,3.4,2,138338,266.4
+3,Bindura Soya Farm,Local Markets,Mar 2026,4.3,4.5,4.0,4.0,0,31185,157.5
+3,Bindura Soya Farm,Local Markets,Feb 2026,4.1,4.2,3.6,4.4,0,101087,214.3
+3,Bindura Soya Farm,Local Markets,Jan 2026,4.7,4.6,4.4,5.2,1,108470,137.4
+3,Bindura Soya Farm,Local Markets,Dec 2025,4.9,4.9,4.3,4.5,3,162627,146.3
+3,Bindura Soya Farm,Local Markets,Nov 2025,3.4,3.0,3.1,3.5,1,193863,495.4
+3,Bindura Soya Farm,Local Markets,Oct 2025,4.0,3.7,4.0,3.5,0,82740,381.5
+3,Bindura Soya Farm,Local Markets,Sep 2025,4.6,4.5,5.0,4.9,1,10678,82.9
+3,Bindura Soya Farm,Local Markets,Aug 2025,4.1,4.1,4.6,4.3,0,57207,162.9
+3,Bindura Soya Farm,Local Markets,Jul 2025,4.9,4.8,4.4,4.9,0,138934,430.3
+3,Bindura Soya Farm,Local Markets,Jun 2025,4.3,4.5,3.8,3.5,0,89464,422.9
+3,Bindura Soya Farm,Local Markets,May 2025,4.0,4.0,3.7,3.9,1,117915,129.2
+3,Bindura Soya Farm,Supermarket Chain,Apr 2026,3.7,3.9,3.8,3.3,1,120239,32.8
+3,Bindura Soya Farm,Supermarket Chain,Mar 2026,4.0,3.7,4.4,4.1,3,10944,399.9
+3,Bindura Soya Farm,Supermarket Chain,Feb 2026,4.6,4.2,4.1,5.4,0,173726,187.6
+3,Bindura Soya Farm,Supermarket Chain,Jan 2026,4.8,4.8,5.4,4.5,0,116455,375.9
+3,Bindura Soya Farm,Supermarket Chain,Dec 2025,4.7,4.3,5.1,5.2,0,194476,191.2
+3,Bindura Soya Farm,Supermarket Chain,Nov 2025,3.2,2.9,3.0,3.7,1,119538,308.8
+3,Bindura Soya Farm,Supermarket Chain,Oct 2025,4.8,4.9,4.3,5.6,1,44864,278.1
+3,Bindura Soya Farm,Supermarket Chain,Sep 2025,4.3,4.7,4.2,4.8,0,102885,232.8
+3,Bindura Soya Farm,Supermarket Chain,Aug 2025,4.6,5.0,4.8,4.1,1,31487,101.9
+3,Bindura Soya Farm,Supermarket Chain,Jul 2025,3.2,3.3,3.1,2.9,4,98635,376.6
+3,Bindura Soya Farm,Supermarket Chain,Jun 2025,4.0,3.8,4.1,4.7,3,165551,234.5
+3,Bindura Soya Farm,Supermarket Chain,May 2025,4.4,4.6,4.7,4.2,1,25032,399.0
+3,Bindura Soya Farm,Food Processing Inc,Apr 2026,4.3,4.2,4.4,5.0,0,192694,256.7
+3,Bindura Soya Farm,Food Processing Inc,Mar 2026,3.7,3.3,3.6,3.9,1,127615,224.7
+3,Bindura Soya Farm,Food Processing Inc,Feb 2026,4.9,4.7,5.3,4.8,0,60670,353.4
+3,Bindura Soya Farm,Food Processing Inc,Jan 2026,3.8,3.7,3.9,3.6,2,120383,343.8
+3,Bindura Soya Farm,Food Processing Inc,Dec 2025,5.0,5.4,5.3,5.0,0,101392,201.3
+3,Bindura Soya Farm,Food Processing Inc,Nov 2025,3.1,3.2,3.6,3.7,0,24859,403.4
+3,Bindura Soya Farm,Food Processing Inc,Oct 2025,3.7,3.9,3.7,3.3,2,78550,297.1
+3,Bindura Soya Farm,Food Processing Inc,Sep 2025,3.4,3.3,3.9,3.3,2,63798,72.1
+3,Bindura Soya Farm,Food Processing Inc,Aug 2025,3.3,3.6,3.3,3.6,0,147135,89.0
+3,Bindura Soya Farm,Food Processing Inc,Jul 2025,3.6,3.9,3.3,2.9,2,44354,314.6
+3,Bindura Soya Farm,Food Processing Inc,Jun 2025,4.9,4.4,4.8,4.1,0,102732,315.8
+3,Bindura Soya Farm,Food Processing Inc,May 2025,3.9,4.2,3.9,3.9,3,144702,212.6
+3,Bindura Soya Farm,Wholesale Distributor,Apr 2026,4.8,5.0,5.3,5.3,0,88421,407.2
+3,Bindura Soya Farm,Wholesale Distributor,Mar 2026,3.3,3.4,2.8,3.1,0,170100,94.0
+3,Bindura Soya Farm,Wholesale Distributor,Feb 2026,3.7,4.1,3.7,4.2,7,75416,109.9
+3,Bindura Soya Farm,Wholesale Distributor,Jan 2026,3.0,3.1,2.7,2.7,2,118409,52.8
+3,Bindura Soya Farm,Wholesale Distributor,Dec 2025,3.8,3.7,3.7,3.5,1,118502,15.0
+3,Bindura Soya Farm,Wholesale Distributor,Nov 2025,4.4,4.6,4.3,3.8,0,176232,181.1
+3,Bindura Soya Farm,Wholesale Distributor,Oct 2025,3.6,3.7,3.9,3.5,3,40084,141.4
+3,Bindura Soya Farm,Wholesale Distributor,Sep 2025,3.6,3.2,3.3,2.9,2,36228,265.7
+3,Bindura Soya Farm,Wholesale Distributor,Aug 2025,3.4,3.7,3.1,3.3,1,97687,405.2
+3,Bindura Soya Farm,Wholesale Distributor,Jul 2025,3.0,2.8,3.0,3.3,1,162512,171.0
+3,Bindura Soya Farm,Wholesale Distributor,Jun 2025,4.6,4.9,4.4,5.2,2,23727,222.2
+3,Bindura Soya Farm,Wholesale Distributor,May 2025,4.8,5.0,4.5,4.2,0,70494,200.8
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Apr 2026,3.5,3.3,3.4,3.3,3,128501,383.6
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Mar 2026,3.1,3.1,3.1,3.7,2,51988,77.5
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Feb 2026,4.5,4.8,5.1,3.7,1,126377,293.0
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Jan 2026,3.5,3.4,3.4,3.4,1,50747,188.8
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Dec 2025,4.1,3.7,4.0,3.8,0,46109,382.8
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Nov 2025,3.3,3.1,3.0,3.7,2,97825,462.0
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Oct 2025,4.4,4.7,3.9,4.6,2,58450,217.6
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Sep 2025,3.6,4.0,3.7,3.0,1,82150,62.5
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Aug 2025,4.5,4.8,4.6,3.9,0,146400,279.6
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Jul 2025,4.3,4.6,4.2,3.7,1,31497,467.4
+4,Karoi Maize Cooperative,AgriProcessors Ltd,Jun 2025,4.9,4.9,4.6,5.8,1,105981,367.6
+4,Karoi Maize Cooperative,AgriProcessors Ltd,May 2025,3.9,3.8,4.3,4.0,4,94895,422.8
+4,Karoi Maize Cooperative,Export Trading Co,Apr 2026,4.0,3.7,3.5,3.5,2,17791,147.8
+4,Karoi Maize Cooperative,Export Trading Co,Mar 2026,4.6,4.6,4.9,4.4,0,134858,27.3
+4,Karoi Maize Cooperative,Export Trading Co,Feb 2026,4.9,5.1,4.8,5.2,0,71716,314.9
+4,Karoi Maize Cooperative,Export Trading Co,Jan 2026,3.0,3.0,3.0,3.4,1,172016,105.7
+4,Karoi Maize Cooperative,Export Trading Co,Dec 2025,4.3,4.3,4.4,4.5,0,113116,418.1
+4,Karoi Maize Cooperative,Export Trading Co,Nov 2025,3.0,2.9,3.0,3.5,1,149223,450.7
+4,Karoi Maize Cooperative,Export Trading Co,Oct 2025,3.3,3.6,3.7,3.2,2,149128,381.8
+4,Karoi Maize Cooperative,Export Trading Co,Sep 2025,3.1,3.4,2.8,2.7,2,128192,455.3
+4,Karoi Maize Cooperative,Export Trading Co,Aug 2025,4.5,4.1,4.4,3.8,1,24560,236.1
+4,Karoi Maize Cooperative,Export Trading Co,Jul 2025,4.9,4.6,4.4,5.3,0,191834,56.1
+4,Karoi Maize Cooperative,Export Trading Co,Jun 2025,4.8,4.8,4.1,5.6,0,164957,429.9
+4,Karoi Maize Cooperative,Export Trading Co,May 2025,4.6,4.2,4.3,5.3,1,177647,17.0
+4,Karoi Maize Cooperative,Local Markets,Apr 2026,4.9,5.2,5.5,4.7,0,88880,470.0
+4,Karoi Maize Cooperative,Local Markets,Mar 2026,3.0,2.7,3.0,3.0,1,181858,128.5
+4,Karoi Maize Cooperative,Local Markets,Feb 2026,3.1,2.9,2.8,2.8,3,160878,130.1
+4,Karoi Maize Cooperative,Local Markets,Jan 2026,4.3,4.3,3.8,4.3,1,136697,452.3
+4,Karoi Maize Cooperative,Local Markets,Dec 2025,4.2,4.1,4.4,4.7,0,199554,262.5
+4,Karoi Maize Cooperative,Local Markets,Nov 2025,3.0,3.3,3.2,2.5,0,20248,342.2
+4,Karoi Maize Cooperative,Local Markets,Oct 2025,4.6,5.1,4.9,4.6,0,37400,173.9
+4,Karoi Maize Cooperative,Local Markets,Sep 2025,3.6,3.8,3.7,3.2,4,81352,371.8
+4,Karoi Maize Cooperative,Local Markets,Aug 2025,4.8,4.6,4.3,5.2,2,154086,446.3
+4,Karoi Maize Cooperative,Local Markets,Jul 2025,4.7,4.6,4.6,5.1,0,150406,485.5
+4,Karoi Maize Cooperative,Local Markets,Jun 2025,4.2,4.4,4.6,3.9,1,156676,335.2
+4,Karoi Maize Cooperative,Local Markets,May 2025,3.6,3.3,3.7,3.2,7,117804,343.4
+4,Karoi Maize Cooperative,Supermarket Chain,Apr 2026,3.8,4.0,3.3,4.0,6,108029,134.5
+4,Karoi Maize Cooperative,Supermarket Chain,Mar 2026,4.4,4.7,4.0,4.8,0,54857,384.1
+4,Karoi Maize Cooperative,Supermarket Chain,Feb 2026,3.3,3.2,3.6,3.7,2,142744,99.6
+4,Karoi Maize Cooperative,Supermarket Chain,Jan 2026,3.6,3.6,3.5,4.3,3,12967,123.0
+4,Karoi Maize Cooperative,Supermarket Chain,Dec 2025,4.2,3.9,4.4,4.4,1,106396,45.8
+4,Karoi Maize Cooperative,Supermarket Chain,Nov 2025,4.3,4.5,4.5,4.8,0,36585,214.7
+4,Karoi Maize Cooperative,Supermarket Chain,Oct 2025,4.1,4.5,4.1,4.2,2,132767,117.1
+4,Karoi Maize Cooperative,Supermarket Chain,Sep 2025,3.9,4.2,4.3,4.5,3,47394,496.8
+4,Karoi Maize Cooperative,Supermarket Chain,Aug 2025,3.9,3.9,4.2,4.6,3,157407,411.0
+4,Karoi Maize Cooperative,Supermarket Chain,Jul 2025,4.1,4.4,4.4,4.2,1,160013,50.8
+4,Karoi Maize Cooperative,Supermarket Chain,Jun 2025,3.9,3.7,4.4,3.9,2,64497,473.8
+4,Karoi Maize Cooperative,Supermarket Chain,May 2025,4.6,5.0,4.9,4.1,1,21366,144.4
+4,Karoi Maize Cooperative,Food Processing Inc,Apr 2026,3.8,4.0,3.4,3.2,3,146354,258.7
+4,Karoi Maize Cooperative,Food Processing Inc,Mar 2026,3.1,3.3,3.4,3.4,3,101396,47.5
+4,Karoi Maize Cooperative,Food Processing Inc,Feb 2026,3.6,3.5,3.6,2.9,0,117041,281.5
+4,Karoi Maize Cooperative,Food Processing Inc,Jan 2026,4.5,4.7,4.6,4.3,1,67454,318.4
+4,Karoi Maize Cooperative,Food Processing Inc,Dec 2025,4.4,4.3,3.8,3.7,1,180439,324.4
+4,Karoi Maize Cooperative,Food Processing Inc,Nov 2025,3.7,3.8,3.2,4.2,4,55820,125.6
+4,Karoi Maize Cooperative,Food Processing Inc,Oct 2025,4.4,4.2,4.4,4.4,0,85012,487.0
+4,Karoi Maize Cooperative,Food Processing Inc,Sep 2025,3.4,3.6,3.4,2.8,4,65600,162.8
+4,Karoi Maize Cooperative,Food Processing Inc,Aug 2025,3.2,3.2,3.7,3.3,3,190753,84.1
+4,Karoi Maize Cooperative,Food Processing Inc,Jul 2025,4.8,5.1,4.1,5.3,1,108548,208.1
+4,Karoi Maize Cooperative,Food Processing Inc,Jun 2025,4.0,3.9,3.7,4.3,2,184292,429.4
+4,Karoi Maize Cooperative,Food Processing Inc,May 2025,4.5,4.4,4.4,4.9,1,173301,383.7
+4,Karoi Maize Cooperative,Wholesale Distributor,Apr 2026,5.0,5.3,5.6,5.5,1,87338,204.2
+4,Karoi Maize Cooperative,Wholesale Distributor,Mar 2026,4.8,4.4,5.2,5.3,2,159579,67.3
+4,Karoi Maize Cooperative,Wholesale Distributor,Feb 2026,3.4,3.6,3.4,3.7,1,53639,49.2
+4,Karoi Maize Cooperative,Wholesale Distributor,Jan 2026,3.5,3.3,3.1,3.3,3,159417,17.8
+4,Karoi Maize Cooperative,Wholesale Distributor,Dec 2025,4.6,4.4,4.7,3.7,1,30010,236.8
+4,Karoi Maize Cooperative,Wholesale Distributor,Nov 2025,3.4,3.6,3.0,3.5,1,103644,339.0
+4,Karoi Maize Cooperative,Wholesale Distributor,Oct 2025,3.2,3.3,3.3,3.2,2,186405,171.3
+4,Karoi Maize Cooperative,Wholesale Distributor,Sep 2025,4.5,4.9,5.0,5.1,2,72052,476.4
+4,Karoi Maize Cooperative,Wholesale Distributor,Aug 2025,3.7,3.7,3.2,4.2,3,187429,15.4
+4,Karoi Maize Cooperative,Wholesale Distributor,Jul 2025,4.1,4.0,4.0,3.9,1,120661,390.2
+4,Karoi Maize Cooperative,Wholesale Distributor,Jun 2025,3.6,3.8,4.1,3.6,2,20301,74.2
+4,Karoi Maize Cooperative,Wholesale Distributor,May 2025,3.6,3.4,3.7,4.2,5,117078,103.7
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Apr 2026,4.3,4.4,4.3,3.6,0,92328,430.4
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Mar 2026,4.1,4.2,4.7,3.6,0,152287,400.3
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Feb 2026,3.9,3.6,3.4,3.9,3,95066,454.3
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Jan 2026,3.3,3.4,3.4,3.6,2,118384,282.1
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Dec 2025,4.1,3.7,4.2,3.7,0,112613,413.6
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Nov 2025,3.2,3.2,2.9,2.8,1,98465,57.4
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Oct 2025,4.6,4.6,4.1,4.6,0,147845,176.7
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Sep 2025,3.2,3.0,3.1,3.6,1,47948,124.9
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Aug 2025,3.3,3.4,3.2,2.9,1,176265,329.3
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Jul 2025,5.0,5.1,4.8,5.3,0,83917,308.6
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,Jun 2025,4.4,4.5,4.7,4.6,0,178246,496.8
+5,Mvurwi Mixed Farm,AgriProcessors Ltd,May 2025,4.4,4.6,4.4,5.0,2,166202,247.8
+5,Mvurwi Mixed Farm,Export Trading Co,Apr 2026,3.2,3.5,3.4,2.9,4,164574,14.4
+5,Mvurwi Mixed Farm,Export Trading Co,Mar 2026,4.3,3.9,4.5,5.0,1,90453,183.2
+5,Mvurwi Mixed Farm,Export Trading Co,Feb 2026,4.8,5.1,4.2,4.6,0,116371,338.4
+5,Mvurwi Mixed Farm,Export Trading Co,Jan 2026,4.8,4.7,4.5,4.3,0,37621,302.4
+5,Mvurwi Mixed Farm,Export Trading Co,Dec 2025,3.6,3.6,3.1,3.0,2,196616,335.0
+5,Mvurwi Mixed Farm,Export Trading Co,Nov 2025,4.0,4.1,3.5,4.6,3,115695,131.9
+5,Mvurwi Mixed Farm,Export Trading Co,Oct 2025,4.6,4.4,5.3,4.3,1,105009,431.8
+5,Mvurwi Mixed Farm,Export Trading Co,Sep 2025,4.3,4.0,4.1,4.9,0,149438,129.9
+5,Mvurwi Mixed Farm,Export Trading Co,Aug 2025,3.5,3.8,3.9,3.1,2,119020,388.1
+5,Mvurwi Mixed Farm,Export Trading Co,Jul 2025,3.6,3.3,3.3,4.0,3,160164,273.9
+5,Mvurwi Mixed Farm,Export Trading Co,Jun 2025,4.7,4.3,4.8,5.1,2,48343,384.0
+5,Mvurwi Mixed Farm,Export Trading Co,May 2025,4.5,4.7,5.0,3.7,0,67009,45.3
+5,Mvurwi Mixed Farm,Local Markets,Apr 2026,3.8,3.9,3.3,3.6,1,151295,63.8
+5,Mvurwi Mixed Farm,Local Markets,Mar 2026,3.7,3.4,4.1,4.2,2,132207,257.0
+5,Mvurwi Mixed Farm,Local Markets,Feb 2026,4.9,4.8,5.5,5.2,0,10860,470.0
+5,Mvurwi Mixed Farm,Local Markets,Jan 2026,5.0,5.0,4.7,5.6,0,150417,428.8
+5,Mvurwi Mixed Farm,Local Markets,Dec 2025,3.4,3.6,2.9,2.9,1,198542,118.4
+5,Mvurwi Mixed Farm,Local Markets,Nov 2025,3.8,4.0,4.0,4.0,0,191465,119.4
+5,Mvurwi Mixed Farm,Local Markets,Oct 2025,3.5,3.3,3.4,2.9,3,42150,376.3
+5,Mvurwi Mixed Farm,Local Markets,Sep 2025,3.0,2.9,3.1,2.6,0,134460,244.5
+5,Mvurwi Mixed Farm,Local Markets,Aug 2025,4.0,3.9,4.5,4.4,0,12521,347.5
+5,Mvurwi Mixed Farm,Local Markets,Jul 2025,3.3,3.2,3.7,3.4,1,175011,123.0
+5,Mvurwi Mixed Farm,Local Markets,Jun 2025,3.8,4.1,3.3,3.9,1,19695,441.6
+5,Mvurwi Mixed Farm,Local Markets,May 2025,3.3,3.4,3.2,3.2,4,153787,14.4
+5,Mvurwi Mixed Farm,Supermarket Chain,Apr 2026,4.3,4.2,4.3,3.6,0,140920,117.0
+5,Mvurwi Mixed Farm,Supermarket Chain,Mar 2026,4.3,4.7,3.7,4.8,1,35784,451.6
+5,Mvurwi Mixed Farm,Supermarket Chain,Feb 2026,3.4,3.1,3.4,3.7,3,170470,129.7
+5,Mvurwi Mixed Farm,Supermarket Chain,Jan 2026,3.2,3.4,2.8,2.6,3,124559,430.1
+5,Mvurwi Mixed Farm,Supermarket Chain,Dec 2025,4.9,4.5,5.0,5.2,1,19627,186.1
+5,Mvurwi Mixed Farm,Supermarket Chain,Nov 2025,3.4,3.2,2.9,3.2,0,80963,462.8
+5,Mvurwi Mixed Farm,Supermarket Chain,Oct 2025,3.5,3.4,3.0,3.7,3,62763,422.0
+5,Mvurwi Mixed Farm,Supermarket Chain,Sep 2025,3.8,4.1,3.5,3.6,4,167454,166.6
+5,Mvurwi Mixed Farm,Supermarket Chain,Aug 2025,3.8,3.6,3.3,3.5,2,189155,258.6
+5,Mvurwi Mixed Farm,Supermarket Chain,Jul 2025,4.0,3.8,3.6,4.7,4,90366,77.9
+5,Mvurwi Mixed Farm,Supermarket Chain,Jun 2025,4.9,5.1,4.2,4.2,0,161068,391.5
+5,Mvurwi Mixed Farm,Supermarket Chain,May 2025,4.7,4.5,4.9,4.3,1,53787,170.8
+5,Mvurwi Mixed Farm,Food Processing Inc,Apr 2026,4.0,4.0,4.6,4.0,1,65746,42.5
+5,Mvurwi Mixed Farm,Food Processing Inc,Mar 2026,3.9,4.1,3.5,3.6,1,109199,123.8
+5,Mvurwi Mixed Farm,Food Processing Inc,Feb 2026,4.1,3.9,3.6,3.3,0,188740,467.9
+5,Mvurwi Mixed Farm,Food Processing Inc,Jan 2026,3.6,3.7,3.8,3.2,3,144191,166.3
+5,Mvurwi Mixed Farm,Food Processing Inc,Dec 2025,4.0,3.9,4.2,4.0,0,107196,497.1
+5,Mvurwi Mixed Farm,Food Processing Inc,Nov 2025,3.7,4.0,3.3,3.2,1,175566,30.6
+5,Mvurwi Mixed Farm,Food Processing Inc,Oct 2025,3.3,3.0,3.4,2.9,3,68081,435.4
+5,Mvurwi Mixed Farm,Food Processing Inc,Sep 2025,4.1,4.1,3.6,4.9,1,74379,334.2
+5,Mvurwi Mixed Farm,Food Processing Inc,Aug 2025,4.8,4.5,4.8,5.6,0,65121,79.7
+5,Mvurwi Mixed Farm,Food Processing Inc,Jul 2025,3.4,3.5,3.4,3.1,3,131485,247.4
+5,Mvurwi Mixed Farm,Food Processing Inc,Jun 2025,3.3,3.2,3.2,3.8,2,132670,437.9
+5,Mvurwi Mixed Farm,Food Processing Inc,May 2025,4.0,3.7,4.1,4.5,0,88759,494.8
+5,Mvurwi Mixed Farm,Wholesale Distributor,Apr 2026,3.4,3.2,3.5,3.0,4,49986,70.4
+5,Mvurwi Mixed Farm,Wholesale Distributor,Mar 2026,3.9,4.3,3.8,4.5,2,156649,387.1
+5,Mvurwi Mixed Farm,Wholesale Distributor,Feb 2026,4.1,4.3,4.0,3.3,0,190275,147.1
+5,Mvurwi Mixed Farm,Wholesale Distributor,Jan 2026,3.6,4.0,3.8,3.5,2,132480,159.3
+5,Mvurwi Mixed Farm,Wholesale Distributor,Dec 2025,4.0,4.1,3.6,4.3,1,161808,331.2
+5,Mvurwi Mixed Farm,Wholesale Distributor,Nov 2025,4.1,3.9,4.3,4.0,0,104906,275.9
+5,Mvurwi Mixed Farm,Wholesale Distributor,Oct 2025,3.3,3.5,3.7,3.8,0,75032,204.2
+5,Mvurwi Mixed Farm,Wholesale Distributor,Sep 2025,4.4,4.6,4.4,5.2,1,29673,262.9
+5,Mvurwi Mixed Farm,Wholesale Distributor,Aug 2025,3.8,3.8,3.7,3.9,3,131563,124.3
+5,Mvurwi Mixed Farm,Wholesale Distributor,Jul 2025,3.6,3.7,3.5,3.7,1,33557,99.4
+5,Mvurwi Mixed Farm,Wholesale Distributor,Jun 2025,4.0,3.9,3.6,3.4,3,113220,406.2
+5,Mvurwi Mixed Farm,Wholesale Distributor,May 2025,4.1,3.9,3.5,3.3,1,176784,69.6
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Apr 2026,4.0,3.9,4.0,4.6,1,71907,170.0
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Mar 2026,4.3,4.7,4.5,3.6,2,13088,126.7
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Feb 2026,4.5,4.3,4.8,5.2,1,41104,272.4
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Jan 2026,4.5,4.9,5.0,3.9,0,75180,450.4
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Dec 2025,3.0,3.1,3.1,3.5,4,40897,412.5
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Nov 2025,3.7,3.8,3.9,4.4,2,33925,397.4
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Oct 2025,4.6,5.0,4.0,4.7,0,48567,332.2
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Sep 2025,5.0,5.4,4.9,4.6,0,50295,169.7
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Aug 2025,3.1,3.2,3.6,3.5,5,184799,59.7
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Jul 2025,3.5,3.5,3.3,3.4,1,70850,351.9
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,Jun 2025,4.6,4.4,5.0,5.2,0,193575,110.0
+6,Chiredzi Sugar Estate,AgriProcessors Ltd,May 2025,3.4,3.1,3.6,3.2,2,183419,236.8
+6,Chiredzi Sugar Estate,Export Trading Co,Apr 2026,4.9,4.7,5.5,5.8,0,13264,228.1
+6,Chiredzi Sugar Estate,Export Trading Co,Mar 2026,4.6,4.1,4.7,4.7,1,130347,357.1
+6,Chiredzi Sugar Estate,Export Trading Co,Feb 2026,4.8,4.5,5.1,5.3,0,124047,462.3
+6,Chiredzi Sugar Estate,Export Trading Co,Jan 2026,3.9,4.2,3.5,4.2,5,148611,406.9
+6,Chiredzi Sugar Estate,Export Trading Co,Dec 2025,4.5,4.8,4.4,4.9,0,80602,446.2
+6,Chiredzi Sugar Estate,Export Trading Co,Nov 2025,4.8,4.6,5.4,5.3,0,111647,127.6
+6,Chiredzi Sugar Estate,Export Trading Co,Oct 2025,4.2,4.5,4.1,4.8,1,133107,243.3
+6,Chiredzi Sugar Estate,Export Trading Co,Sep 2025,4.2,4.1,4.0,4.4,0,110584,467.1
+6,Chiredzi Sugar Estate,Export Trading Co,Aug 2025,3.1,3.0,3.3,3.2,2,95230,339.4
+6,Chiredzi Sugar Estate,Export Trading Co,Jul 2025,3.7,4.1,4.2,3.6,5,44699,90.8
+6,Chiredzi Sugar Estate,Export Trading Co,Jun 2025,3.4,3.5,3.4,3.1,3,125434,405.6
+6,Chiredzi Sugar Estate,Export Trading Co,May 2025,4.6,4.9,4.7,4.3,0,118987,295.1
+6,Chiredzi Sugar Estate,Local Markets,Apr 2026,4.9,4.7,4.8,5.2,1,80935,206.9
+6,Chiredzi Sugar Estate,Local Markets,Mar 2026,4.3,4.3,3.8,5.1,1,29295,136.1
+6,Chiredzi Sugar Estate,Local Markets,Feb 2026,4.1,4.2,4.8,4.2,0,39483,351.7
+6,Chiredzi Sugar Estate,Local Markets,Jan 2026,3.7,3.4,3.7,3.8,0,88167,111.6
+6,Chiredzi Sugar Estate,Local Markets,Dec 2025,3.7,3.7,3.5,3.4,1,172227,200.6
+6,Chiredzi Sugar Estate,Local Markets,Nov 2025,4.4,4.2,3.7,3.9,0,127298,167.4
+6,Chiredzi Sugar Estate,Local Markets,Oct 2025,3.9,4.1,3.7,3.5,2,135593,382.0
+6,Chiredzi Sugar Estate,Local Markets,Sep 2025,3.7,3.4,3.6,4.0,4,99440,479.2
+6,Chiredzi Sugar Estate,Local Markets,Aug 2025,4.2,3.8,3.7,4.8,2,73594,298.8
+6,Chiredzi Sugar Estate,Local Markets,Jul 2025,4.6,4.2,4.8,5.4,0,113638,150.2
+6,Chiredzi Sugar Estate,Local Markets,Jun 2025,4.8,4.5,4.7,5.0,0,196143,15.3
+6,Chiredzi Sugar Estate,Local Markets,May 2025,4.6,4.5,4.8,3.9,1,70120,486.4
+6,Chiredzi Sugar Estate,Supermarket Chain,Apr 2026,4.2,4.5,4.3,3.8,0,82650,478.0
+6,Chiredzi Sugar Estate,Supermarket Chain,Mar 2026,3.5,3.4,3.8,3.2,3,102971,30.8
+6,Chiredzi Sugar Estate,Supermarket Chain,Feb 2026,5.0,5.4,5.1,4.6,0,14876,364.1
+6,Chiredzi Sugar Estate,Supermarket Chain,Jan 2026,4.0,3.9,3.9,4.4,0,192247,487.1
+6,Chiredzi Sugar Estate,Supermarket Chain,Dec 2025,4.4,4.4,4.8,4.8,1,33097,157.5
+6,Chiredzi Sugar Estate,Supermarket Chain,Nov 2025,4.9,4.7,5.5,5.8,0,64018,141.2
+6,Chiredzi Sugar Estate,Supermarket Chain,Oct 2025,3.1,3.3,3.2,3.7,4,63341,166.0
+6,Chiredzi Sugar Estate,Supermarket Chain,Sep 2025,4.0,3.7,3.8,3.7,0,193678,287.7
+6,Chiredzi Sugar Estate,Supermarket Chain,Aug 2025,3.8,3.5,3.6,3.7,2,55078,401.2
+6,Chiredzi Sugar Estate,Supermarket Chain,Jul 2025,4.9,5.2,4.8,5.5,0,27489,244.4
+6,Chiredzi Sugar Estate,Supermarket Chain,Jun 2025,4.3,4.6,4.2,5.0,0,169005,466.2
+6,Chiredzi Sugar Estate,Supermarket Chain,May 2025,4.2,4.5,3.8,4.8,0,123031,357.2
+6,Chiredzi Sugar Estate,Food Processing Inc,Apr 2026,4.0,4.1,4.0,4.0,0,80446,140.2
+6,Chiredzi Sugar Estate,Food Processing Inc,Mar 2026,5.0,4.7,4.6,5.4,1,42952,123.8
+6,Chiredzi Sugar Estate,Food Processing Inc,Feb 2026,3.4,3.6,3.0,2.8,3,89098,233.4
+6,Chiredzi Sugar Estate,Food Processing Inc,Jan 2026,4.1,4.3,3.8,4.7,1,125152,335.8
+6,Chiredzi Sugar Estate,Food Processing Inc,Dec 2025,3.9,3.6,3.9,3.4,2,11585,249.8
+6,Chiredzi Sugar Estate,Food Processing Inc,Nov 2025,4.9,5.4,5.3,5.9,2,90379,301.4
+6,Chiredzi Sugar Estate,Food Processing Inc,Oct 2025,3.7,3.8,3.8,3.1,1,46062,258.3
+6,Chiredzi Sugar Estate,Food Processing Inc,Sep 2025,4.5,4.2,5.1,4.2,0,103715,404.7
+6,Chiredzi Sugar Estate,Food Processing Inc,Aug 2025,3.8,3.9,4.2,4.2,0,170492,255.7
+6,Chiredzi Sugar Estate,Food Processing Inc,Jul 2025,4.2,3.9,4.0,4.0,0,166478,235.8
+6,Chiredzi Sugar Estate,Food Processing Inc,Jun 2025,3.1,3.0,3.2,2.9,4,118574,89.3
+6,Chiredzi Sugar Estate,Food Processing Inc,May 2025,3.1,2.9,3.3,2.7,2,13005,78.1
+6,Chiredzi Sugar Estate,Wholesale Distributor,Apr 2026,3.9,4.3,3.5,4.6,3,102246,407.0
+6,Chiredzi Sugar Estate,Wholesale Distributor,Mar 2026,4.6,4.5,4.7,5.2,0,153947,217.1
+6,Chiredzi Sugar Estate,Wholesale Distributor,Feb 2026,3.2,3.0,3.1,3.6,4,186150,344.9
+6,Chiredzi Sugar Estate,Wholesale Distributor,Jan 2026,4.2,4.3,4.5,4.0,1,161902,347.2
+6,Chiredzi Sugar Estate,Wholesale Distributor,Dec 2025,3.6,3.5,3.9,3.6,2,185021,451.1
+6,Chiredzi Sugar Estate,Wholesale Distributor,Nov 2025,3.6,3.9,3.8,4.2,2,19251,40.1
+6,Chiredzi Sugar Estate,Wholesale Distributor,Oct 2025,3.6,3.4,3.7,3.6,4,64617,109.8
+6,Chiredzi Sugar Estate,Wholesale Distributor,Sep 2025,3.4,3.1,3.2,2.7,2,57276,203.9
+6,Chiredzi Sugar Estate,Wholesale Distributor,Aug 2025,4.8,4.8,4.6,4.3,0,167137,416.9
+6,Chiredzi Sugar Estate,Wholesale Distributor,Jul 2025,3.5,3.2,3.3,4.0,0,121937,161.1
+6,Chiredzi Sugar Estate,Wholesale Distributor,Jun 2025,4.1,4.1,3.9,3.8,2,104395,450.0
+6,Chiredzi Sugar Estate,Wholesale Distributor,May 2025,4.3,4.4,4.2,3.7,0,194206,444.1
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Apr 2026,4.6,4.6,4.3,4.6,0,118841,101.2
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Mar 2026,4.3,4.3,4.5,3.9,0,105765,438.9
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Feb 2026,4.0,3.8,3.4,4.3,2,167054,441.5
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Jan 2026,4.8,5.2,4.2,4.7,0,69289,423.8
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Dec 2025,3.1,3.1,3.4,3.3,1,77323,308.7
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Nov 2025,4.2,4.6,3.8,4.0,1,142749,85.7
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Oct 2025,4.8,4.8,4.6,4.3,1,188953,123.8
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Sep 2025,4.9,5.0,5.6,5.7,0,40740,167.7
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Aug 2025,3.2,3.1,3.5,2.5,2,131656,402.6
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Jul 2025,3.2,3.0,2.9,3.1,3,139247,477.4
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,Jun 2025,3.2,3.0,3.7,3.8,1,25427,22.5
+7,Beitbridge Citrus Farm,AgriProcessors Ltd,May 2025,3.5,3.3,4.0,3.8,1,163969,103.2
+7,Beitbridge Citrus Farm,Export Trading Co,Apr 2026,5.0,4.8,4.4,5.4,2,25151,88.7
+7,Beitbridge Citrus Farm,Export Trading Co,Mar 2026,3.6,3.6,3.1,3.1,2,154135,150.5
+7,Beitbridge Citrus Farm,Export Trading Co,Feb 2026,4.6,4.2,4.7,5.3,0,143374,366.1
+7,Beitbridge Citrus Farm,Export Trading Co,Jan 2026,3.3,3.2,3.7,3.3,1,85315,394.5
+7,Beitbridge Citrus Farm,Export Trading Co,Dec 2025,4.3,4.4,4.8,3.5,0,103173,42.3
+7,Beitbridge Citrus Farm,Export Trading Co,Nov 2025,4.3,4.7,4.8,4.4,1,195893,378.1
+7,Beitbridge Citrus Farm,Export Trading Co,Oct 2025,3.6,3.8,3.3,3.6,1,144458,383.4
+7,Beitbridge Citrus Farm,Export Trading Co,Sep 2025,4.0,4.4,3.7,3.6,1,144210,192.0
+7,Beitbridge Citrus Farm,Export Trading Co,Aug 2025,4.4,4.2,4.4,4.0,0,66997,116.5
+7,Beitbridge Citrus Farm,Export Trading Co,Jul 2025,4.8,4.6,4.9,4.3,0,179031,458.8
+7,Beitbridge Citrus Farm,Export Trading Co,Jun 2025,3.8,4.0,3.4,3.1,3,56905,19.1
+7,Beitbridge Citrus Farm,Export Trading Co,May 2025,4.1,4.5,3.9,4.8,0,131282,218.3
+7,Beitbridge Citrus Farm,Local Markets,Apr 2026,3.3,3.0,3.7,3.6,1,135560,457.1
+7,Beitbridge Citrus Farm,Local Markets,Mar 2026,3.9,3.7,3.5,3.7,1,117679,170.7
+7,Beitbridge Citrus Farm,Local Markets,Feb 2026,4.1,4.3,4.2,4.4,0,38544,172.8
+7,Beitbridge Citrus Farm,Local Markets,Jan 2026,4.2,3.8,4.7,3.9,3,86844,29.1
+7,Beitbridge Citrus Farm,Local Markets,Dec 2025,3.1,2.9,3.4,2.7,5,69418,430.0
+7,Beitbridge Citrus Farm,Local Markets,Nov 2025,4.7,4.7,4.5,5.0,0,95768,97.4
+7,Beitbridge Citrus Farm,Local Markets,Oct 2025,3.2,3.4,3.6,2.6,2,102103,369.5
+7,Beitbridge Citrus Farm,Local Markets,Sep 2025,4.6,4.5,4.1,4.9,1,197287,398.3
+7,Beitbridge Citrus Farm,Local Markets,Aug 2025,3.3,3.6,3.5,3.3,1,99450,46.1
+7,Beitbridge Citrus Farm,Local Markets,Jul 2025,4.1,4.1,4.5,4.5,0,126710,290.9
+7,Beitbridge Citrus Farm,Local Markets,Jun 2025,4.2,3.9,4.7,4.9,2,161118,164.3
+7,Beitbridge Citrus Farm,Local Markets,May 2025,4.7,4.8,5.3,4.6,0,175145,107.9
+7,Beitbridge Citrus Farm,Supermarket Chain,Apr 2026,3.8,3.5,3.5,3.6,5,175276,365.6
+7,Beitbridge Citrus Farm,Supermarket Chain,Mar 2026,3.5,3.8,3.4,3.2,1,73728,361.2
+7,Beitbridge Citrus Farm,Supermarket Chain,Feb 2026,4.2,4.5,4.0,4.8,1,158100,337.9
+7,Beitbridge Citrus Farm,Supermarket Chain,Jan 2026,4.8,4.9,4.8,3.9,2,194524,234.2
+7,Beitbridge Citrus Farm,Supermarket Chain,Dec 2025,5.0,5.1,4.5,4.4,1,57312,82.6
+7,Beitbridge Citrus Farm,Supermarket Chain,Nov 2025,3.9,4.1,3.8,3.3,1,191016,12.2
+7,Beitbridge Citrus Farm,Supermarket Chain,Oct 2025,4.8,4.5,4.7,4.8,0,142432,283.3
+7,Beitbridge Citrus Farm,Supermarket Chain,Sep 2025,3.7,3.6,4.0,3.2,2,127700,280.1
+7,Beitbridge Citrus Farm,Supermarket Chain,Aug 2025,4.0,4.1,4.3,4.7,2,110029,491.3
+7,Beitbridge Citrus Farm,Supermarket Chain,Jul 2025,3.6,3.7,3.4,4.2,1,66318,436.3
+7,Beitbridge Citrus Farm,Supermarket Chain,Jun 2025,4.6,4.4,5.1,5.0,2,114445,289.4
+7,Beitbridge Citrus Farm,Supermarket Chain,May 2025,4.2,3.9,3.6,3.4,1,83635,128.1
+7,Beitbridge Citrus Farm,Food Processing Inc,Apr 2026,3.6,3.4,3.9,3.8,2,24201,38.7
+7,Beitbridge Citrus Farm,Food Processing Inc,Mar 2026,4.5,4.1,5.1,3.8,0,198803,338.4
+7,Beitbridge Citrus Farm,Food Processing Inc,Feb 2026,3.9,4.3,3.5,4.2,1,127379,218.9
+7,Beitbridge Citrus Farm,Food Processing Inc,Jan 2026,3.5,3.3,3.2,3.5,4,145510,417.5
+7,Beitbridge Citrus Farm,Food Processing Inc,Dec 2025,3.4,3.5,3.0,2.8,1,149494,421.8
+7,Beitbridge Citrus Farm,Food Processing Inc,Nov 2025,3.8,3.4,4.0,4.4,2,134118,350.4
+7,Beitbridge Citrus Farm,Food Processing Inc,Oct 2025,3.5,3.7,3.4,3.5,8,160258,12.8
+7,Beitbridge Citrus Farm,Food Processing Inc,Sep 2025,3.3,3.2,2.9,3.8,1,63034,185.4
+7,Beitbridge Citrus Farm,Food Processing Inc,Aug 2025,3.8,3.9,4.2,3.3,5,18990,399.0
+7,Beitbridge Citrus Farm,Food Processing Inc,Jul 2025,3.6,3.6,3.6,4.2,4,84454,74.8
+7,Beitbridge Citrus Farm,Food Processing Inc,Jun 2025,3.9,3.7,3.5,3.3,1,101568,87.7
+7,Beitbridge Citrus Farm,Food Processing Inc,May 2025,4.1,3.9,3.6,4.0,0,144883,416.7
+7,Beitbridge Citrus Farm,Wholesale Distributor,Apr 2026,3.5,3.5,3.7,4.1,1,176373,398.7
+7,Beitbridge Citrus Farm,Wholesale Distributor,Mar 2026,4.4,4.0,4.3,5.0,1,68860,280.1
+7,Beitbridge Citrus Farm,Wholesale Distributor,Feb 2026,4.8,4.9,4.7,5.5,0,58390,470.9
+7,Beitbridge Citrus Farm,Wholesale Distributor,Jan 2026,3.5,3.6,3.8,3.8,1,142817,191.6
+7,Beitbridge Citrus Farm,Wholesale Distributor,Dec 2025,4.8,5.1,4.3,5.5,0,139228,408.9
+7,Beitbridge Citrus Farm,Wholesale Distributor,Nov 2025,4.0,3.9,4.5,3.6,0,158145,431.1
+7,Beitbridge Citrus Farm,Wholesale Distributor,Oct 2025,4.9,4.6,5.4,4.4,1,37428,284.6
+7,Beitbridge Citrus Farm,Wholesale Distributor,Sep 2025,3.4,3.5,2.9,3.5,2,123500,116.7
+7,Beitbridge Citrus Farm,Wholesale Distributor,Aug 2025,4.8,4.9,5.3,5.7,0,137185,304.3
+7,Beitbridge Citrus Farm,Wholesale Distributor,Jul 2025,3.3,3.5,3.4,3.9,5,15686,142.9
+7,Beitbridge Citrus Farm,Wholesale Distributor,Jun 2025,4.3,3.9,4.4,5.0,0,191597,344.8
+7,Beitbridge Citrus Farm,Wholesale Distributor,May 2025,3.4,3.1,3.1,4.1,3,146987,136.2
+8,Marondera Dairy,AgriProcessors Ltd,Apr 2026,4.8,4.9,4.6,4.2,0,56799,410.5
+8,Marondera Dairy,AgriProcessors Ltd,Mar 2026,3.2,3.3,3.0,3.6,3,46003,141.1
+8,Marondera Dairy,AgriProcessors Ltd,Feb 2026,3.3,3.5,3.2,2.9,5,27870,161.3
+8,Marondera Dairy,AgriProcessors Ltd,Jan 2026,4.4,4.7,4.0,4.1,2,180020,270.3
+8,Marondera Dairy,AgriProcessors Ltd,Dec 2025,3.3,3.4,3.6,3.5,2,156580,30.5
+8,Marondera Dairy,AgriProcessors Ltd,Nov 2025,4.0,3.7,3.9,4.6,0,195366,284.5
+8,Marondera Dairy,AgriProcessors Ltd,Oct 2025,5.0,5.2,4.3,5.4,2,125686,105.0
+8,Marondera Dairy,AgriProcessors Ltd,Sep 2025,4.5,4.5,4.8,4.5,0,113924,59.2
+8,Marondera Dairy,AgriProcessors Ltd,Aug 2025,3.7,3.6,3.6,3.4,0,35850,262.4
+8,Marondera Dairy,AgriProcessors Ltd,Jul 2025,4.0,4.4,4.2,3.7,0,123032,130.5
+8,Marondera Dairy,AgriProcessors Ltd,Jun 2025,4.7,4.7,5.2,4.7,1,146785,409.3
+8,Marondera Dairy,AgriProcessors Ltd,May 2025,3.7,4.0,3.3,3.0,1,101676,498.5
+8,Marondera Dairy,Export Trading Co,Apr 2026,4.5,4.3,4.2,4.1,0,53042,254.0
+8,Marondera Dairy,Export Trading Co,Mar 2026,3.4,3.3,3.7,3.9,0,73076,81.2
+8,Marondera Dairy,Export Trading Co,Feb 2026,4.1,4.5,3.9,4.5,1,158216,65.4
+8,Marondera Dairy,Export Trading Co,Jan 2026,3.5,3.3,3.2,3.7,1,87863,216.7
+8,Marondera Dairy,Export Trading Co,Dec 2025,3.2,3.0,3.3,3.8,3,41611,377.8
+8,Marondera Dairy,Export Trading Co,Nov 2025,3.9,4.1,4.0,4.6,0,109156,307.4
+8,Marondera Dairy,Export Trading Co,Oct 2025,3.6,3.5,3.5,3.8,5,170805,478.9
+8,Marondera Dairy,Export Trading Co,Sep 2025,4.6,4.5,4.7,4.8,1,73804,63.4
+8,Marondera Dairy,Export Trading Co,Aug 2025,4.4,4.1,4.6,4.6,1,151221,238.3
+8,Marondera Dairy,Export Trading Co,Jul 2025,4.9,5.3,5.3,4.8,0,81799,364.8
+8,Marondera Dairy,Export Trading Co,Jun 2025,4.3,4.5,4.2,3.6,0,134052,129.9
+8,Marondera Dairy,Export Trading Co,May 2025,4.8,5.1,4.1,5.5,0,132202,240.2
+8,Marondera Dairy,Local Markets,Apr 2026,3.6,3.6,3.5,4.2,0,144237,427.0
+8,Marondera Dairy,Local Markets,Mar 2026,4.9,4.6,5.0,4.0,0,142479,371.3
+8,Marondera Dairy,Local Markets,Feb 2026,5.0,4.5,5.0,4.9,0,37391,151.0
+8,Marondera Dairy,Local Markets,Jan 2026,3.5,3.2,3.7,3.7,1,59316,157.1
+8,Marondera Dairy,Local Markets,Dec 2025,3.5,3.8,3.7,3.2,2,177812,108.3
+8,Marondera Dairy,Local Markets,Nov 2025,3.3,3.0,3.7,3.0,1,163098,359.9
+8,Marondera Dairy,Local Markets,Oct 2025,4.7,4.4,5.0,4.5,1,127057,262.7
+8,Marondera Dairy,Local Markets,Sep 2025,3.3,3.0,3.5,3.6,3,114304,289.2
+8,Marondera Dairy,Local Markets,Aug 2025,4.3,3.9,3.7,4.0,1,33036,89.6
+8,Marondera Dairy,Local Markets,Jul 2025,3.5,3.3,3.7,3.5,6,196889,373.8
+8,Marondera Dairy,Local Markets,Jun 2025,4.2,4.2,3.9,3.9,1,160715,37.4
+8,Marondera Dairy,Local Markets,May 2025,4.2,4.1,4.0,4.8,1,141692,317.2
+8,Marondera Dairy,Supermarket Chain,Apr 2026,4.1,4.2,4.0,4.6,1,39840,166.4
+8,Marondera Dairy,Supermarket Chain,Mar 2026,3.9,3.5,4.4,3.9,0,147125,178.0
+8,Marondera Dairy,Supermarket Chain,Feb 2026,3.7,3.5,3.9,3.1,1,124041,447.4
+8,Marondera Dairy,Supermarket Chain,Jan 2026,3.6,3.4,3.9,3.7,0,194823,174.5
+8,Marondera Dairy,Supermarket Chain,Dec 2025,3.7,3.9,3.8,4.4,5,185721,62.1
+8,Marondera Dairy,Supermarket Chain,Nov 2025,4.0,4.1,3.5,4.0,2,110523,289.1
+8,Marondera Dairy,Supermarket Chain,Oct 2025,5.0,4.7,5.7,5.4,1,32132,11.1
+8,Marondera Dairy,Supermarket Chain,Sep 2025,3.6,3.6,3.7,3.2,1,57736,106.6
+8,Marondera Dairy,Supermarket Chain,Aug 2025,3.3,3.2,3.5,2.7,1,143465,319.9
+8,Marondera Dairy,Supermarket Chain,Jul 2025,3.2,3.2,3.0,2.6,2,144469,283.9
+8,Marondera Dairy,Supermarket Chain,Jun 2025,3.2,2.9,3.5,3.5,0,160955,228.3
+8,Marondera Dairy,Supermarket Chain,May 2025,4.0,4.2,4.3,3.8,1,169966,66.6
+8,Marondera Dairy,Food Processing Inc,Apr 2026,3.3,3.0,3.4,3.2,5,112715,438.0
+8,Marondera Dairy,Food Processing Inc,Mar 2026,4.7,4.8,4.0,4.2,1,160433,15.9
+8,Marondera Dairy,Food Processing Inc,Feb 2026,4.4,4.7,4.3,4.9,1,95413,93.3
+8,Marondera Dairy,Food Processing Inc,Jan 2026,3.1,2.9,2.8,3.2,3,47638,98.8
+8,Marondera Dairy,Food Processing Inc,Dec 2025,4.8,4.4,5.5,4.2,0,167148,12.2
+8,Marondera Dairy,Food Processing Inc,Nov 2025,4.4,4.3,4.7,4.9,0,30655,421.6
+8,Marondera Dairy,Food Processing Inc,Oct 2025,4.9,4.9,5.3,4.8,0,48754,194.3
+8,Marondera Dairy,Food Processing Inc,Sep 2025,3.6,3.4,3.1,4.1,0,166406,210.8
+8,Marondera Dairy,Food Processing Inc,Aug 2025,3.9,3.6,3.7,4.5,3,20865,174.0
+8,Marondera Dairy,Food Processing Inc,Jul 2025,4.7,4.9,4.5,5.3,1,98783,290.3
+8,Marondera Dairy,Food Processing Inc,Jun 2025,3.2,3.2,3.0,2.7,1,143714,55.3
+8,Marondera Dairy,Food Processing Inc,May 2025,3.1,3.2,3.6,3.1,0,127028,210.9
+8,Marondera Dairy,Wholesale Distributor,Apr 2026,4.5,4.2,3.9,4.2,0,17839,42.9
+8,Marondera Dairy,Wholesale Distributor,Mar 2026,3.1,3.2,3.5,3.1,2,188156,332.3
+8,Marondera Dairy,Wholesale Distributor,Feb 2026,3.9,3.7,3.8,3.8,1,38477,151.2
+8,Marondera Dairy,Wholesale Distributor,Jan 2026,3.7,3.9,3.2,4.2,1,152332,230.9
+8,Marondera Dairy,Wholesale Distributor,Dec 2025,4.4,4.7,5.0,4.6,0,81095,133.6
+8,Marondera Dairy,Wholesale Distributor,Nov 2025,3.2,3.3,2.9,3.8,0,95176,302.0
+8,Marondera Dairy,Wholesale Distributor,Oct 2025,3.9,3.8,4.5,3.3,3,45276,422.3
+8,Marondera Dairy,Wholesale Distributor,Sep 2025,3.4,3.5,3.3,4.1,1,124069,429.4
+8,Marondera Dairy,Wholesale Distributor,Aug 2025,4.0,3.8,3.7,4.8,0,17775,270.8
+8,Marondera Dairy,Wholesale Distributor,Jul 2025,3.4,3.3,3.0,3.8,2,66243,379.8
+8,Marondera Dairy,Wholesale Distributor,Jun 2025,4.1,4.3,4.6,4.1,1,145920,409.1
+8,Marondera Dairy,Wholesale Distributor,May 2025,3.5,3.9,4.0,3.9,2,91501,429.2
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Apr 2026,3.3,3.6,3.4,2.7,2,119830,458.6
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Mar 2026,3.0,3.1,3.0,2.8,1,58486,65.6
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Feb 2026,3.4,3.2,3.3,3.9,2,144892,438.1
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Jan 2026,4.5,4.2,5.0,4.1,1,107869,284.8
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Dec 2025,4.3,4.0,3.9,4.3,1,193118,197.1
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Nov 2025,4.4,4.6,4.0,4.1,0,68796,117.6
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Oct 2025,4.9,4.6,4.2,5.0,0,17114,474.9
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Sep 2025,4.1,4.4,4.4,3.7,2,32625,46.2
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Aug 2025,4.9,5.3,5.5,5.9,0,10497,478.8
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Jul 2025,3.1,2.9,2.8,2.5,5,55417,400.5
+9,Kwekwe Grain Farm,AgriProcessors Ltd,Jun 2025,3.4,3.5,3.4,4.1,3,166456,289.9
+9,Kwekwe Grain Farm,AgriProcessors Ltd,May 2025,4.8,5.3,4.4,4.2,1,97567,180.0
+9,Kwekwe Grain Farm,Export Trading Co,Apr 2026,4.6,4.9,4.6,4.6,0,166185,21.0
+9,Kwekwe Grain Farm,Export Trading Co,Mar 2026,3.3,3.2,3.8,3.9,2,173062,133.6
+9,Kwekwe Grain Farm,Export Trading Co,Feb 2026,4.3,3.9,3.8,4.5,1,103761,473.4
+9,Kwekwe Grain Farm,Export Trading Co,Jan 2026,4.9,4.7,5.3,5.1,1,29347,386.4
+9,Kwekwe Grain Farm,Export Trading Co,Dec 2025,4.0,4.2,3.7,3.4,3,82777,370.1
+9,Kwekwe Grain Farm,Export Trading Co,Nov 2025,3.1,3.3,3.3,3.3,0,125468,56.6
+9,Kwekwe Grain Farm,Export Trading Co,Oct 2025,3.5,3.4,3.5,3.1,3,26036,315.5
+9,Kwekwe Grain Farm,Export Trading Co,Sep 2025,3.3,3.2,3.8,3.7,2,79092,138.6
+9,Kwekwe Grain Farm,Export Trading Co,Aug 2025,4.2,4.3,3.6,4.3,0,194284,452.2
+9,Kwekwe Grain Farm,Export Trading Co,Jul 2025,4.9,5.3,4.5,4.5,2,192389,372.7
+9,Kwekwe Grain Farm,Export Trading Co,Jun 2025,3.5,3.5,3.6,3.3,1,93060,148.4
+9,Kwekwe Grain Farm,Export Trading Co,May 2025,3.2,3.3,3.2,2.8,1,120987,391.8
+9,Kwekwe Grain Farm,Local Markets,Apr 2026,4.2,4.0,3.9,4.7,0,65387,335.5
+9,Kwekwe Grain Farm,Local Markets,Mar 2026,4.1,4.1,4.6,3.7,1,58028,99.5
+9,Kwekwe Grain Farm,Local Markets,Feb 2026,4.2,4.1,3.8,4.9,1,77122,373.0
+9,Kwekwe Grain Farm,Local Markets,Jan 2026,4.6,4.3,5.2,5.1,1,139160,159.6
+9,Kwekwe Grain Farm,Local Markets,Dec 2025,3.1,2.9,2.8,3.4,0,141877,30.5
+9,Kwekwe Grain Farm,Local Markets,Nov 2025,4.5,4.2,5.1,4.5,0,100672,471.7
+9,Kwekwe Grain Farm,Local Markets,Oct 2025,3.9,4.0,3.6,4.1,3,66221,370.8
+9,Kwekwe Grain Farm,Local Markets,Sep 2025,3.3,3.2,3.5,3.9,0,97053,415.6
+9,Kwekwe Grain Farm,Local Markets,Aug 2025,4.1,3.7,3.6,4.2,0,50239,228.9
+9,Kwekwe Grain Farm,Local Markets,Jul 2025,3.6,3.6,3.4,3.2,4,88208,396.9
+9,Kwekwe Grain Farm,Local Markets,Jun 2025,3.8,3.9,3.3,4.6,3,107021,31.9
+9,Kwekwe Grain Farm,Local Markets,May 2025,3.8,4.1,3.4,3.7,2,195811,428.2
+9,Kwekwe Grain Farm,Supermarket Chain,Apr 2026,3.4,3.3,3.3,4.0,2,54053,323.4
+9,Kwekwe Grain Farm,Supermarket Chain,Mar 2026,4.9,5.2,5.2,5.8,0,197729,356.5
+9,Kwekwe Grain Farm,Supermarket Chain,Feb 2026,3.7,3.5,4.2,3.6,1,30063,175.3
+9,Kwekwe Grain Farm,Supermarket Chain,Jan 2026,4.6,4.3,4.6,5.1,0,48481,287.6
+9,Kwekwe Grain Farm,Supermarket Chain,Dec 2025,4.8,5.2,5.4,5.6,0,45495,307.0
+9,Kwekwe Grain Farm,Supermarket Chain,Nov 2025,4.4,4.2,5.1,5.1,1,18820,380.9
+9,Kwekwe Grain Farm,Supermarket Chain,Oct 2025,3.6,3.4,3.3,3.3,2,57501,191.8
+9,Kwekwe Grain Farm,Supermarket Chain,Sep 2025,4.9,4.7,5.4,5.4,0,62219,255.2
+9,Kwekwe Grain Farm,Supermarket Chain,Aug 2025,4.4,4.8,4.2,3.8,0,157434,419.7
+9,Kwekwe Grain Farm,Supermarket Chain,Jul 2025,4.8,4.5,5.2,5.3,0,73739,248.4
+9,Kwekwe Grain Farm,Supermarket Chain,Jun 2025,4.3,3.9,4.4,4.2,1,147840,82.5
+9,Kwekwe Grain Farm,Supermarket Chain,May 2025,4.1,4.3,3.8,3.9,1,76883,10.7
+9,Kwekwe Grain Farm,Food Processing Inc,Apr 2026,3.5,3.2,3.0,3.7,2,75491,421.3
+9,Kwekwe Grain Farm,Food Processing Inc,Mar 2026,3.2,3.2,3.2,3.4,2,44328,289.2
+9,Kwekwe Grain Farm,Food Processing Inc,Feb 2026,3.4,3.2,3.3,3.0,0,92675,90.5
+9,Kwekwe Grain Farm,Food Processing Inc,Jan 2026,4.6,4.2,4.9,4.4,1,189159,307.7
+9,Kwekwe Grain Farm,Food Processing Inc,Dec 2025,4.4,4.1,4.0,5.2,0,185206,126.5
+9,Kwekwe Grain Farm,Food Processing Inc,Nov 2025,3.8,3.6,3.6,3.0,0,106541,40.1
+9,Kwekwe Grain Farm,Food Processing Inc,Oct 2025,3.4,3.7,3.0,3.6,1,99092,59.8
+9,Kwekwe Grain Farm,Food Processing Inc,Sep 2025,4.2,4.3,4.4,4.4,0,20321,202.6
+9,Kwekwe Grain Farm,Food Processing Inc,Aug 2025,3.7,3.6,3.2,3.3,1,160785,280.9
+9,Kwekwe Grain Farm,Food Processing Inc,Jul 2025,3.5,3.2,3.9,4.1,0,166728,327.1
+9,Kwekwe Grain Farm,Food Processing Inc,Jun 2025,3.9,4.0,4.0,3.5,3,175190,437.3
+9,Kwekwe Grain Farm,Food Processing Inc,May 2025,4.3,4.3,4.9,5.1,1,123857,169.5
+9,Kwekwe Grain Farm,Wholesale Distributor,Apr 2026,3.0,2.8,2.8,2.5,2,19390,161.6
+9,Kwekwe Grain Farm,Wholesale Distributor,Mar 2026,4.5,4.6,4.1,3.6,0,82762,54.5
+9,Kwekwe Grain Farm,Wholesale Distributor,Feb 2026,3.8,4.1,4.1,4.2,3,89764,147.0
+9,Kwekwe Grain Farm,Wholesale Distributor,Jan 2026,3.1,2.9,3.2,3.2,3,171482,56.4
+9,Kwekwe Grain Farm,Wholesale Distributor,Dec 2025,3.2,3.5,3.4,2.8,0,145508,155.7
+9,Kwekwe Grain Farm,Wholesale Distributor,Nov 2025,3.9,3.6,3.5,3.9,4,82447,198.6
+9,Kwekwe Grain Farm,Wholesale Distributor,Oct 2025,3.1,3.1,3.2,3.4,1,168411,227.6
+9,Kwekwe Grain Farm,Wholesale Distributor,Sep 2025,3.8,3.9,4.4,4.3,1,81047,160.3
+9,Kwekwe Grain Farm,Wholesale Distributor,Aug 2025,4.8,4.7,4.5,4.1,1,43366,279.6
+9,Kwekwe Grain Farm,Wholesale Distributor,Jul 2025,3.7,3.9,3.9,4.4,2,146485,23.2
+9,Kwekwe Grain Farm,Wholesale Distributor,Jun 2025,4.4,4.2,4.4,3.9,1,187036,354.3
+9,Kwekwe Grain Farm,Wholesale Distributor,May 2025,3.3,3.3,3.3,3.3,1,103745,412.4
+10,Mutare Tea Estate,AgriProcessors Ltd,Apr 2026,3.4,3.5,3.1,3.1,3,143884,86.8
+10,Mutare Tea Estate,AgriProcessors Ltd,Mar 2026,3.6,3.5,3.5,3.8,1,160025,429.3
+10,Mutare Tea Estate,AgriProcessors Ltd,Feb 2026,4.0,4.4,4.0,3.6,1,28614,264.2
+10,Mutare Tea Estate,AgriProcessors Ltd,Jan 2026,4.9,4.5,5.3,5.2,1,198311,83.3
+10,Mutare Tea Estate,AgriProcessors Ltd,Dec 2025,4.8,4.6,5.6,5.2,0,31118,88.3
+10,Mutare Tea Estate,AgriProcessors Ltd,Nov 2025,3.3,3.2,3.7,2.9,1,137974,145.1
+10,Mutare Tea Estate,AgriProcessors Ltd,Oct 2025,4.7,4.2,4.3,3.9,0,141012,143.4
+10,Mutare Tea Estate,AgriProcessors Ltd,Sep 2025,3.3,3.1,3.6,3.3,2,12883,180.8
+10,Mutare Tea Estate,AgriProcessors Ltd,Aug 2025,4.9,4.4,4.6,5.1,2,120002,181.0
+10,Mutare Tea Estate,AgriProcessors Ltd,Jul 2025,4.2,4.3,3.7,4.7,1,14777,282.8
+10,Mutare Tea Estate,AgriProcessors Ltd,Jun 2025,4.9,4.6,5.3,4.0,1,76686,440.8
+10,Mutare Tea Estate,AgriProcessors Ltd,May 2025,3.6,3.5,3.7,4.2,0,199159,53.9
+10,Mutare Tea Estate,Export Trading Co,Apr 2026,4.8,4.7,4.6,4.3,1,75059,413.0
+10,Mutare Tea Estate,Export Trading Co,Mar 2026,4.5,4.1,4.8,4.5,0,187850,350.8
+10,Mutare Tea Estate,Export Trading Co,Feb 2026,3.5,3.2,4.0,2.8,2,197468,45.3
+10,Mutare Tea Estate,Export Trading Co,Jan 2026,3.7,4.0,4.1,4.2,2,129693,161.8
+10,Mutare Tea Estate,Export Trading Co,Dec 2025,3.4,3.6,3.7,3.4,3,100845,120.1
+10,Mutare Tea Estate,Export Trading Co,Nov 2025,4.6,4.8,4.8,4.5,1,28150,427.1
+10,Mutare Tea Estate,Export Trading Co,Oct 2025,3.8,3.9,3.4,4.2,2,199916,12.1
+10,Mutare Tea Estate,Export Trading Co,Sep 2025,4.6,4.4,4.9,5.4,2,96298,341.3
+10,Mutare Tea Estate,Export Trading Co,Aug 2025,4.9,4.5,4.7,4.0,1,95721,197.2
+10,Mutare Tea Estate,Export Trading Co,Jul 2025,4.1,4.4,4.2,4.9,2,13340,417.2
+10,Mutare Tea Estate,Export Trading Co,Jun 2025,3.5,3.3,3.9,2.9,3,177099,203.2
+10,Mutare Tea Estate,Export Trading Co,May 2025,4.8,5.2,4.8,3.9,1,33938,419.2
+10,Mutare Tea Estate,Local Markets,Apr 2026,3.8,3.7,4.4,4.4,2,171262,415.0
+10,Mutare Tea Estate,Local Markets,Mar 2026,4.5,4.2,4.8,4.2,0,140349,499.9
+10,Mutare Tea Estate,Local Markets,Feb 2026,4.8,5.0,4.8,4.0,1,174085,163.4
+10,Mutare Tea Estate,Local Markets,Jan 2026,3.2,3.2,3.7,3.0,2,183160,199.4
+10,Mutare Tea Estate,Local Markets,Dec 2025,4.7,4.3,4.2,4.4,0,78292,218.9
+10,Mutare Tea Estate,Local Markets,Nov 2025,3.5,3.2,3.9,3.2,2,45723,194.8
+10,Mutare Tea Estate,Local Markets,Oct 2025,4.4,4.7,5.0,3.7,0,113512,499.2
+10,Mutare Tea Estate,Local Markets,Sep 2025,4.1,4.0,4.6,3.7,0,123190,57.0
+10,Mutare Tea Estate,Local Markets,Aug 2025,3.7,3.7,3.8,4.5,1,173109,33.9
+10,Mutare Tea Estate,Local Markets,Jul 2025,4.9,4.7,5.6,4.5,1,80191,208.8
+10,Mutare Tea Estate,Local Markets,Jun 2025,3.9,4.2,4.3,4.2,3,59496,218.4
+10,Mutare Tea Estate,Local Markets,May 2025,4.2,4.3,4.3,3.8,1,103392,319.0
+10,Mutare Tea Estate,Supermarket Chain,Apr 2026,3.5,3.2,3.6,2.9,3,166027,373.2
+10,Mutare Tea Estate,Supermarket Chain,Mar 2026,3.8,4.1,3.7,4.2,1,83484,499.0
+10,Mutare Tea Estate,Supermarket Chain,Feb 2026,4.0,4.4,4.4,4.5,0,38381,301.2
+10,Mutare Tea Estate,Supermarket Chain,Jan 2026,3.1,3.2,3.5,3.6,4,195159,417.7
+10,Mutare Tea Estate,Supermarket Chain,Dec 2025,3.2,3.1,3.6,3.4,2,102594,245.1
+10,Mutare Tea Estate,Supermarket Chain,Nov 2025,3.2,3.3,3.1,3.4,2,104305,195.5
+10,Mutare Tea Estate,Supermarket Chain,Oct 2025,4.4,4.1,4.3,5.2,0,194989,456.6
+10,Mutare Tea Estate,Supermarket Chain,Sep 2025,4.0,3.7,4.2,4.2,0,88305,161.4
+10,Mutare Tea Estate,Supermarket Chain,Aug 2025,3.6,3.4,3.3,3.9,3,69405,54.0
+10,Mutare Tea Estate,Supermarket Chain,Jul 2025,3.9,4.2,3.6,3.3,1,146689,132.9
+10,Mutare Tea Estate,Supermarket Chain,Jun 2025,4.4,4.3,4.5,4.4,0,71855,481.9
+10,Mutare Tea Estate,Supermarket Chain,May 2025,4.8,5.2,4.4,4.5,2,87152,162.7
+10,Mutare Tea Estate,Food Processing Inc,Apr 2026,4.9,4.6,4.3,4.0,1,45847,399.0
+10,Mutare Tea Estate,Food Processing Inc,Mar 2026,4.9,4.6,5.1,5.7,2,167386,488.9
+10,Mutare Tea Estate,Food Processing Inc,Feb 2026,3.8,3.9,3.2,4.1,2,81892,272.1
+10,Mutare Tea Estate,Food Processing Inc,Jan 2026,3.8,3.7,3.4,4.5,1,174718,157.7
+10,Mutare Tea Estate,Food Processing Inc,Dec 2025,4.6,4.6,5.2,4.5,1,153304,212.5
+10,Mutare Tea Estate,Food Processing Inc,Nov 2025,4.2,3.8,4.3,4.0,1,86439,75.3
+10,Mutare Tea Estate,Food Processing Inc,Oct 2025,3.0,2.9,3.1,3.3,4,159819,366.2
+10,Mutare Tea Estate,Food Processing Inc,Sep 2025,4.9,4.6,5.1,5.5,1,55813,212.1
+10,Mutare Tea Estate,Food Processing Inc,Aug 2025,3.3,3.1,3.1,2.7,3,134359,38.2
+10,Mutare Tea Estate,Food Processing Inc,Jul 2025,3.6,3.3,3.3,3.5,1,153597,219.8
+10,Mutare Tea Estate,Food Processing Inc,Jun 2025,3.5,3.7,3.9,3.2,0,52941,142.4
+10,Mutare Tea Estate,Food Processing Inc,May 2025,3.2,3.2,3.1,3.2,1,13466,94.8
+10,Mutare Tea Estate,Wholesale Distributor,Apr 2026,3.4,3.6,2.9,4.1,2,47723,49.3
+10,Mutare Tea Estate,Wholesale Distributor,Mar 2026,4.8,4.4,4.3,5.7,0,104322,181.7
+10,Mutare Tea Estate,Wholesale Distributor,Feb 2026,3.2,3.0,2.9,3.4,3,172022,320.2
+10,Mutare Tea Estate,Wholesale Distributor,Jan 2026,4.2,4.4,3.6,4.6,0,155500,356.2
+10,Mutare Tea Estate,Wholesale Distributor,Dec 2025,4.7,5.0,5.0,5.2,1,179507,82.9
+10,Mutare Tea Estate,Wholesale Distributor,Nov 2025,4.7,4.8,4.9,5.5,0,115771,407.5
+10,Mutare Tea Estate,Wholesale Distributor,Oct 2025,4.9,5.2,5.2,4.2,0,183088,412.9
+10,Mutare Tea Estate,Wholesale Distributor,Sep 2025,3.4,3.5,3.7,3.3,1,187185,185.1
+10,Mutare Tea Estate,Wholesale Distributor,Aug 2025,3.7,3.7,3.9,4.1,3,22101,67.5
+10,Mutare Tea Estate,Wholesale Distributor,Jul 2025,3.7,3.6,3.8,4.1,2,121221,479.0
+10,Mutare Tea Estate,Wholesale Distributor,Jun 2025,4.7,4.3,5.3,3.9,1,104274,168.1
+10,Mutare Tea Estate,Wholesale Distributor,May 2025,4.0,3.7,4.5,3.7,1,46798,207.5
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Apr 2026,3.1,3.2,3.5,3.3,1,126054,318.9
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Mar 2026,4.4,4.3,4.2,4.7,0,78150,333.6
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Feb 2026,4.1,3.9,3.8,4.2,0,91107,81.4
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Jan 2026,4.5,4.6,4.7,4.4,0,43138,363.7
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Dec 2025,4.9,5.2,4.4,5.8,0,41048,336.0
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Nov 2025,4.5,4.1,4.9,4.9,0,181833,400.7
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Oct 2025,4.5,4.4,4.8,4.9,0,63445,161.4
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Sep 2025,3.8,3.6,4.0,3.8,0,153260,357.7
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Aug 2025,3.6,3.9,3.8,3.3,2,150363,304.9
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Jul 2025,5.0,4.8,5.5,6.0,0,69677,372.7
+11,Gweru Livestock Ranch,AgriProcessors Ltd,Jun 2025,3.9,4.1,3.7,4.2,3,89468,305.7
+11,Gweru Livestock Ranch,AgriProcessors Ltd,May 2025,3.4,3.3,3.5,3.3,1,105736,64.4
+11,Gweru Livestock Ranch,Export Trading Co,Apr 2026,3.5,3.2,3.1,2.8,5,50503,312.2
+11,Gweru Livestock Ranch,Export Trading Co,Mar 2026,4.4,4.5,4.7,4.8,0,60933,319.5
+11,Gweru Livestock Ranch,Export Trading Co,Feb 2026,4.9,4.6,4.3,4.0,0,194823,59.7
+11,Gweru Livestock Ranch,Export Trading Co,Jan 2026,4.4,4.7,4.7,4.2,0,94389,426.4
+11,Gweru Livestock Ranch,Export Trading Co,Dec 2025,3.5,3.3,3.8,2.9,2,197225,355.0
+11,Gweru Livestock Ranch,Export Trading Co,Nov 2025,3.3,3.4,3.3,3.0,0,71402,380.7
+11,Gweru Livestock Ranch,Export Trading Co,Oct 2025,4.1,3.9,3.7,3.7,0,126817,105.3
+11,Gweru Livestock Ranch,Export Trading Co,Sep 2025,3.2,3.2,2.7,2.6,2,196286,176.1
+11,Gweru Livestock Ranch,Export Trading Co,Aug 2025,4.0,4.1,4.1,4.0,0,158279,28.8
+11,Gweru Livestock Ranch,Export Trading Co,Jul 2025,3.3,3.0,3.1,3.4,0,26614,325.1
+11,Gweru Livestock Ranch,Export Trading Co,Jun 2025,4.2,3.8,4.8,3.4,0,66430,264.0
+11,Gweru Livestock Ranch,Export Trading Co,May 2025,3.8,3.8,3.7,3.4,1,132205,311.9
+11,Gweru Livestock Ranch,Local Markets,Apr 2026,4.6,4.6,4.5,5.5,0,104605,210.2
+11,Gweru Livestock Ranch,Local Markets,Mar 2026,3.2,3.0,2.7,3.7,4,122171,55.0
+11,Gweru Livestock Ranch,Local Markets,Feb 2026,3.7,3.8,4.2,4.4,1,41157,131.2
+11,Gweru Livestock Ranch,Local Markets,Jan 2026,4.0,4.1,3.9,4.3,0,85753,316.4
+11,Gweru Livestock Ranch,Local Markets,Dec 2025,3.2,3.1,2.8,3.3,1,20998,202.2
+11,Gweru Livestock Ranch,Local Markets,Nov 2025,3.9,4.3,3.5,4.3,1,119273,437.0
+11,Gweru Livestock Ranch,Local Markets,Oct 2025,4.3,4.2,4.8,4.7,0,15174,147.3
+11,Gweru Livestock Ranch,Local Markets,Sep 2025,4.5,4.2,5.1,3.9,0,77928,301.6
+11,Gweru Livestock Ranch,Local Markets,Aug 2025,3.6,3.9,3.5,3.5,3,53117,450.7
+11,Gweru Livestock Ranch,Local Markets,Jul 2025,4.2,4.5,4.2,3.7,1,197180,367.0
+11,Gweru Livestock Ranch,Local Markets,Jun 2025,3.8,3.8,4.2,3.2,1,109763,483.0
+11,Gweru Livestock Ranch,Local Markets,May 2025,4.4,4.5,4.6,4.2,1,52241,153.6
+11,Gweru Livestock Ranch,Supermarket Chain,Apr 2026,3.3,3.1,3.4,3.1,2,52232,296.5
+11,Gweru Livestock Ranch,Supermarket Chain,Mar 2026,4.8,5.2,4.3,4.6,0,154177,26.3
+11,Gweru Livestock Ranch,Supermarket Chain,Feb 2026,4.9,4.9,4.9,5.7,0,69487,122.5
+11,Gweru Livestock Ranch,Supermarket Chain,Jan 2026,3.6,3.8,3.9,4.2,2,86420,275.4
+11,Gweru Livestock Ranch,Supermarket Chain,Dec 2025,4.4,4.6,4.1,3.6,0,152954,39.4
+11,Gweru Livestock Ranch,Supermarket Chain,Nov 2025,4.4,4.2,4.8,4.8,0,68314,104.3
+11,Gweru Livestock Ranch,Supermarket Chain,Oct 2025,3.8,3.9,4.3,3.8,3,40285,25.3
+11,Gweru Livestock Ranch,Supermarket Chain,Sep 2025,4.8,5.0,4.4,5.7,0,113833,274.4
+11,Gweru Livestock Ranch,Supermarket Chain,Aug 2025,3.7,3.8,3.7,3.7,2,161233,155.2
+11,Gweru Livestock Ranch,Supermarket Chain,Jul 2025,4.4,4.7,4.9,3.7,1,115506,379.6
+11,Gweru Livestock Ranch,Supermarket Chain,Jun 2025,3.9,3.8,4.1,3.4,0,163026,186.3
+11,Gweru Livestock Ranch,Supermarket Chain,May 2025,4.9,4.8,5.6,5.3,1,99461,233.7
+11,Gweru Livestock Ranch,Food Processing Inc,Apr 2026,3.2,3.3,2.8,2.7,1,79389,48.6
+11,Gweru Livestock Ranch,Food Processing Inc,Mar 2026,4.0,4.2,3.5,4.4,0,165859,403.0
+11,Gweru Livestock Ranch,Food Processing Inc,Feb 2026,3.2,3.3,2.9,3.0,2,159175,14.7
+11,Gweru Livestock Ranch,Food Processing Inc,Jan 2026,3.6,3.3,3.7,3.8,3,88285,261.4
+11,Gweru Livestock Ranch,Food Processing Inc,Dec 2025,4.0,4.1,4.6,4.6,0,184251,98.9
+11,Gweru Livestock Ranch,Food Processing Inc,Nov 2025,4.0,4.3,4.1,3.3,1,61042,92.8
+11,Gweru Livestock Ranch,Food Processing Inc,Oct 2025,4.4,4.6,4.9,3.9,1,190063,157.1
+11,Gweru Livestock Ranch,Food Processing Inc,Sep 2025,3.9,4.1,4.4,3.1,0,194415,72.9
+11,Gweru Livestock Ranch,Food Processing Inc,Aug 2025,3.0,2.8,3.4,3.3,1,41764,31.7
+11,Gweru Livestock Ranch,Food Processing Inc,Jul 2025,4.6,4.5,4.0,4.7,0,130423,463.8
+11,Gweru Livestock Ranch,Food Processing Inc,Jun 2025,4.7,4.6,5.4,3.9,1,81190,28.3
+11,Gweru Livestock Ranch,Food Processing Inc,May 2025,4.7,4.3,4.2,3.9,0,12917,37.0
+11,Gweru Livestock Ranch,Wholesale Distributor,Apr 2026,3.9,3.7,3.4,4.1,1,112148,366.5
+11,Gweru Livestock Ranch,Wholesale Distributor,Mar 2026,4.8,5.1,4.8,4.8,2,152343,114.6
+11,Gweru Livestock Ranch,Wholesale Distributor,Feb 2026,4.5,4.2,4.5,4.4,1,15800,316.6
+11,Gweru Livestock Ranch,Wholesale Distributor,Jan 2026,3.8,3.6,3.9,3.3,4,51750,276.0
+11,Gweru Livestock Ranch,Wholesale Distributor,Dec 2025,4.6,4.7,4.8,5.5,1,189741,329.9
+11,Gweru Livestock Ranch,Wholesale Distributor,Nov 2025,4.9,4.6,4.9,5.3,1,160025,491.8
+11,Gweru Livestock Ranch,Wholesale Distributor,Oct 2025,3.6,3.3,3.5,3.6,1,12525,323.8
+11,Gweru Livestock Ranch,Wholesale Distributor,Sep 2025,3.1,3.2,3.4,3.4,1,81640,279.1
+11,Gweru Livestock Ranch,Wholesale Distributor,Aug 2025,4.2,4.0,4.7,3.7,0,79878,172.4
+11,Gweru Livestock Ranch,Wholesale Distributor,Jul 2025,4.3,4.7,4.5,3.7,0,119093,46.2
+11,Gweru Livestock Ranch,Wholesale Distributor,Jun 2025,4.3,4.0,4.8,3.9,1,179455,396.9
+11,Gweru Livestock Ranch,Wholesale Distributor,May 2025,3.1,3.3,2.7,2.9,2,33255,82.2
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Apr 2026,3.5,3.5,3.1,4.2,1,30893,198.7
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Mar 2026,4.2,3.8,4.3,5.0,0,66959,383.5
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Feb 2026,4.2,4.1,3.8,4.2,0,155875,226.5
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Jan 2026,4.7,4.4,4.6,4.8,0,93521,458.5
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Dec 2025,3.1,3.3,2.7,2.6,0,107444,427.6
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Nov 2025,3.8,3.8,3.8,4.4,6,195573,95.7
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Oct 2025,4.8,4.4,5.2,4.0,2,104784,54.6
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Sep 2025,3.7,3.8,3.5,4.0,3,68884,335.5
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Aug 2025,4.5,4.6,4.2,3.6,2,194006,312.0
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Jul 2025,4.6,4.3,4.7,5.0,1,194346,302.5
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,Jun 2025,4.3,4.4,4.5,4.5,0,63532,218.6
+12,Harare Peri-Urban Veg,AgriProcessors Ltd,May 2025,3.1,3.3,2.8,3.5,3,85553,338.7
+12,Harare Peri-Urban Veg,Export Trading Co,Apr 2026,4.9,4.8,5.5,4.8,1,68433,121.5
+12,Harare Peri-Urban Veg,Export Trading Co,Mar 2026,4.5,4.2,4.2,4.4,0,27285,281.6
+12,Harare Peri-Urban Veg,Export Trading Co,Feb 2026,3.6,3.8,3.2,3.2,4,165176,169.6
+12,Harare Peri-Urban Veg,Export Trading Co,Jan 2026,4.6,4.5,4.7,4.0,2,174078,75.6
+12,Harare Peri-Urban Veg,Export Trading Co,Dec 2025,3.8,3.5,3.5,4.1,1,181922,354.8
+12,Harare Peri-Urban Veg,Export Trading Co,Nov 2025,3.7,4.0,3.3,4.0,2,140752,132.4
+12,Harare Peri-Urban Veg,Export Trading Co,Oct 2025,3.3,3.5,3.0,2.8,1,179390,105.6
+12,Harare Peri-Urban Veg,Export Trading Co,Sep 2025,3.7,3.9,4.1,3.6,4,135770,126.5
+12,Harare Peri-Urban Veg,Export Trading Co,Aug 2025,4.9,5.0,4.4,4.8,0,169649,317.3
+12,Harare Peri-Urban Veg,Export Trading Co,Jul 2025,4.2,4.0,4.2,4.3,1,51250,352.9
+12,Harare Peri-Urban Veg,Export Trading Co,Jun 2025,4.3,4.5,4.6,5.1,0,85226,198.7
+12,Harare Peri-Urban Veg,Export Trading Co,May 2025,4.9,4.9,5.6,5.0,1,162195,47.9
+12,Harare Peri-Urban Veg,Local Markets,Apr 2026,4.2,4.5,4.3,3.7,0,108002,302.6
+12,Harare Peri-Urban Veg,Local Markets,Mar 2026,4.9,4.9,4.7,5.0,1,21804,259.0
+12,Harare Peri-Urban Veg,Local Markets,Feb 2026,3.3,3.5,3.5,3.8,1,179475,381.5
+12,Harare Peri-Urban Veg,Local Markets,Jan 2026,4.3,4.4,4.6,4.1,0,50769,84.7
+12,Harare Peri-Urban Veg,Local Markets,Dec 2025,4.7,4.7,5.1,4.3,0,154371,399.6
+12,Harare Peri-Urban Veg,Local Markets,Nov 2025,3.8,3.8,4.3,4.1,1,157847,102.2
+12,Harare Peri-Urban Veg,Local Markets,Oct 2025,4.8,4.5,4.9,4.0,0,180282,151.4
+12,Harare Peri-Urban Veg,Local Markets,Sep 2025,3.4,3.5,3.6,3.7,1,107095,164.5
+12,Harare Peri-Urban Veg,Local Markets,Aug 2025,3.1,2.9,2.9,2.5,4,18095,351.6
+12,Harare Peri-Urban Veg,Local Markets,Jul 2025,3.6,3.3,3.6,3.5,1,159988,310.8
+12,Harare Peri-Urban Veg,Local Markets,Jun 2025,4.0,4.2,4.1,4.5,3,28224,311.4
+12,Harare Peri-Urban Veg,Local Markets,May 2025,3.3,3.1,2.8,3.7,0,144386,147.6
+12,Harare Peri-Urban Veg,Supermarket Chain,Apr 2026,4.0,3.7,3.7,4.5,0,10392,387.5
+12,Harare Peri-Urban Veg,Supermarket Chain,Mar 2026,4.4,4.7,4.1,3.7,0,14794,263.1
+12,Harare Peri-Urban Veg,Supermarket Chain,Feb 2026,3.9,3.7,4.3,3.8,0,19448,463.3
+12,Harare Peri-Urban Veg,Supermarket Chain,Jan 2026,5.0,5.0,5.5,4.4,0,10177,379.9
+12,Harare Peri-Urban Veg,Supermarket Chain,Dec 2025,4.1,4.5,4.7,4.9,2,157247,382.1
+12,Harare Peri-Urban Veg,Supermarket Chain,Nov 2025,4.5,4.9,4.3,4.8,0,77089,250.9
+12,Harare Peri-Urban Veg,Supermarket Chain,Oct 2025,3.4,3.7,3.7,3.1,0,119655,395.3
+12,Harare Peri-Urban Veg,Supermarket Chain,Sep 2025,4.2,4.4,3.9,3.7,2,53316,124.6
+12,Harare Peri-Urban Veg,Supermarket Chain,Aug 2025,3.6,3.6,3.6,4.1,2,46444,259.9
+12,Harare Peri-Urban Veg,Supermarket Chain,Jul 2025,3.1,3.1,2.7,2.7,0,98690,203.9
+12,Harare Peri-Urban Veg,Supermarket Chain,Jun 2025,4.6,4.6,5.1,5.5,0,18532,335.8
+12,Harare Peri-Urban Veg,Supermarket Chain,May 2025,3.6,3.4,4.0,4.3,3,53439,135.4
+12,Harare Peri-Urban Veg,Food Processing Inc,Apr 2026,3.8,3.6,3.4,4.0,2,129488,12.9
+12,Harare Peri-Urban Veg,Food Processing Inc,Mar 2026,3.9,4.0,3.8,3.3,2,155506,231.2
+12,Harare Peri-Urban Veg,Food Processing Inc,Feb 2026,4.8,4.6,4.6,5.7,0,52711,117.8
+12,Harare Peri-Urban Veg,Food Processing Inc,Jan 2026,4.2,4.1,3.8,4.7,0,130574,355.5
+12,Harare Peri-Urban Veg,Food Processing Inc,Dec 2025,4.0,3.6,4.1,4.7,0,156169,87.4
+12,Harare Peri-Urban Veg,Food Processing Inc,Nov 2025,4.5,4.3,4.4,4.7,0,15804,420.0
+12,Harare Peri-Urban Veg,Food Processing Inc,Oct 2025,4.3,4.2,4.3,5.1,0,111721,79.0
+12,Harare Peri-Urban Veg,Food Processing Inc,Sep 2025,4.5,4.7,4.9,4.1,0,107318,403.8
+12,Harare Peri-Urban Veg,Food Processing Inc,Aug 2025,5.0,4.6,4.9,4.0,0,102141,340.4
+12,Harare Peri-Urban Veg,Food Processing Inc,Jul 2025,4.8,4.4,5.3,5.2,1,171432,482.5
+12,Harare Peri-Urban Veg,Food Processing Inc,Jun 2025,3.3,3.3,3.8,2.8,2,115004,339.1
+12,Harare Peri-Urban Veg,Food Processing Inc,May 2025,4.6,4.3,5.1,4.4,0,20937,297.9
+12,Harare Peri-Urban Veg,Wholesale Distributor,Apr 2026,3.7,3.6,3.3,4.1,2,39720,63.5
+12,Harare Peri-Urban Veg,Wholesale Distributor,Mar 2026,4.8,4.9,5.4,5.0,1,15220,269.0
+12,Harare Peri-Urban Veg,Wholesale Distributor,Feb 2026,3.6,3.8,4.1,4.1,5,32365,50.5
+12,Harare Peri-Urban Veg,Wholesale Distributor,Jan 2026,4.2,4.5,3.7,4.3,2,70390,254.5
+12,Harare Peri-Urban Veg,Wholesale Distributor,Dec 2025,3.5,3.3,3.8,4.2,3,39580,480.7
+12,Harare Peri-Urban Veg,Wholesale Distributor,Nov 2025,4.9,5.3,5.5,5.7,1,127699,75.8
+12,Harare Peri-Urban Veg,Wholesale Distributor,Oct 2025,3.0,2.8,3.4,3.2,2,169742,491.3
+12,Harare Peri-Urban Veg,Wholesale Distributor,Sep 2025,4.5,4.9,4.0,5.4,0,177776,127.1
+12,Harare Peri-Urban Veg,Wholesale Distributor,Aug 2025,4.9,5.0,5.1,5.9,1,162604,365.0
+12,Harare Peri-Urban Veg,Wholesale Distributor,Jul 2025,3.1,3.1,3.4,3.2,1,53252,159.8
+12,Harare Peri-Urban Veg,Wholesale Distributor,Jun 2025,4.2,4.5,4.8,3.5,0,48178,147.3
+12,Harare Peri-Urban Veg,Wholesale Distributor,May 2025,4.1,4.3,4.4,3.5,1,191423,365.3

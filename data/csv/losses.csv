@@ -1,0 +1,242 @@
+farm_id,farm_name,crop,loss_cause,loss_tons,loss_value_usd,loss_pct,season,recoverable
+1,Mazowe Valley Farm,Maize,Theft,49.5,29041,4.9,2025 Summer,False
+1,Mazowe Valley Farm,Maize,Spoilage,37.2,20857,2.9,2024 Summer,False
+1,Mazowe Valley Farm,Maize,Transport Damage,9.3,3197,11.8,2024 Summer,True
+1,Mazowe Valley Farm,Maize,Storage Rot,14.8,7578,12.6,2024 Winter,False
+1,Mazowe Valley Farm,Maize,Pest Damage,44.3,16912,2.9,2025 Summer,False
+1,Mazowe Valley Farm,Maize,Theft,8.5,2346,12.8,2025 Summer,False
+1,Mazowe Valley Farm,Maize,Storage Rot,49.4,25563,3.5,2024 Winter,False
+1,Mazowe Valley Farm,Maize,Storage Rot,41.3,20432,10.2,2024 Summer,False
+1,Mazowe Valley Farm,Maize,Transport Damage,7.5,2108,12.3,2024 Winter,False
+1,Mazowe Valley Farm,Maize,Spoilage,49.0,14039,6.9,2025 Summer,False
+1,Mazowe Valley Farm,Maize,Storage Rot,13.2,5758,4.9,2024 Summer,False
+1,Mazowe Valley Farm,Maize,Storage Rot,40.5,9066,11.8,2024 Summer,False
+1,Mazowe Valley Farm,Maize,Pest Damage,26.5,12818,7.1,2024 Winter,False
+1,Mazowe Valley Farm,Maize,Grading Downgrade,33.4,18995,8.5,2025 Summer,True
+1,Mazowe Valley Farm,Maize,Theft,7.1,1749,4.7,2024 Winter,True
+1,Mazowe Valley Farm,Maize,Storage Rot,29.4,9085,14.1,2025 Summer,False
+2,Headlands Cotton Block,Cotton,Spoilage,44.6,26599,8.1,2024 Summer,False
+2,Headlands Cotton Block,Cotton,Grading Downgrade,24.8,10309,7.5,2024 Winter,False
+2,Headlands Cotton Block,Cotton,Transport Damage,46.2,13185,6.3,2024 Winter,True
+2,Headlands Cotton Block,Cotton,Storage Rot,16.4,9511,7.3,2024 Winter,False
+2,Headlands Cotton Block,Cotton,Pest Damage,15.9,4307,10.0,2024 Summer,False
+2,Headlands Cotton Block,Cotton,Pest Damage,23.4,12301,9.5,2024 Winter,False
+2,Headlands Cotton Block,Cotton,Grading Downgrade,40.1,22687,12.5,2025 Summer,True
+2,Headlands Cotton Block,Cotton,Pest Damage,6.4,3182,6.3,2024 Winter,False
+2,Headlands Cotton Block,Cotton,Theft,17.9,6984,8.8,2025 Summer,True
+2,Headlands Cotton Block,Cotton,Storage Rot,11.7,5799,13.6,2025 Summer,False
+2,Headlands Cotton Block,Cotton,Theft,15.1,5779,12.4,2025 Summer,False
+2,Headlands Cotton Block,Cotton,Storage Rot,42.4,25122,13.8,2024 Winter,True
+2,Headlands Cotton Block,Cotton,Storage Rot,34.3,17088,13.9,2024 Winter,False
+2,Headlands Cotton Block,Cotton,Spoilage,46.6,23244,7.1,2024 Summer,False
+2,Headlands Cotton Block,Cotton,Spoilage,19.0,5189,13.5,2024 Winter,False
+2,Headlands Cotton Block,Cotton,Storage Rot,36.0,16911,5.7,2024 Winter,True
+2,Headlands Cotton Block,Cotton,Pest Damage,45.0,17005,3.0,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Theft,1.3,367,12.7,2025 Summer,False
+3,Bindura Soya Farm,Soybeans,Theft,8.8,2671,9.1,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Theft,34.2,13933,8.8,2025 Summer,True
+3,Bindura Soya Farm,Soybeans,Storage Rot,40.7,22870,6.0,2025 Summer,False
+3,Bindura Soya Farm,Soybeans,Pest Damage,26.7,6085,3.1,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Transport Damage,29.0,11931,13.0,2024 Summer,False
+3,Bindura Soya Farm,Soybeans,Pest Damage,46.0,11679,4.7,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Pest Damage,22.9,10871,5.6,2024 Summer,False
+3,Bindura Soya Farm,Soybeans,Transport Damage,29.2,6063,9.0,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Transport Damage,31.4,6384,7.7,2024 Winter,True
+3,Bindura Soya Farm,Soybeans,Spoilage,36.6,12851,6.2,2025 Summer,False
+3,Bindura Soya Farm,Soybeans,Pest Damage,44.1,11475,5.5,2025 Summer,False
+3,Bindura Soya Farm,Soybeans,Theft,42.2,9844,13.0,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Storage Rot,18.0,7224,10.9,2024 Summer,True
+3,Bindura Soya Farm,Soybeans,Grading Downgrade,26.0,8692,8.2,2024 Winter,False
+3,Bindura Soya Farm,Soybeans,Pest Damage,44.9,26466,5.1,2024 Winter,True
+3,Bindura Soya Farm,Soybeans,Storage Rot,19.6,8709,7.5,2024 Winter,True
+3,Bindura Soya Farm,Soybeans,Transport Damage,6.2,3654,9.6,2025 Summer,False
+3,Bindura Soya Farm,Soybeans,Spoilage,16.1,6113,3.5,2025 Summer,False
+3,Bindura Soya Farm,Soybeans,Theft,7.5,1809,5.1,2024 Summer,False
+3,Bindura Soya Farm,Soybeans,Pest Damage,40.3,12565,13.3,2024 Summer,True
+4,Karoi Maize Cooperative,Maize,Transport Damage,47.8,25643,5.0,2024 Summer,False
+4,Karoi Maize Cooperative,Maize,Spoilage,48.0,15603,12.9,2024 Summer,False
+4,Karoi Maize Cooperative,Maize,Transport Damage,17.1,3886,13.7,2024 Winter,True
+4,Karoi Maize Cooperative,Maize,Spoilage,32.7,15379,10.0,2025 Summer,True
+4,Karoi Maize Cooperative,Maize,Storage Rot,31.9,10681,14.9,2025 Summer,False
+4,Karoi Maize Cooperative,Maize,Pest Damage,15.5,6441,5.3,2024 Summer,False
+4,Karoi Maize Cooperative,Maize,Spoilage,28.3,15604,5.4,2025 Summer,True
+4,Karoi Maize Cooperative,Maize,Spoilage,14.3,5456,11.3,2024 Winter,False
+4,Karoi Maize Cooperative,Maize,Grading Downgrade,40.3,23909,8.6,2024 Summer,True
+4,Karoi Maize Cooperative,Maize,Theft,21.3,9526,9.8,2024 Summer,False
+4,Karoi Maize Cooperative,Maize,Spoilage,17.1,9725,9.9,2024 Winter,True
+4,Karoi Maize Cooperative,Maize,Pest Damage,6.0,1308,4.7,2024 Summer,False
+4,Karoi Maize Cooperative,Maize,Storage Rot,17.2,8839,8.1,2024 Winter,True
+4,Karoi Maize Cooperative,Maize,Transport Damage,38.9,13502,8.7,2024 Winter,False
+4,Karoi Maize Cooperative,Maize,Storage Rot,44.8,12851,4.5,2024 Summer,False
+4,Karoi Maize Cooperative,Maize,Pest Damage,42.2,12783,7.4,2024 Winter,False
+4,Karoi Maize Cooperative,Maize,Storage Rot,49.8,27892,6.4,2025 Summer,True
+4,Karoi Maize Cooperative,Maize,Theft,23.6,9670,13.6,2024 Winter,False
+5,Mvurwi Mixed Farm,Tobacco,Grading Downgrade,18.1,7065,14.6,2025 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Theft,15.0,4461,4.6,2024 Winter,False
+5,Mvurwi Mixed Farm,Tobacco,Theft,16.5,7634,10.4,2024 Winter,True
+5,Mvurwi Mixed Farm,Tobacco,Theft,41.9,16596,3.2,2024 Winter,True
+5,Mvurwi Mixed Farm,Tobacco,Transport Damage,23.0,6714,6.2,2024 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Grading Downgrade,26.9,12132,9.2,2024 Winter,True
+5,Mvurwi Mixed Farm,Tobacco,Pest Damage,19.8,5098,10.7,2024 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Transport Damage,20.7,10340,13.6,2024 Summer,True
+5,Mvurwi Mixed Farm,Tobacco,Transport Damage,20.8,10830,2.2,2024 Winter,False
+5,Mvurwi Mixed Farm,Tobacco,Theft,19.6,9776,10.7,2025 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Spoilage,36.9,20094,14.7,2025 Summer,True
+5,Mvurwi Mixed Farm,Tobacco,Grading Downgrade,23.7,10828,14.3,2025 Summer,True
+5,Mvurwi Mixed Farm,Tobacco,Grading Downgrade,7.6,4040,8.5,2024 Winter,False
+5,Mvurwi Mixed Farm,Tobacco,Theft,11.3,4728,11.9,2024 Summer,True
+5,Mvurwi Mixed Farm,Tobacco,Transport Damage,40.2,12300,14.0,2024 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Grading Downgrade,40.6,24080,2.2,2025 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Theft,40.8,11967,4.6,2025 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Spoilage,12.8,7523,4.1,2025 Summer,True
+5,Mvurwi Mixed Farm,Tobacco,Theft,1.9,904,5.0,2024 Winter,False
+5,Mvurwi Mixed Farm,Tobacco,Storage Rot,19.4,7251,7.9,2025 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Spoilage,9.1,3438,6.0,2025 Summer,False
+5,Mvurwi Mixed Farm,Tobacco,Pest Damage,7.5,2304,14.9,2024 Summer,True
+5,Mvurwi Mixed Farm,Tobacco,Storage Rot,46.2,22533,4.8,2024 Winter,True
+5,Mvurwi Mixed Farm,Tobacco,Storage Rot,5.8,1952,13.4,2024 Winter,False
+6,Chiredzi Sugar Estate,Sugarcane,Spoilage,5.3,2222,6.9,2025 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Theft,28.6,9088,10.7,2024 Winter,False
+6,Chiredzi Sugar Estate,Sugarcane,Pest Damage,3.1,897,12.8,2024 Winter,False
+6,Chiredzi Sugar Estate,Sugarcane,Theft,35.0,10808,3.3,2024 Summer,True
+6,Chiredzi Sugar Estate,Sugarcane,Grading Downgrade,15.3,6596,8.4,2024 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Grading Downgrade,10.6,2434,2.5,2024 Winter,False
+6,Chiredzi Sugar Estate,Sugarcane,Storage Rot,9.1,2745,9.0,2025 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Storage Rot,48.3,11656,8.5,2024 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Pest Damage,40.8,21885,11.1,2024 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Spoilage,19.8,10556,8.4,2024 Summer,True
+6,Chiredzi Sugar Estate,Sugarcane,Theft,8.8,3818,7.9,2024 Summer,True
+6,Chiredzi Sugar Estate,Sugarcane,Spoilage,35.4,20137,3.1,2024 Winter,False
+6,Chiredzi Sugar Estate,Sugarcane,Spoilage,17.5,6934,4.8,2025 Summer,True
+6,Chiredzi Sugar Estate,Sugarcane,Spoilage,11.5,3898,11.5,2024 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Storage Rot,40.1,15094,8.0,2024 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Spoilage,8.0,4268,14.5,2024 Summer,False
+6,Chiredzi Sugar Estate,Sugarcane,Theft,7.3,2439,8.1,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Theft,15.0,6944,6.9,2024 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Pest Damage,29.9,7814,10.8,2024 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Theft,46.0,13345,5.6,2024 Winter,True
+7,Beitbridge Citrus Farm,Citrus,Transport Damage,5.4,2825,7.1,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Storage Rot,39.3,22424,5.1,2025 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Theft,22.4,4845,12.1,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Storage Rot,43.2,25775,4.6,2024 Winter,True
+7,Beitbridge Citrus Farm,Citrus,Theft,8.7,1901,6.1,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Theft,18.9,4617,7.2,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Storage Rot,24.7,8571,4.4,2024 Winter,True
+7,Beitbridge Citrus Farm,Citrus,Theft,4.1,1096,2.7,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Grading Downgrade,41.3,17372,14.2,2024 Winter,False
+7,Beitbridge Citrus Farm,Citrus,Grading Downgrade,41.7,9252,9.8,2024 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Grading Downgrade,36.4,10080,12.4,2025 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Transport Damage,41.9,15316,3.5,2024 Winter,False
+7,Beitbridge Citrus Farm,Citrus,Theft,11.6,3764,4.3,2025 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Transport Damage,1.5,418,2.5,2025 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Transport Damage,32.8,19706,8.1,2025 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Storage Rot,20.8,11302,12.9,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Theft,8.0,3708,10.4,2024 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Transport Damage,43.4,22692,10.3,2024 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Storage Rot,42.9,25077,11.9,2025 Summer,False
+7,Beitbridge Citrus Farm,Citrus,Transport Damage,27.6,16362,10.2,2025 Summer,True
+7,Beitbridge Citrus Farm,Citrus,Theft,4.7,1253,6.8,2025 Summer,False
+8,Marondera Dairy,Dairy,Storage Rot,24.5,12832,3.0,2025 Summer,True
+8,Marondera Dairy,Dairy,Spoilage,48.2,18370,4.9,2025 Summer,False
+8,Marondera Dairy,Dairy,Spoilage,19.8,4794,10.5,2024 Summer,False
+8,Marondera Dairy,Dairy,Storage Rot,19.7,10486,10.1,2024 Summer,True
+8,Marondera Dairy,Dairy,Storage Rot,10.3,2373,7.6,2024 Winter,False
+8,Marondera Dairy,Dairy,Spoilage,3.9,1356,9.7,2024 Summer,True
+8,Marondera Dairy,Dairy,Storage Rot,36.5,9000,14.3,2024 Summer,False
+8,Marondera Dairy,Dairy,Spoilage,7.0,3134,8.8,2025 Summer,False
+8,Marondera Dairy,Dairy,Pest Damage,40.1,16113,7.3,2024 Winter,True
+8,Marondera Dairy,Dairy,Grading Downgrade,36.8,16934,4.8,2025 Summer,False
+8,Marondera Dairy,Dairy,Theft,25.5,10384,4.3,2024 Winter,True
+8,Marondera Dairy,Dairy,Theft,9.6,3176,10.6,2024 Summer,True
+8,Marondera Dairy,Dairy,Spoilage,26.5,8056,6.8,2025 Summer,True
+8,Marondera Dairy,Dairy,Pest Damage,7.2,2515,9.2,2024 Winter,False
+8,Marondera Dairy,Dairy,Theft,49.7,29082,13.3,2025 Summer,True
+8,Marondera Dairy,Dairy,Storage Rot,41.8,9301,13.8,2025 Summer,True
+8,Marondera Dairy,Dairy,Theft,23.5,11531,12.6,2025 Summer,False
+8,Marondera Dairy,Dairy,Theft,34.5,7976,3.6,2024 Summer,False
+8,Marondera Dairy,Dairy,Pest Damage,30.9,18203,2.1,2024 Summer,True
+8,Marondera Dairy,Dairy,Spoilage,40.5,15790,5.5,2024 Summer,True
+8,Marondera Dairy,Dairy,Theft,18.3,9204,13.3,2024 Winter,True
+8,Marondera Dairy,Dairy,Pest Damage,11.4,3897,10.7,2024 Winter,False
+9,Kwekwe Grain Farm,Wheat,Theft,27.5,8386,13.6,2024 Winter,False
+9,Kwekwe Grain Farm,Wheat,Spoilage,22.3,11163,4.1,2025 Summer,False
+9,Kwekwe Grain Farm,Wheat,Spoilage,37.8,15552,11.9,2025 Summer,False
+9,Kwekwe Grain Farm,Wheat,Storage Rot,13.0,5156,7.9,2024 Summer,True
+9,Kwekwe Grain Farm,Wheat,Theft,45.3,23404,13.4,2025 Summer,True
+9,Kwekwe Grain Farm,Wheat,Spoilage,17.3,7313,5.5,2025 Summer,True
+9,Kwekwe Grain Farm,Wheat,Spoilage,14.7,3578,10.0,2024 Summer,False
+9,Kwekwe Grain Farm,Wheat,Theft,12.1,6660,6.8,2024 Summer,False
+9,Kwekwe Grain Farm,Wheat,Theft,31.4,12563,4.9,2025 Summer,True
+9,Kwekwe Grain Farm,Wheat,Spoilage,36.0,9975,6.6,2024 Summer,True
+9,Kwekwe Grain Farm,Wheat,Grading Downgrade,47.4,15615,4.9,2024 Winter,False
+9,Kwekwe Grain Farm,Wheat,Transport Damage,3.2,1246,7.0,2024 Summer,False
+9,Kwekwe Grain Farm,Wheat,Transport Damage,37.5,21090,4.8,2024 Summer,False
+9,Kwekwe Grain Farm,Wheat,Grading Downgrade,49.7,29208,8.0,2024 Winter,False
+9,Kwekwe Grain Farm,Wheat,Grading Downgrade,45.1,25390,5.6,2024 Winter,False
+9,Kwekwe Grain Farm,Wheat,Transport Damage,17.9,8705,13.9,2024 Summer,False
+9,Kwekwe Grain Farm,Wheat,Pest Damage,14.7,6927,14.0,2024 Summer,True
+9,Kwekwe Grain Farm,Wheat,Theft,11.6,4928,4.2,2025 Summer,False
+9,Kwekwe Grain Farm,Wheat,Pest Damage,3.2,1012,2.0,2024 Winter,True
+9,Kwekwe Grain Farm,Wheat,Storage Rot,14.8,6750,12.8,2024 Winter,False
+9,Kwekwe Grain Farm,Wheat,Pest Damage,30.3,9715,14.3,2025 Summer,True
+10,Mutare Tea Estate,Tea,Pest Damage,31.1,17324,13.6,2024 Summer,False
+10,Mutare Tea Estate,Tea,Storage Rot,20.5,7091,2.7,2024 Summer,True
+10,Mutare Tea Estate,Tea,Pest Damage,49.2,22436,7.4,2024 Winter,False
+10,Mutare Tea Estate,Tea,Grading Downgrade,43.9,19624,3.7,2024 Winter,False
+10,Mutare Tea Estate,Tea,Theft,38.0,10167,7.8,2024 Winter,False
+10,Mutare Tea Estate,Tea,Spoilage,15.4,5806,12.9,2025 Summer,True
+10,Mutare Tea Estate,Tea,Transport Damage,19.5,4448,3.9,2024 Winter,False
+10,Mutare Tea Estate,Tea,Spoilage,37.7,17204,9.1,2025 Summer,False
+10,Mutare Tea Estate,Tea,Theft,14.5,6653,13.4,2024 Winter,True
+10,Mutare Tea Estate,Tea,Spoilage,27.9,10052,13.3,2025 Summer,False
+10,Mutare Tea Estate,Tea,Transport Damage,48.3,25754,14.3,2025 Summer,True
+10,Mutare Tea Estate,Tea,Grading Downgrade,2.6,891,13.6,2025 Summer,False
+10,Mutare Tea Estate,Tea,Pest Damage,3.9,1040,7.8,2024 Winter,False
+10,Mutare Tea Estate,Tea,Storage Rot,10.5,4354,12.0,2025 Summer,True
+10,Mutare Tea Estate,Tea,Storage Rot,46.7,10362,4.4,2025 Summer,False
+10,Mutare Tea Estate,Tea,Spoilage,1.4,683,3.9,2024 Winter,False
+10,Mutare Tea Estate,Tea,Theft,8.9,2173,6.4,2024 Winter,False
+10,Mutare Tea Estate,Tea,Storage Rot,24.5,10512,13.4,2025 Summer,True
+10,Mutare Tea Estate,Tea,Storage Rot,44.9,19773,5.0,2025 Summer,False
+10,Mutare Tea Estate,Tea,Storage Rot,29.6,6565,12.3,2024 Summer,False
+10,Mutare Tea Estate,Tea,Grading Downgrade,2.2,518,10.1,2024 Winter,True
+10,Mutare Tea Estate,Tea,Storage Rot,28.5,12760,10.4,2025 Summer,False
+10,Mutare Tea Estate,Tea,Transport Damage,8.3,4190,12.6,2025 Summer,False
+11,Gweru Livestock Ranch,Cattle,Grading Downgrade,4.4,1930,3.6,2024 Summer,False
+11,Gweru Livestock Ranch,Cattle,Pest Damage,4.3,1230,7.8,2024 Winter,False
+11,Gweru Livestock Ranch,Cattle,Transport Damage,21.2,4403,7.0,2024 Summer,False
+11,Gweru Livestock Ranch,Cattle,Storage Rot,6.1,1510,9.9,2025 Summer,True
+11,Gweru Livestock Ranch,Cattle,Spoilage,40.8,10272,3.6,2024 Winter,False
+11,Gweru Livestock Ranch,Cattle,Transport Damage,3.6,2098,10.9,2024 Winter,False
+11,Gweru Livestock Ranch,Cattle,Storage Rot,9.6,3243,14.7,2025 Summer,False
+11,Gweru Livestock Ranch,Cattle,Transport Damage,38.3,13223,4.5,2024 Summer,True
+11,Gweru Livestock Ranch,Cattle,Grading Downgrade,4.6,1716,11.9,2024 Summer,False
+11,Gweru Livestock Ranch,Cattle,Storage Rot,49.6,10995,5.6,2024 Summer,True
+11,Gweru Livestock Ranch,Cattle,Theft,23.1,11469,11.4,2025 Summer,True
+11,Gweru Livestock Ranch,Cattle,Grading Downgrade,27.5,14464,9.1,2024 Summer,False
+11,Gweru Livestock Ranch,Cattle,Storage Rot,27.1,15970,7.5,2025 Summer,True
+11,Gweru Livestock Ranch,Cattle,Grading Downgrade,11.1,3746,10.1,2025 Summer,True
+11,Gweru Livestock Ranch,Cattle,Pest Damage,15.4,7277,9.5,2024 Winter,True
+11,Gweru Livestock Ranch,Cattle,Spoilage,28.7,6085,7.8,2024 Summer,False
+11,Gweru Livestock Ranch,Cattle,Pest Damage,30.8,11970,7.1,2025 Summer,True
+11,Gweru Livestock Ranch,Cattle,Theft,46.9,19937,10.4,2025 Summer,False
+11,Gweru Livestock Ranch,Cattle,Spoilage,25.3,5091,9.1,2024 Winter,True
+11,Gweru Livestock Ranch,Cattle,Spoilage,22.8,11261,10.7,2024 Winter,False
+12,Harare Peri-Urban Veg,Vegetables,Transport Damage,6.3,2008,5.7,2025 Summer,True
+12,Harare Peri-Urban Veg,Vegetables,Theft,23.8,12806,7.8,2024 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Storage Rot,8.9,2341,6.1,2025 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Grading Downgrade,39.4,20900,11.0,2024 Summer,True
+12,Harare Peri-Urban Veg,Vegetables,Theft,42.0,22833,7.5,2025 Summer,True
+12,Harare Peri-Urban Veg,Vegetables,Storage Rot,42.1,11411,3.9,2025 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Theft,26.0,8565,3.6,2024 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Pest Damage,35.8,11745,12.8,2024 Summer,True
+12,Harare Peri-Urban Veg,Vegetables,Storage Rot,11.7,3337,4.1,2024 Winter,False
+12,Harare Peri-Urban Veg,Vegetables,Theft,47.8,25835,12.9,2024 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Transport Damage,11.2,3980,10.6,2025 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Spoilage,36.1,21399,14.0,2024 Winter,True
+12,Harare Peri-Urban Veg,Vegetables,Storage Rot,35.0,15234,7.4,2024 Winter,True
+12,Harare Peri-Urban Veg,Vegetables,Pest Damage,19.7,6932,14.1,2024 Winter,False
+12,Harare Peri-Urban Veg,Vegetables,Transport Damage,42.0,11423,11.1,2025 Summer,True
+12,Harare Peri-Urban Veg,Vegetables,Transport Damage,28.5,16498,12.2,2024 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Pest Damage,15.1,6275,9.2,2024 Summer,False
+12,Harare Peri-Urban Veg,Vegetables,Grading Downgrade,13.1,3790,13.0,2025 Summer,True

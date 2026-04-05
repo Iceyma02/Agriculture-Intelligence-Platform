@@ -1,0 +1,61 @@
+farm_id,farm_name,supplier_name,category,credit_limit_usd,outstanding_usd,overdue_usd,credit_utilization_pct,risk_level,supply_status
+1,Mazowe Valley Farm,AgriSupply Co.,Fuel,293722,44440,31655,15.1,LOW,Active
+1,Mazowe Valley Farm,Zim Fert,Chemicals,236061,11244,9443,4.8,LOW,Active
+1,Mazowe Valley Farm,SeedCo,Equipment,340515,159950,5914,47.0,LOW,Active
+1,Mazowe Valley Farm,ChemTech,Fuel,339324,227561,140988,67.1,MEDIUM,Suspended
+1,Mazowe Valley Farm,Total Energies,Spare Parts,145213,37805,13453,26.0,LOW,Active
+2,Headlands Cotton Block,AgriSupply Co.,Fertilizer,124176,94799,81614,76.3,MEDIUM,Suspended
+2,Headlands Cotton Block,Zim Fert,Fertilizer,450626,81462,48268,18.1,LOW,Active
+2,Headlands Cotton Block,SeedCo,Fertilizer,81159,42039,36366,51.8,LOW,Suspended
+2,Headlands Cotton Block,ChemTech,Fertilizer,352905,94626,86103,26.8,LOW,Active
+2,Headlands Cotton Block,Total Energies,Equipment,224735,80903,40412,36.0,LOW,Active
+3,Bindura Soya Farm,AgriSupply Co.,Spare Parts,478583,399029,322038,83.4,MEDIUM,Suspended
+3,Bindura Soya Farm,Zim Fert,Chemicals,363588,61748,41190,17.0,LOW,Active
+3,Bindura Soya Farm,SeedCo,Spare Parts,174078,39759,16498,22.8,LOW,Active
+3,Bindura Soya Farm,ChemTech,Fuel,206640,117035,66577,56.6,LOW,Suspended
+3,Bindura Soya Farm,Total Energies,Chemicals,211171,89900,40639,42.6,LOW,Active
+4,Karoi Maize Cooperative,AgriSupply Co.,Equipment,381356,292192,35814,76.6,MEDIUM,Active
+4,Karoi Maize Cooperative,Zim Fert,Fuel,441637,60204,32844,13.6,LOW,Active
+4,Karoi Maize Cooperative,SeedCo,Equipment,295256,21518,17059,7.3,LOW,Active
+4,Karoi Maize Cooperative,ChemTech,Spare Parts,306346,69803,8680,22.8,LOW,Active
+4,Karoi Maize Cooperative,Total Energies,Equipment,261321,20043,2419,7.7,LOW,Active
+5,Mvurwi Mixed Farm,AgriSupply Co.,Equipment,171831,101799,17140,59.2,LOW,Active
+5,Mvurwi Mixed Farm,Zim Fert,Fuel,244941,176282,57600,72.0,MEDIUM,Active
+5,Mvurwi Mixed Farm,SeedCo,Equipment,390641,108611,6487,27.8,LOW,Active
+5,Mvurwi Mixed Farm,ChemTech,Fertilizer,112112,31110,9664,27.7,LOW,Active
+5,Mvurwi Mixed Farm,Total Energies,Spare Parts,492626,233451,221490,47.4,LOW,Suspended
+6,Chiredzi Sugar Estate,AgriSupply Co.,Equipment,315161,191196,182021,60.7,MEDIUM,Suspended
+6,Chiredzi Sugar Estate,Zim Fert,Equipment,116320,93556,81301,80.4,MEDIUM,Suspended
+6,Chiredzi Sugar Estate,SeedCo,Chemicals,387232,180786,31921,46.7,LOW,Active
+6,Chiredzi Sugar Estate,ChemTech,Equipment,380679,65350,50345,17.2,LOW,Active
+6,Chiredzi Sugar Estate,Total Energies,Fertilizer,393275,22063,18812,5.6,LOW,Active
+7,Beitbridge Citrus Farm,AgriSupply Co.,Equipment,401057,341090,177043,85.0,MEDIUM,Suspended
+7,Beitbridge Citrus Farm,Zim Fert,Equipment,292124,227506,49725,77.9,MEDIUM,Active
+7,Beitbridge Citrus Farm,SeedCo,Seeds,112085,17862,10265,15.9,LOW,Active
+7,Beitbridge Citrus Farm,ChemTech,Chemicals,236351,62471,25544,26.4,LOW,Active
+7,Beitbridge Citrus Farm,Total Energies,Equipment,367972,108007,46104,29.4,LOW,Active
+8,Marondera Dairy,AgriSupply Co.,Fertilizer,56050,43952,21034,78.4,MEDIUM,Suspended
+8,Marondera Dairy,Zim Fert,Equipment,320628,184750,31323,57.6,LOW,Active
+8,Marondera Dairy,SeedCo,Seeds,406749,255540,254547,62.8,MEDIUM,Suspended
+8,Marondera Dairy,ChemTech,Fuel,322459,310112,157591,96.2,HIGH,Suspended
+8,Marondera Dairy,Total Energies,Chemicals,105781,3869,3159,3.7,LOW,Active
+9,Kwekwe Grain Farm,AgriSupply Co.,Fuel,57971,31269,25551,53.9,LOW,Suspended
+9,Kwekwe Grain Farm,Zim Fert,Fuel,369118,23446,5340,6.4,LOW,Active
+9,Kwekwe Grain Farm,SeedCo,Equipment,53823,13454,3932,25.0,LOW,Active
+9,Kwekwe Grain Farm,ChemTech,Equipment,255162,67965,28208,26.6,LOW,Active
+9,Kwekwe Grain Farm,Total Energies,Seeds,322654,141609,105935,43.9,LOW,Suspended
+10,Mutare Tea Estate,AgriSupply Co.,Equipment,384398,253978,144854,66.1,MEDIUM,Suspended
+10,Mutare Tea Estate,Zim Fert,Fertilizer,437688,327731,78004,74.9,MEDIUM,Active
+10,Mutare Tea Estate,SeedCo,Chemicals,131015,94003,88938,71.7,MEDIUM,Suspended
+10,Mutare Tea Estate,ChemTech,Fuel,226774,102260,6057,45.1,LOW,Active
+10,Mutare Tea Estate,Total Energies,Fertilizer,80916,27268,11210,33.7,LOW,Active
+11,Gweru Livestock Ranch,AgriSupply Co.,Spare Parts,73259,53583,13864,73.1,MEDIUM,Active
+11,Gweru Livestock Ranch,Zim Fert,Seeds,161581,7043,1278,4.4,LOW,Active
+11,Gweru Livestock Ranch,SeedCo,Spare Parts,351037,209137,161940,59.6,LOW,Suspended
+11,Gweru Livestock Ranch,ChemTech,Fertilizer,335428,113259,100804,33.8,LOW,Suspended
+11,Gweru Livestock Ranch,Total Energies,Chemicals,134179,65049,29265,48.5,LOW,Active
+12,Harare Peri-Urban Veg,AgriSupply Co.,Fertilizer,310226,23880,19043,7.7,LOW,Active
+12,Harare Peri-Urban Veg,Zim Fert,Seeds,377568,333110,172438,88.2,MEDIUM,Suspended
+12,Harare Peri-Urban Veg,SeedCo,Chemicals,495544,245352,67396,49.5,LOW,Active
+12,Harare Peri-Urban Veg,ChemTech,Spare Parts,329250,56731,9474,17.2,LOW,Active
+12,Harare Peri-Urban Veg,Total Energies,Equipment,299091,294743,71326,98.5,HIGH,Warning

@@ -1,0 +1,329 @@
+farm_id,farm_name,crop,date,movement_type,quantity_tons,value_usd,destination,status
+1,Mazowe Valley Farm,Maize,2025-11-08,Harvest,114.2,78852,Export Terminal,Completed
+1,Mazowe Valley Farm,Maize,2025-11-30,Storage to Market,166.4,107904,Cold Storage,Pending
+1,Mazowe Valley Farm,Maize,2025-11-06,Harvest,29.4,21321,GMB Depot,Completed
+1,Mazowe Valley Farm,Maize,2025-10-19,Export,43.1,20358,Local Market,Completed
+1,Mazowe Valley Farm,Maize,2026-01-15,Local Delivery,141.7,94040,GMB Depot,Completed
+1,Mazowe Valley Farm,Maize,2026-03-22,Export,103.8,51238,Private Buyer,Completed
+1,Mazowe Valley Farm,Maize,2026-02-22,Transport to Storage,168.6,51543,GMB Depot,Delayed
+1,Mazowe Valley Farm,Maize,2025-11-25,Harvest,114.0,62762,GMB Depot,Delayed
+1,Mazowe Valley Farm,Maize,2026-01-13,Local Delivery,88.8,40339,Cold Storage,Completed
+1,Mazowe Valley Farm,Maize,2026-01-16,Export,30.7,22480,Local Market,In Transit
+1,Mazowe Valley Farm,Maize,2026-04-04,Local Delivery,174.9,111314,Cold Storage,In Transit
+1,Mazowe Valley Farm,Maize,2025-12-13,Transport to Storage,167.4,126060,Local Market,In Transit
+1,Mazowe Valley Farm,Maize,2025-12-03,Local Delivery,41.4,12844,Export Terminal,Completed
+1,Mazowe Valley Farm,Maize,2025-11-17,Harvest,126.2,58916,Local Market,Completed
+1,Mazowe Valley Farm,Maize,2025-12-09,Transport to Storage,53.2,25421,GMB Depot,In Transit
+1,Mazowe Valley Farm,Maize,2025-12-04,Export,16.0,7808,GMB Depot,In Transit
+1,Mazowe Valley Farm,Maize,2025-11-22,Storage to Market,128.3,51253,Cold Storage,In Transit
+1,Mazowe Valley Farm,Maize,2025-11-09,Transport to Storage,59.2,25930,GMB Depot,Delayed
+1,Mazowe Valley Farm,Maize,2026-02-03,Transport to Storage,106.1,41363,Processing Plant,Delayed
+1,Mazowe Valley Farm,Maize,2025-10-19,Harvest,148.9,97115,GMB Depot,Completed
+1,Mazowe Valley Farm,Maize,2026-01-25,Harvest,56.5,22764,Export Terminal,Completed
+1,Mazowe Valley Farm,Maize,2025-12-03,Transport to Storage,112.2,72339,Export Terminal,Completed
+1,Mazowe Valley Farm,Maize,2025-10-31,Harvest,185.5,61980,Cold Storage,In Transit
+1,Mazowe Valley Farm,Maize,2025-11-10,Local Delivery,126.6,79037,Private Buyer,In Transit
+1,Mazowe Valley Farm,Maize,2025-11-23,Harvest,53.9,34404,Cold Storage,Completed
+1,Mazowe Valley Farm,Maize,2025-12-27,Export,53.7,16151,GMB Depot,Completed
+1,Mazowe Valley Farm,Maize,2026-03-27,Storage to Market,124.4,50569,Processing Plant,Completed
+1,Mazowe Valley Farm,Maize,2026-03-15,Local Delivery,126.9,61779,Local Market,In Transit
+1,Mazowe Valley Farm,Maize,2026-02-20,Export,118.7,50619,Export Terminal,Delayed
+1,Mazowe Valley Farm,Maize,2025-10-24,Harvest,146.5,89173,Private Buyer,Completed
+2,Headlands Cotton Block,Cotton,2025-10-10,Harvest,23.1,15548,Local Market,Pending
+2,Headlands Cotton Block,Cotton,2025-11-25,Transport to Storage,89.7,59362,Export Terminal,Completed
+2,Headlands Cotton Block,Cotton,2026-03-20,Transport to Storage,111.6,70929,Local Market,Completed
+2,Headlands Cotton Block,Cotton,2026-02-26,Export,43.9,32399,GMB Depot,Completed
+2,Headlands Cotton Block,Cotton,2026-01-27,Storage to Market,20.0,15144,Processing Plant,Completed
+2,Headlands Cotton Block,Cotton,2026-02-03,Transport to Storage,123.3,78480,Cold Storage,Delayed
+2,Headlands Cotton Block,Cotton,2025-11-19,Export,177.6,87299,Export Terminal,Completed
+2,Headlands Cotton Block,Cotton,2025-10-14,Storage to Market,82.5,45937,Cold Storage,Completed
+2,Headlands Cotton Block,Cotton,2026-01-23,Harvest,45.2,31642,Local Market,Completed
+2,Headlands Cotton Block,Cotton,2026-02-28,Local Delivery,135.0,93621,Private Buyer,In Transit
+2,Headlands Cotton Block,Cotton,2025-12-20,Export,129.4,92757,Private Buyer,In Transit
+2,Headlands Cotton Block,Cotton,2026-02-28,Storage to Market,157.9,80469,Private Buyer,Completed
+2,Headlands Cotton Block,Cotton,2026-04-02,Storage to Market,120.1,60506,Cold Storage,Completed
+2,Headlands Cotton Block,Cotton,2025-11-28,Transport to Storage,154.1,77777,GMB Depot,Completed
+2,Headlands Cotton Block,Cotton,2026-02-27,Harvest,26.8,14969,Private Buyer,Pending
+2,Headlands Cotton Block,Cotton,2025-12-18,Export,166.2,86921,Processing Plant,Completed
+2,Headlands Cotton Block,Cotton,2025-11-17,Harvest,53.7,29961,Processing Plant,In Transit
+2,Headlands Cotton Block,Cotton,2025-12-05,Local Delivery,166.6,115706,Local Market,In Transit
+2,Headlands Cotton Block,Cotton,2025-10-11,Harvest,103.6,79829,GMB Depot,Completed
+2,Headlands Cotton Block,Cotton,2025-11-20,Harvest,20.1,14388,Cold Storage,In Transit
+2,Headlands Cotton Block,Cotton,2026-01-09,Storage to Market,168.4,122822,Cold Storage,Completed
+2,Headlands Cotton Block,Cotton,2026-03-08,Export,94.5,47795,Processing Plant,Completed
+2,Headlands Cotton Block,Cotton,2025-12-23,Export,173.3,98066,Private Buyer,Completed
+2,Headlands Cotton Block,Cotton,2026-03-04,Transport to Storage,72.3,36673,Export Terminal,Completed
+2,Headlands Cotton Block,Cotton,2025-11-19,Transport to Storage,128.8,76103,GMB Depot,Completed
+3,Bindura Soya Farm,Soybeans,2025-10-21,Storage to Market,16.3,8055,Cold Storage,Completed
+3,Bindura Soya Farm,Soybeans,2025-11-01,Harvest,116.5,92417,GMB Depot,Completed
+3,Bindura Soya Farm,Soybeans,2026-03-18,Transport to Storage,137.4,69515,GMB Depot,Completed
+3,Bindura Soya Farm,Soybeans,2025-12-29,Transport to Storage,85.3,62741,Processing Plant,Completed
+3,Bindura Soya Farm,Soybeans,2026-02-17,Local Delivery,123.1,44143,Private Buyer,Completed
+3,Bindura Soya Farm,Soybeans,2026-03-24,Transport to Storage,81.4,60883,GMB Depot,Delayed
+3,Bindura Soya Farm,Soybeans,2026-02-03,Local Delivery,159.6,53385,Export Terminal,Completed
+3,Bindura Soya Farm,Soybeans,2025-12-10,Harvest,48.3,31729,Cold Storage,In Transit
+3,Bindura Soya Farm,Soybeans,2025-12-07,Harvest,151.8,80818,Export Terminal,Completed
+3,Bindura Soya Farm,Soybeans,2025-12-09,Storage to Market,159.4,83763,Export Terminal,Pending
+3,Bindura Soya Farm,Soybeans,2025-10-15,Harvest,99.4,30498,Private Buyer,Pending
+3,Bindura Soya Farm,Soybeans,2026-02-17,Export,45.6,14621,GMB Depot,In Transit
+3,Bindura Soya Farm,Soybeans,2026-01-17,Local Delivery,18.0,11222,Private Buyer,Completed
+3,Bindura Soya Farm,Soybeans,2026-02-20,Local Delivery,197.9,82280,Export Terminal,Completed
+3,Bindura Soya Farm,Soybeans,2026-01-29,Storage to Market,47.9,22775,Cold Storage,Completed
+3,Bindura Soya Farm,Soybeans,2026-02-05,Storage to Market,145.9,91699,Export Terminal,Completed
+3,Bindura Soya Farm,Soybeans,2025-11-27,Export,134.0,72642,Local Market,Completed
+3,Bindura Soya Farm,Soybeans,2026-02-17,Transport to Storage,18.0,12271,Private Buyer,In Transit
+3,Bindura Soya Farm,Soybeans,2025-10-15,Export,73.3,46812,GMB Depot,Completed
+3,Bindura Soya Farm,Soybeans,2026-02-21,Harvest,149.7,57640,Local Market,Completed
+3,Bindura Soya Farm,Soybeans,2025-11-12,Local Delivery,55.4,33362,Private Buyer,Pending
+3,Bindura Soya Farm,Soybeans,2026-02-03,Local Delivery,35.5,19069,Export Terminal,Completed
+3,Bindura Soya Farm,Soybeans,2026-03-29,Local Delivery,119.8,47027,Export Terminal,Pending
+3,Bindura Soya Farm,Soybeans,2025-11-19,Harvest,103.9,40923,Private Buyer,In Transit
+3,Bindura Soya Farm,Soybeans,2025-11-17,Harvest,91.6,48100,Cold Storage,In Transit
+3,Bindura Soya Farm,Soybeans,2025-10-22,Local Delivery,150.9,62251,Local Market,Completed
+3,Bindura Soya Farm,Soybeans,2025-12-17,Transport to Storage,47.6,28477,Processing Plant,Pending
+3,Bindura Soya Farm,Soybeans,2025-11-25,Export,95.0,75204,Private Buyer,In Transit
+3,Bindura Soya Farm,Soybeans,2025-10-27,Local Delivery,89.3,28183,Processing Plant,Pending
+3,Bindura Soya Farm,Soybeans,2026-01-17,Transport to Storage,113.7,36319,Cold Storage,Completed
+4,Karoi Maize Cooperative,Maize,2025-10-31,Transport to Storage,90.1,57069,Private Buyer,In Transit
+4,Karoi Maize Cooperative,Maize,2025-12-02,Export,18.1,6294,Local Market,Completed
+4,Karoi Maize Cooperative,Maize,2026-03-06,Storage to Market,161.3,102745,Processing Plant,Completed
+4,Karoi Maize Cooperative,Maize,2026-01-01,Harvest,12.9,6506,Export Terminal,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-08,Export,157.8,92028,Processing Plant,Completed
+4,Karoi Maize Cooperative,Maize,2025-10-22,Harvest,8.3,6327,Local Market,Completed
+4,Karoi Maize Cooperative,Maize,2025-12-28,Local Delivery,188.0,95387,Private Buyer,Completed
+4,Karoi Maize Cooperative,Maize,2026-01-28,Storage to Market,198.2,134440,Private Buyer,In Transit
+4,Karoi Maize Cooperative,Maize,2025-10-17,Storage to Market,117.9,68925,Cold Storage,Completed
+4,Karoi Maize Cooperative,Maize,2026-03-09,Storage to Market,107.9,43786,Processing Plant,Delayed
+4,Karoi Maize Cooperative,Maize,2025-11-25,Harvest,172.9,91739,Cold Storage,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-18,Transport to Storage,167.4,80556,Export Terminal,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-24,Harvest,15.6,9709,GMB Depot,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-07,Export,35.5,21913,GMB Depot,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-07,Local Delivery,93.8,59431,Cold Storage,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-09,Storage to Market,138.7,43326,Export Terminal,Completed
+4,Karoi Maize Cooperative,Maize,2026-02-25,Storage to Market,161.5,126081,Local Market,Completed
+4,Karoi Maize Cooperative,Maize,2026-01-02,Harvest,176.9,104777,Cold Storage,In Transit
+4,Karoi Maize Cooperative,Maize,2026-03-11,Storage to Market,149.4,51913,Cold Storage,In Transit
+4,Karoi Maize Cooperative,Maize,2026-03-08,Export,87.6,29966,Local Market,Completed
+4,Karoi Maize Cooperative,Maize,2025-10-14,Local Delivery,133.5,54155,Export Terminal,Pending
+4,Karoi Maize Cooperative,Maize,2025-10-12,Harvest,78.2,54750,Export Terminal,Completed
+4,Karoi Maize Cooperative,Maize,2026-02-28,Harvest,180.0,110028,Processing Plant,Completed
+4,Karoi Maize Cooperative,Maize,2026-03-17,Export,72.8,37669,GMB Depot,In Transit
+4,Karoi Maize Cooperative,Maize,2026-02-23,Storage to Market,187.9,64366,Private Buyer,Completed
+4,Karoi Maize Cooperative,Maize,2025-12-19,Transport to Storage,37.8,20307,Cold Storage,Pending
+4,Karoi Maize Cooperative,Maize,2025-10-28,Storage to Market,37.7,14071,Processing Plant,In Transit
+4,Karoi Maize Cooperative,Maize,2026-02-25,Storage to Market,27.3,8313,Cold Storage,In Transit
+4,Karoi Maize Cooperative,Maize,2026-01-03,Export,50.3,18365,GMB Depot,Completed
+4,Karoi Maize Cooperative,Maize,2026-03-24,Export,17.2,6970,Private Buyer,Completed
+4,Karoi Maize Cooperative,Maize,2025-11-30,Transport to Storage,197.4,86009,Export Terminal,Completed
+4,Karoi Maize Cooperative,Maize,2025-12-31,Transport to Storage,35.4,19098,Cold Storage,Completed
+4,Karoi Maize Cooperative,Maize,2025-10-16,Harvest,58.4,31742,GMB Depot,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-02-08,Transport to Storage,144.5,63701,GMB Depot,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-07,Harvest,117.0,74123,Private Buyer,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-02-02,Harvest,29.6,17228,Local Market,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-14,Export,96.8,60805,Local Market,In Transit
+5,Mvurwi Mixed Farm,Tobacco,2026-01-25,Export,27.8,19468,Export Terminal,In Transit
+5,Mvurwi Mixed Farm,Tobacco,2026-02-03,Harvest,181.1,134941,Processing Plant,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-19,Export,118.0,64269,Local Market,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-03-12,Export,149.6,65785,Processing Plant,Completed
+5,Mvurwi Mixed Farm,Tobacco,2025-11-01,Local Delivery,100.7,50679,Cold Storage,Delayed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-24,Storage to Market,77.4,53609,Private Buyer,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-20,Local Delivery,113.6,82063,Cold Storage,Delayed
+5,Mvurwi Mixed Farm,Tobacco,2025-11-30,Transport to Storage,48.0,19636,Local Market,Completed
+5,Mvurwi Mixed Farm,Tobacco,2025-11-07,Transport to Storage,151.6,92725,Private Buyer,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-15,Local Delivery,34.6,18335,GMB Depot,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-24,Storage to Market,184.5,59059,Private Buyer,In Transit
+5,Mvurwi Mixed Farm,Tobacco,2026-03-24,Harvest,96.3,51328,Processing Plant,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-04-04,Local Delivery,153.3,85295,Private Buyer,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-02,Local Delivery,97.8,62292,GMB Depot,Completed
+5,Mvurwi Mixed Farm,Tobacco,2025-12-11,Export,135.7,72462,Processing Plant,Completed
+5,Mvurwi Mixed Farm,Tobacco,2025-10-08,Harvest,59.3,43082,Cold Storage,Delayed
+5,Mvurwi Mixed Farm,Tobacco,2026-02-21,Harvest,9.9,5176,Local Market,In Transit
+5,Mvurwi Mixed Farm,Tobacco,2025-11-21,Harvest,59.8,23129,Export Terminal,Pending
+5,Mvurwi Mixed Farm,Tobacco,2025-12-12,Harvest,151.4,54919,GMB Depot,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-01-11,Transport to Storage,167.8,128174,Cold Storage,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-02-11,Storage to Market,22.1,9742,Export Terminal,Completed
+5,Mvurwi Mixed Farm,Tobacco,2025-11-08,Storage to Market,192.5,122026,Local Market,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-03-31,Transport to Storage,137.3,62993,Cold Storage,Pending
+5,Mvurwi Mixed Farm,Tobacco,2025-12-12,Harvest,103.7,49295,Export Terminal,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-03-24,Harvest,7.0,4609,Local Market,In Transit
+5,Mvurwi Mixed Farm,Tobacco,2026-01-13,Storage to Market,65.8,30932,Local Market,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-02-17,Transport to Storage,167.7,128782,Local Market,Completed
+5,Mvurwi Mixed Farm,Tobacco,2025-11-02,Export,23.0,8776,Cold Storage,Completed
+5,Mvurwi Mixed Farm,Tobacco,2026-03-03,Transport to Storage,41.9,12684,GMB Depot,In Transit
+5,Mvurwi Mixed Farm,Tobacco,2025-12-23,Local Delivery,117.7,88523,Export Terminal,In Transit
+6,Chiredzi Sugar Estate,Sugarcane,2026-03-22,Export,95.2,69707,Private Buyer,In Transit
+6,Chiredzi Sugar Estate,Sugarcane,2026-01-01,Export,74.6,50612,GMB Depot,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2026-01-30,Harvest,41.0,19314,Local Market,Pending
+6,Chiredzi Sugar Estate,Sugarcane,2025-12-11,Transport to Storage,61.1,33412,Cold Storage,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2026-02-19,Transport to Storage,128.3,75920,Processing Plant,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2025-12-20,Export,72.1,48035,Export Terminal,Pending
+6,Chiredzi Sugar Estate,Sugarcane,2025-12-23,Transport to Storage,133.1,99733,Private Buyer,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2026-02-04,Local Delivery,157.1,54885,Processing Plant,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2025-12-25,Transport to Storage,46.9,15635,GMB Depot,In Transit
+6,Chiredzi Sugar Estate,Sugarcane,2026-02-14,Export,133.4,75552,Private Buyer,In Transit
+6,Chiredzi Sugar Estate,Sugarcane,2025-12-02,Harvest,164.7,130370,Private Buyer,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2025-10-26,Export,14.8,4836,GMB Depot,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2026-02-25,Harvest,197.9,116233,Private Buyer,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2025-11-08,Storage to Market,150.3,50837,Processing Plant,In Transit
+6,Chiredzi Sugar Estate,Sugarcane,2025-10-13,Local Delivery,15.1,8736,GMB Depot,Pending
+6,Chiredzi Sugar Estate,Sugarcane,2026-01-18,Local Delivery,183.0,106668,Cold Storage,In Transit
+6,Chiredzi Sugar Estate,Sugarcane,2026-03-24,Storage to Market,94.5,42693,Local Market,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2026-02-07,Transport to Storage,138.4,78278,Processing Plant,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2025-11-23,Transport to Storage,36.4,22890,Local Market,Completed
+6,Chiredzi Sugar Estate,Sugarcane,2026-03-23,Export,169.7,69934,Export Terminal,In Transit
+7,Beitbridge Citrus Farm,Citrus,2025-10-25,Export,20.0,9535,Export Terminal,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-10-12,Local Delivery,14.1,6494,GMB Depot,Pending
+7,Beitbridge Citrus Farm,Citrus,2026-02-15,Local Delivery,25.6,12244,Cold Storage,In Transit
+7,Beitbridge Citrus Farm,Citrus,2025-11-15,Export,59.2,24193,Export Terminal,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-11-13,Export,13.2,6713,Processing Plant,In Transit
+7,Beitbridge Citrus Farm,Citrus,2026-04-03,Storage to Market,50.1,27626,GMB Depot,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-03-29,Transport to Storage,14.8,7873,Processing Plant,In Transit
+7,Beitbridge Citrus Farm,Citrus,2026-03-07,Local Delivery,151.7,85818,Processing Plant,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-02-05,Local Delivery,91.6,68377,Cold Storage,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-12-05,Local Delivery,51.2,18130,Cold Storage,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-11-11,Harvest,53.7,30782,Processing Plant,Pending
+7,Beitbridge Citrus Farm,Citrus,2026-03-31,Storage to Market,68.4,21868,Private Buyer,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-11-12,Harvest,140.9,65099,GMB Depot,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-10-28,Harvest,135.9,95473,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-03-26,Harvest,93.6,64598,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-03-23,Harvest,139.2,50127,GMB Depot,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-01-13,Export,178.0,90760,Cold Storage,In Transit
+7,Beitbridge Citrus Farm,Citrus,2025-12-15,Transport to Storage,91.2,63740,GMB Depot,In Transit
+7,Beitbridge Citrus Farm,Citrus,2026-01-02,Storage to Market,24.5,7568,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-03-27,Local Delivery,50.6,15777,Cold Storage,Delayed
+7,Beitbridge Citrus Farm,Citrus,2025-12-01,Transport to Storage,174.3,133061,Private Buyer,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-01-21,Storage to Market,86.9,26491,Processing Plant,In Transit
+7,Beitbridge Citrus Farm,Citrus,2025-11-13,Transport to Storage,7.2,4997,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-11-25,Storage to Market,194.9,111497,Export Terminal,In Transit
+7,Beitbridge Citrus Farm,Citrus,2026-01-24,Export,181.3,88371,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-02-22,Export,162.1,66811,Processing Plant,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-01-06,Local Delivery,23.6,12388,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-11-06,Local Delivery,46.2,31221,Local Market,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-02-28,Export,146.9,79631,Export Terminal,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-03-16,Export,162.1,110213,Processing Plant,Completed
+7,Beitbridge Citrus Farm,Citrus,2026-01-26,Transport to Storage,72.6,36569,Processing Plant,Pending
+7,Beitbridge Citrus Farm,Citrus,2026-03-07,Local Delivery,81.4,52809,Export Terminal,In Transit
+7,Beitbridge Citrus Farm,Citrus,2025-12-27,Export,177.8,132956,GMB Depot,Completed
+7,Beitbridge Citrus Farm,Citrus,2025-11-10,Harvest,131.4,96900,Local Market,In Transit
+8,Marondera Dairy,Dairy,2026-02-15,Storage to Market,82.4,31165,Processing Plant,Completed
+8,Marondera Dairy,Dairy,2026-01-28,Transport to Storage,57.8,19679,GMB Depot,Completed
+8,Marondera Dairy,Dairy,2025-11-22,Storage to Market,27.9,10716,GMB Depot,Completed
+8,Marondera Dairy,Dairy,2025-10-29,Transport to Storage,61.4,32799,Export Terminal,Completed
+8,Marondera Dairy,Dairy,2025-11-27,Local Delivery,125.7,79503,Export Terminal,Completed
+8,Marondera Dairy,Dairy,2025-11-18,Transport to Storage,113.5,78258,Private Buyer,Completed
+8,Marondera Dairy,Dairy,2026-01-04,Local Delivery,43.0,26936,Private Buyer,In Transit
+8,Marondera Dairy,Dairy,2025-12-21,Transport to Storage,173.8,61071,Export Terminal,Delayed
+8,Marondera Dairy,Dairy,2025-10-17,Storage to Market,192.9,70915,Private Buyer,Pending
+8,Marondera Dairy,Dairy,2026-02-16,Export,138.1,81154,Cold Storage,Completed
+8,Marondera Dairy,Dairy,2025-12-31,Harvest,49.1,31742,Processing Plant,In Transit
+8,Marondera Dairy,Dairy,2025-12-09,Local Delivery,47.6,15722,Cold Storage,Completed
+8,Marondera Dairy,Dairy,2025-12-20,Transport to Storage,27.1,21654,GMB Depot,Pending
+8,Marondera Dairy,Dairy,2025-10-20,Transport to Storage,29.6,9306,GMB Depot,Completed
+8,Marondera Dairy,Dairy,2026-03-17,Storage to Market,99.1,68272,Local Market,In Transit
+8,Marondera Dairy,Dairy,2025-11-02,Transport to Storage,128.5,90315,Processing Plant,Pending
+8,Marondera Dairy,Dairy,2025-12-26,Local Delivery,117.5,68375,Private Buyer,Completed
+8,Marondera Dairy,Dairy,2025-12-26,Transport to Storage,122.2,57482,Local Market,Completed
+8,Marondera Dairy,Dairy,2026-03-01,Local Delivery,198.3,131578,Local Market,In Transit
+8,Marondera Dairy,Dairy,2025-12-31,Transport to Storage,136.9,87584,Cold Storage,Completed
+8,Marondera Dairy,Dairy,2025-12-18,Export,58.0,23731,Processing Plant,In Transit
+8,Marondera Dairy,Dairy,2025-11-17,Local Delivery,68.1,43067,Cold Storage,Completed
+8,Marondera Dairy,Dairy,2026-02-21,Export,185.2,98233,Private Buyer,Completed
+9,Kwekwe Grain Farm,Wheat,2025-12-11,Storage to Market,130.8,58072,GMB Depot,Completed
+9,Kwekwe Grain Farm,Wheat,2025-12-28,Local Delivery,74.5,31844,Export Terminal,Pending
+9,Kwekwe Grain Farm,Wheat,2025-11-24,Harvest,105.3,36075,Cold Storage,In Transit
+9,Kwekwe Grain Farm,Wheat,2026-01-27,Harvest,80.8,33948,Local Market,Completed
+9,Kwekwe Grain Farm,Wheat,2025-12-31,Storage to Market,39.5,31345,Processing Plant,Completed
+9,Kwekwe Grain Farm,Wheat,2026-03-21,Harvest,199.1,117760,Private Buyer,Completed
+9,Kwekwe Grain Farm,Wheat,2025-11-28,Local Delivery,83.5,53144,Export Terminal,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-25,Export,135.0,48566,Processing Plant,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-21,Storage to Market,175.2,96360,Processing Plant,In Transit
+9,Kwekwe Grain Farm,Wheat,2025-11-16,Export,10.0,4426,Processing Plant,In Transit
+9,Kwekwe Grain Farm,Wheat,2026-02-22,Transport to Storage,43.3,15696,Private Buyer,Completed
+9,Kwekwe Grain Farm,Wheat,2026-03-11,Harvest,63.1,27706,Local Market,In Transit
+9,Kwekwe Grain Farm,Wheat,2026-02-26,Storage to Market,195.2,104847,Private Buyer,Completed
+9,Kwekwe Grain Farm,Wheat,2026-03-26,Export,13.1,7197,Cold Storage,In Transit
+9,Kwekwe Grain Farm,Wheat,2026-01-31,Export,195.5,111913,Cold Storage,Pending
+9,Kwekwe Grain Farm,Wheat,2026-03-30,Harvest,130.0,69295,Local Market,In Transit
+9,Kwekwe Grain Farm,Wheat,2025-12-17,Local Delivery,70.8,54551,Cold Storage,In Transit
+9,Kwekwe Grain Farm,Wheat,2025-12-06,Harvest,195.2,139852,Local Market,In Transit
+9,Kwekwe Grain Farm,Wheat,2026-01-21,Transport to Storage,186.5,118981,Export Terminal,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-15,Harvest,28.5,16872,Private Buyer,Pending
+9,Kwekwe Grain Farm,Wheat,2026-03-08,Storage to Market,71.2,39351,Cold Storage,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-30,Harvest,188.5,138800,Export Terminal,Completed
+9,Kwekwe Grain Farm,Wheat,2026-02-18,Transport to Storage,125.2,66197,Cold Storage,Completed
+9,Kwekwe Grain Farm,Wheat,2026-03-30,Harvest,131.5,102219,Private Buyer,Completed
+9,Kwekwe Grain Farm,Wheat,2025-11-22,Storage to Market,107.4,38200,Local Market,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-26,Transport to Storage,12.4,7580,Local Market,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-10,Local Delivery,175.0,102999,Export Terminal,Completed
+9,Kwekwe Grain Farm,Wheat,2025-12-04,Harvest,137.3,81875,Private Buyer,Completed
+9,Kwekwe Grain Farm,Wheat,2025-10-31,Storage to Market,33.0,12390,Local Market,In Transit
+9,Kwekwe Grain Farm,Wheat,2026-02-26,Harvest,188.2,127528,Local Market,Completed
+10,Mutare Tea Estate,Tea,2026-01-30,Transport to Storage,127.9,91339,Private Buyer,Completed
+10,Mutare Tea Estate,Tea,2026-04-05,Transport to Storage,68.0,53987,Processing Plant,Completed
+10,Mutare Tea Estate,Tea,2026-02-21,Local Delivery,12.9,6462,Private Buyer,Completed
+10,Mutare Tea Estate,Tea,2025-12-26,Transport to Storage,7.0,5267,Processing Plant,In Transit
+10,Mutare Tea Estate,Tea,2026-01-02,Local Delivery,9.3,7361,Local Market,Pending
+10,Mutare Tea Estate,Tea,2025-10-27,Transport to Storage,115.5,54972,Local Market,Completed
+10,Mutare Tea Estate,Tea,2025-10-16,Storage to Market,15.6,9379,Private Buyer,Completed
+10,Mutare Tea Estate,Tea,2025-10-23,Transport to Storage,181.6,130317,Export Terminal,Pending
+10,Mutare Tea Estate,Tea,2025-12-14,Transport to Storage,103.2,34471,Local Market,Pending
+10,Mutare Tea Estate,Tea,2025-10-18,Storage to Market,158.0,94661,Cold Storage,Completed
+10,Mutare Tea Estate,Tea,2025-10-09,Local Delivery,127.0,74398,Cold Storage,Completed
+10,Mutare Tea Estate,Tea,2026-02-23,Storage to Market,60.3,43301,Private Buyer,Completed
+10,Mutare Tea Estate,Tea,2025-10-31,Transport to Storage,7.4,2751,Local Market,Completed
+10,Mutare Tea Estate,Tea,2026-03-02,Local Delivery,15.0,7470,Processing Plant,Completed
+10,Mutare Tea Estate,Tea,2025-11-21,Export,57.8,22939,Export Terminal,Completed
+10,Mutare Tea Estate,Tea,2026-02-20,Storage to Market,112.9,63244,GMB Depot,Completed
+10,Mutare Tea Estate,Tea,2026-01-19,Transport to Storage,27.1,20593,GMB Depot,Pending
+10,Mutare Tea Estate,Tea,2025-12-14,Storage to Market,130.9,42249,Cold Storage,Completed
+10,Mutare Tea Estate,Tea,2025-12-14,Harvest,20.1,7718,Local Market,Completed
+10,Mutare Tea Estate,Tea,2025-12-15,Storage to Market,137.7,52747,Cold Storage,In Transit
+10,Mutare Tea Estate,Tea,2025-10-17,Storage to Market,14.2,10818,Cold Storage,Completed
+10,Mutare Tea Estate,Tea,2026-02-06,Storage to Market,5.8,3694,Export Terminal,In Transit
+10,Mutare Tea Estate,Tea,2025-11-20,Harvest,86.0,26835,Local Market,Completed
+10,Mutare Tea Estate,Tea,2026-01-29,Local Delivery,193.7,111376,Processing Plant,Completed
+10,Mutare Tea Estate,Tea,2025-11-09,Transport to Storage,39.9,27888,Private Buyer,Completed
+11,Gweru Livestock Ranch,Cattle,2025-10-13,Transport to Storage,184.9,62185,GMB Depot,In Transit
+11,Gweru Livestock Ranch,Cattle,2025-11-10,Local Delivery,198.5,83453,Local Market,Completed
+11,Gweru Livestock Ranch,Cattle,2026-02-14,Storage to Market,149.2,90458,Private Buyer,Pending
+11,Gweru Livestock Ranch,Cattle,2026-01-04,Export,147.7,71769,Export Terminal,Completed
+11,Gweru Livestock Ranch,Cattle,2025-12-01,Transport to Storage,16.6,10740,Export Terminal,Completed
+11,Gweru Livestock Ranch,Cattle,2026-02-27,Export,83.5,46762,Export Terminal,Completed
+11,Gweru Livestock Ranch,Cattle,2026-02-19,Local Delivery,7.2,4762,Private Buyer,Pending
+11,Gweru Livestock Ranch,Cattle,2025-11-04,Storage to Market,84.8,40452,Export Terminal,In Transit
+11,Gweru Livestock Ranch,Cattle,2025-12-31,Harvest,74.8,44631,Processing Plant,Completed
+11,Gweru Livestock Ranch,Cattle,2025-11-06,Storage to Market,66.4,27387,Export Terminal,Completed
+11,Gweru Livestock Ranch,Cattle,2026-02-15,Storage to Market,13.4,8735,GMB Depot,In Transit
+11,Gweru Livestock Ranch,Cattle,2026-02-08,Local Delivery,160.3,106980,Processing Plant,Completed
+11,Gweru Livestock Ranch,Cattle,2025-11-09,Harvest,56.0,28514,Local Market,Completed
+11,Gweru Livestock Ranch,Cattle,2026-03-12,Storage to Market,67.2,34128,GMB Depot,Completed
+11,Gweru Livestock Ranch,Cattle,2025-11-23,Storage to Market,9.7,5728,Processing Plant,Completed
+11,Gweru Livestock Ranch,Cattle,2025-11-05,Export,11.0,7249,Processing Plant,Completed
+11,Gweru Livestock Ranch,Cattle,2026-03-02,Local Delivery,179.8,71599,GMB Depot,Pending
+11,Gweru Livestock Ranch,Cattle,2026-01-07,Storage to Market,66.6,40879,GMB Depot,In Transit
+11,Gweru Livestock Ranch,Cattle,2026-01-23,Transport to Storage,116.6,45505,Local Market,In Transit
+11,Gweru Livestock Ranch,Cattle,2025-11-11,Local Delivery,64.8,37398,Private Buyer,Completed
+11,Gweru Livestock Ranch,Cattle,2025-12-22,Transport to Storage,20.9,7189,Private Buyer,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-03-19,Harvest,60.2,30129,Local Market,In Transit
+12,Harare Peri-Urban Veg,Vegetables,2026-03-28,Harvest,65.2,29136,Export Terminal,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-01-27,Transport to Storage,94.4,54975,Private Buyer,Pending
+12,Harare Peri-Urban Veg,Vegetables,2026-04-02,Harvest,199.4,131623,Export Terminal,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-12-17,Storage to Market,16.1,5951,Export Terminal,Pending
+12,Harare Peri-Urban Veg,Vegetables,2026-02-23,Export,172.5,94894,Processing Plant,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-01-23,Export,153.2,69905,Processing Plant,Pending
+12,Harare Peri-Urban Veg,Vegetables,2025-10-09,Transport to Storage,177.8,66806,Local Market,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-11-27,Export,193.2,99330,Private Buyer,In Transit
+12,Harare Peri-Urban Veg,Vegetables,2025-12-28,Local Delivery,88.4,55011,Export Terminal,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-12-01,Harvest,43.7,30249,Local Market,In Transit
+12,Harare Peri-Urban Veg,Vegetables,2026-03-02,Export,170.0,66536,Cold Storage,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-11-13,Transport to Storage,99.8,35381,Local Market,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-01-13,Local Delivery,175.7,79290,Export Terminal,In Transit
+12,Harare Peri-Urban Veg,Vegetables,2026-03-01,Local Delivery,33.6,21681,Cold Storage,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-01-15,Storage to Market,135.5,56329,Cold Storage,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-11-26,Storage to Market,39.5,11963,Private Buyer,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-02-11,Storage to Market,134.2,90674,Local Market,Completed
+12,Harare Peri-Urban Veg,Vegetables,2026-02-06,Local Delivery,161.6,128220,Cold Storage,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-12-04,Storage to Market,129.5,58727,GMB Depot,Completed
+12,Harare Peri-Urban Veg,Vegetables,2025-10-16,Transport to Storage,42.9,30495,Processing Plant,In Transit
+12,Harare Peri-Urban Veg,Vegetables,2026-02-02,Harvest,145.5,80819,Export Terminal,In Transit
+12,Harare Peri-Urban Veg,Vegetables,2026-02-17,Storage to Market,166.8,109179,Local Market,Completed

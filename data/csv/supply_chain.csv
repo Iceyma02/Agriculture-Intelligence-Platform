@@ -1,0 +1,171 @@
+shipment_id,farm_id,farm_name,crop,quantity_tons,value_usd,current_stage,start_date,destination,days_delayed
+SHIP-1-6640,1,Mazowe Valley Farm,Maize,94.8,87912,Delivered,2026-02-18,Private Buyer,0
+SHIP-1-4561,1,Mazowe Valley Farm,Maize,227.0,137828,Export Cleared,2026-03-13,Cold Storage,0
+SHIP-1-9899,1,Mazowe Valley Farm,Maize,250.6,83210,Processing,2026-03-15,Export Terminal,8
+SHIP-1-7883,1,Mazowe Valley Farm,Maize,258.1,64884,Transport,2026-01-09,GMB Depot,7
+SHIP-1-5099,1,Mazowe Valley Farm,Maize,163.3,15207,Delivered,2026-03-05,Cold Storage,0
+SHIP-1-9572,1,Mazowe Valley Farm,Maize,269.3,48351,Field Harvest,2026-02-23,GMB Depot,14
+SHIP-1-4553,1,Mazowe Valley Farm,Maize,116.5,16219,Processing,2026-02-22,Cold Storage,5
+SHIP-1-3627,1,Mazowe Valley Farm,Maize,178.4,142852,Transport,2026-02-27,Export Terminal,13
+SHIP-1-1096,1,Mazowe Valley Farm,Maize,204.8,43165,Storage,2026-01-11,GMB Depot,3
+SHIP-1-5368,1,Mazowe Valley Farm,Maize,151.9,17076,Field Harvest,2026-03-23,Private Buyer,10
+SHIP-1-9118,1,Mazowe Valley Farm,Maize,23.9,61911,Field Harvest,2026-02-27,Private Buyer,11
+SHIP-1-2461,1,Mazowe Valley Farm,Maize,70.7,5386,Transport,2026-02-11,Private Buyer,0
+SHIP-1-5775,1,Mazowe Valley Farm,Maize,61.1,120377,Transport,2026-03-07,Processing Plant,4
+SHIP-1-1952,1,Mazowe Valley Farm,Maize,255.8,109446,Transport,2026-02-27,Cold Storage,12
+SHIP-1-3484,1,Mazowe Valley Farm,Maize,61.9,122919,Export Cleared,2026-02-19,Cold Storage,0
+SHIP-1-7684,1,Mazowe Valley Farm,Maize,103.0,49772,Storage,2026-03-10,Export Terminal,3
+SHIP-1-7312,1,Mazowe Valley Farm,Maize,221.6,34048,Delivered,2026-03-19,Cold Storage,0
+SHIP-2-5584,2,Headlands Cotton Block,Cotton,127.8,16292,Processing,2026-02-04,Export Terminal,8
+SHIP-2-3273,2,Headlands Cotton Block,Cotton,267.0,134858,Field Harvest,2026-02-15,Cold Storage,7
+SHIP-2-3520,2,Headlands Cotton Block,Cotton,292.6,27113,Storage,2026-01-30,Processing Plant,5
+SHIP-2-4683,2,Headlands Cotton Block,Cotton,150.2,72507,Export Cleared,2026-01-30,Private Buyer,0
+SHIP-2-5218,2,Headlands Cotton Block,Cotton,31.2,6868,Delivered,2026-02-10,Export Terminal,0
+SHIP-2-7403,2,Headlands Cotton Block,Cotton,41.9,14340,Field Harvest,2026-01-26,GMB Depot,11
+SHIP-2-7212,2,Headlands Cotton Block,Cotton,155.1,135632,Delivered,2026-03-25,Cold Storage,0
+SHIP-2-9457,2,Headlands Cotton Block,Cotton,262.6,71540,Delivered,2026-03-13,Cold Storage,0
+SHIP-2-6539,2,Headlands Cotton Block,Cotton,177.6,114920,Storage,2026-01-19,Processing Plant,1
+SHIP-2-1768,2,Headlands Cotton Block,Cotton,25.5,99786,Delivered,2026-03-27,Local Market,0
+SHIP-2-9733,2,Headlands Cotton Block,Cotton,232.7,143570,Storage,2026-02-25,Export Terminal,12
+SHIP-3-2831,3,Bindura Soya Farm,Soybeans,253.0,136401,Export Cleared,2026-01-31,Local Market,0
+SHIP-3-8978,3,Bindura Soya Farm,Soybeans,281.4,99120,Storage,2026-03-13,Export Terminal,3
+SHIP-3-2100,3,Bindura Soya Farm,Soybeans,299.0,29154,Processing,2026-01-11,Cold Storage,0
+SHIP-3-5782,3,Bindura Soya Farm,Soybeans,11.9,121189,Processing,2026-01-23,Export Terminal,2
+SHIP-3-1502,3,Bindura Soya Farm,Soybeans,78.8,36541,Delivered,2026-03-23,Private Buyer,0
+SHIP-3-8385,3,Bindura Soya Farm,Soybeans,51.2,25156,Storage,2026-02-23,Processing Plant,5
+SHIP-3-5114,3,Bindura Soya Farm,Soybeans,61.4,78631,Transport,2026-02-09,Cold Storage,11
+SHIP-3-3634,3,Bindura Soya Farm,Soybeans,215.2,125938,Export Cleared,2026-01-25,Local Market,0
+SHIP-3-6955,3,Bindura Soya Farm,Soybeans,288.3,137232,Export Cleared,2026-03-24,Private Buyer,0
+SHIP-3-6876,3,Bindura Soya Farm,Soybeans,275.2,149954,Export Cleared,2026-03-30,Export Terminal,0
+SHIP-4-2079,4,Karoi Maize Cooperative,Maize,223.4,102911,Processing,2026-03-18,Export Terminal,4
+SHIP-4-2473,4,Karoi Maize Cooperative,Maize,59.7,6212,Transport,2026-02-28,Private Buyer,8
+SHIP-4-4659,4,Karoi Maize Cooperative,Maize,209.6,66160,Field Harvest,2026-02-18,Local Market,3
+SHIP-4-2340,4,Karoi Maize Cooperative,Maize,204.2,81120,Field Harvest,2026-02-22,Processing Plant,9
+SHIP-4-2361,4,Karoi Maize Cooperative,Maize,67.0,71062,Export Cleared,2026-03-14,Processing Plant,0
+SHIP-4-3758,4,Karoi Maize Cooperative,Maize,191.2,44199,Processing,2026-02-17,Cold Storage,12
+SHIP-4-9494,4,Karoi Maize Cooperative,Maize,108.2,38205,Storage,2026-02-05,Processing Plant,8
+SHIP-4-9751,4,Karoi Maize Cooperative,Maize,277.9,43562,Field Harvest,2026-03-10,Private Buyer,12
+SHIP-4-8750,4,Karoi Maize Cooperative,Maize,227.4,136756,Delivered,2026-01-08,Processing Plant,0
+SHIP-4-9007,4,Karoi Maize Cooperative,Maize,93.6,122419,Transport,2026-03-22,Local Market,5
+SHIP-4-6782,4,Karoi Maize Cooperative,Maize,109.2,108509,Export Cleared,2026-02-13,Processing Plant,0
+SHIP-4-7034,4,Karoi Maize Cooperative,Maize,86.4,24689,Field Harvest,2026-03-11,Export Terminal,10
+SHIP-4-7939,4,Karoi Maize Cooperative,Maize,281.7,43712,Field Harvest,2026-02-08,Local Market,2
+SHIP-4-3793,4,Karoi Maize Cooperative,Maize,101.4,29395,Delivered,2026-03-16,Processing Plant,0
+SHIP-4-1797,4,Karoi Maize Cooperative,Maize,156.9,118561,Processing,2026-03-01,GMB Depot,11
+SHIP-4-2892,4,Karoi Maize Cooperative,Maize,180.1,134958,Transport,2026-01-31,Processing Plant,0
+SHIP-4-5833,4,Karoi Maize Cooperative,Maize,129.4,136637,Transport,2026-01-28,Processing Plant,0
+SHIP-5-5412,5,Mvurwi Mixed Farm,Tobacco,136.7,111520,Storage,2026-01-15,Local Market,10
+SHIP-5-2189,5,Mvurwi Mixed Farm,Tobacco,163.2,61494,Export Cleared,2026-03-28,GMB Depot,0
+SHIP-5-4157,5,Mvurwi Mixed Farm,Tobacco,210.6,59672,Delivered,2026-03-29,Cold Storage,0
+SHIP-5-6369,5,Mvurwi Mixed Farm,Tobacco,221.7,133554,Field Harvest,2026-01-13,Private Buyer,13
+SHIP-5-4967,5,Mvurwi Mixed Farm,Tobacco,76.3,148285,Delivered,2026-02-04,Private Buyer,0
+SHIP-5-4037,5,Mvurwi Mixed Farm,Tobacco,197.3,97038,Delivered,2026-03-25,Local Market,0
+SHIP-5-1233,5,Mvurwi Mixed Farm,Tobacco,129.1,114388,Storage,2026-02-20,GMB Depot,10
+SHIP-5-1427,5,Mvurwi Mixed Farm,Tobacco,126.7,71267,Transport,2026-01-11,Local Market,12
+SHIP-5-8624,5,Mvurwi Mixed Farm,Tobacco,12.5,56690,Transport,2026-01-17,GMB Depot,1
+SHIP-5-6229,5,Mvurwi Mixed Farm,Tobacco,14.5,23799,Storage,2026-02-20,Local Market,0
+SHIP-5-3949,5,Mvurwi Mixed Farm,Tobacco,25.7,74002,Processing,2026-03-10,Private Buyer,8
+SHIP-5-3590,5,Mvurwi Mixed Farm,Tobacco,153.3,7978,Processing,2026-03-15,Export Terminal,2
+SHIP-6-9090,6,Chiredzi Sugar Estate,Sugarcane,242.5,29435,Field Harvest,2026-01-29,Processing Plant,8
+SHIP-6-2995,6,Chiredzi Sugar Estate,Sugarcane,84.7,20522,Processing,2026-02-25,Private Buyer,6
+SHIP-6-4030,6,Chiredzi Sugar Estate,Sugarcane,242.9,78643,Storage,2026-02-09,GMB Depot,6
+SHIP-6-7747,6,Chiredzi Sugar Estate,Sugarcane,152.7,40877,Field Harvest,2026-01-11,Export Terminal,6
+SHIP-6-7144,6,Chiredzi Sugar Estate,Sugarcane,186.6,97508,Field Harvest,2026-01-24,Local Market,6
+SHIP-6-2909,6,Chiredzi Sugar Estate,Sugarcane,33.1,126906,Processing,2026-01-20,GMB Depot,14
+SHIP-6-2690,6,Chiredzi Sugar Estate,Sugarcane,192.3,41519,Storage,2026-02-24,GMB Depot,0
+SHIP-6-7852,6,Chiredzi Sugar Estate,Sugarcane,104.0,30595,Export Cleared,2026-01-07,Cold Storage,0
+SHIP-6-1444,6,Chiredzi Sugar Estate,Sugarcane,114.2,79191,Storage,2026-02-27,Private Buyer,14
+SHIP-6-1496,6,Chiredzi Sugar Estate,Sugarcane,272.3,28212,Field Harvest,2026-02-06,Cold Storage,8
+SHIP-6-6065,6,Chiredzi Sugar Estate,Sugarcane,280.3,14884,Export Cleared,2026-02-16,Private Buyer,0
+SHIP-7-9741,7,Beitbridge Citrus Farm,Citrus,269.2,107654,Transport,2026-03-13,Private Buyer,14
+SHIP-7-9953,7,Beitbridge Citrus Farm,Citrus,231.4,149867,Export Cleared,2026-01-20,Processing Plant,0
+SHIP-7-5931,7,Beitbridge Citrus Farm,Citrus,270.4,115724,Processing,2026-03-08,Processing Plant,6
+SHIP-7-7553,7,Beitbridge Citrus Farm,Citrus,281.4,106490,Delivered,2026-03-02,Processing Plant,0
+SHIP-7-2145,7,Beitbridge Citrus Farm,Citrus,159.7,12548,Storage,2026-03-02,GMB Depot,10
+SHIP-7-1296,7,Beitbridge Citrus Farm,Citrus,222.2,61782,Delivered,2026-01-18,Cold Storage,0
+SHIP-7-1994,7,Beitbridge Citrus Farm,Citrus,209.6,56667,Delivered,2026-01-22,Private Buyer,0
+SHIP-7-7204,7,Beitbridge Citrus Farm,Citrus,239.7,88038,Delivered,2026-03-19,GMB Depot,0
+SHIP-7-1660,7,Beitbridge Citrus Farm,Citrus,89.5,98697,Export Cleared,2026-03-02,Private Buyer,0
+SHIP-7-4970,7,Beitbridge Citrus Farm,Citrus,70.8,32843,Transport,2026-02-19,GMB Depot,1
+SHIP-7-2897,7,Beitbridge Citrus Farm,Citrus,110.1,128152,Field Harvest,2026-01-07,Private Buyer,13
+SHIP-7-8255,7,Beitbridge Citrus Farm,Citrus,205.5,116233,Processing,2026-03-09,GMB Depot,3
+SHIP-7-4724,7,Beitbridge Citrus Farm,Citrus,125.7,141427,Processing,2026-01-13,Cold Storage,0
+SHIP-8-7686,8,Marondera Dairy,Dairy,88.9,92273,Transport,2026-01-19,Private Buyer,5
+SHIP-8-7172,8,Marondera Dairy,Dairy,141.8,123642,Storage,2026-03-09,Cold Storage,3
+SHIP-8-9252,8,Marondera Dairy,Dairy,235.2,28365,Delivered,2026-02-26,Export Terminal,0
+SHIP-8-9664,8,Marondera Dairy,Dairy,240.4,136565,Storage,2026-01-09,Export Terminal,9
+SHIP-8-3970,8,Marondera Dairy,Dairy,292.2,132424,Export Cleared,2026-01-09,Private Buyer,0
+SHIP-8-6664,8,Marondera Dairy,Dairy,39.2,19126,Storage,2026-03-06,Export Terminal,11
+SHIP-8-2525,8,Marondera Dairy,Dairy,46.9,61344,Processing,2026-01-26,GMB Depot,10
+SHIP-8-4675,8,Marondera Dairy,Dairy,125.3,43725,Processing,2026-02-28,Local Market,14
+SHIP-8-2830,8,Marondera Dairy,Dairy,193.2,89730,Field Harvest,2026-03-27,Processing Plant,5
+SHIP-8-4514,8,Marondera Dairy,Dairy,79.0,114071,Field Harvest,2026-02-04,GMB Depot,1
+SHIP-8-2377,8,Marondera Dairy,Dairy,47.7,96713,Transport,2026-01-07,Processing Plant,6
+SHIP-8-4937,8,Marondera Dairy,Dairy,221.8,119360,Field Harvest,2026-01-28,Export Terminal,5
+SHIP-8-6745,8,Marondera Dairy,Dairy,40.6,112983,Processing,2026-03-15,Local Market,8
+SHIP-8-4397,8,Marondera Dairy,Dairy,25.1,128971,Storage,2026-02-12,Cold Storage,0
+SHIP-8-8933,8,Marondera Dairy,Dairy,172.7,132385,Delivered,2026-03-10,Export Terminal,0
+SHIP-8-2660,8,Marondera Dairy,Dairy,227.0,30395,Processing,2026-03-29,Export Terminal,9
+SHIP-9-8512,9,Kwekwe Grain Farm,Wheat,23.8,108235,Export Cleared,2026-01-15,Local Market,0
+SHIP-9-5408,9,Kwekwe Grain Farm,Wheat,153.5,7881,Transport,2026-01-20,Private Buyer,2
+SHIP-9-3575,9,Kwekwe Grain Farm,Wheat,238.1,144728,Export Cleared,2026-02-10,Cold Storage,0
+SHIP-9-1065,9,Kwekwe Grain Farm,Wheat,222.0,111898,Processing,2026-03-10,Cold Storage,2
+SHIP-9-5692,9,Kwekwe Grain Farm,Wheat,44.2,124107,Transport,2026-03-07,GMB Depot,6
+SHIP-9-9620,9,Kwekwe Grain Farm,Wheat,86.1,93952,Export Cleared,2026-01-28,Processing Plant,0
+SHIP-9-7347,9,Kwekwe Grain Farm,Wheat,186.5,84364,Transport,2026-02-09,Cold Storage,8
+SHIP-9-9324,9,Kwekwe Grain Farm,Wheat,100.1,19588,Processing,2026-01-22,GMB Depot,5
+SHIP-9-6327,9,Kwekwe Grain Farm,Wheat,44.9,27076,Storage,2026-03-10,Export Terminal,9
+SHIP-9-7461,9,Kwekwe Grain Farm,Wheat,285.8,60486,Export Cleared,2026-03-22,Export Terminal,0
+SHIP-9-7065,9,Kwekwe Grain Farm,Wheat,248.9,103938,Storage,2026-02-04,Export Terminal,14
+SHIP-9-5677,9,Kwekwe Grain Farm,Wheat,126.7,116375,Storage,2026-02-08,Export Terminal,9
+SHIP-9-8640,9,Kwekwe Grain Farm,Wheat,132.0,134198,Storage,2026-02-07,Cold Storage,1
+SHIP-9-1442,9,Kwekwe Grain Farm,Wheat,189.6,45721,Storage,2026-02-06,Private Buyer,13
+SHIP-9-6765,9,Kwekwe Grain Farm,Wheat,294.9,146280,Processing,2026-03-13,Export Terminal,8
+SHIP-9-8862,9,Kwekwe Grain Farm,Wheat,95.5,92122,Field Harvest,2026-01-06,Processing Plant,14
+SHIP-9-5727,9,Kwekwe Grain Farm,Wheat,79.9,131204,Processing,2026-03-22,Processing Plant,0
+SHIP-9-6392,9,Kwekwe Grain Farm,Wheat,211.6,55385,Processing,2026-03-22,Cold Storage,5
+SHIP-9-7044,9,Kwekwe Grain Farm,Wheat,209.8,26381,Delivered,2026-01-11,Export Terminal,0
+SHIP-10-6644,10,Mutare Tea Estate,Tea,127.8,96501,Transport,2026-02-27,GMB Depot,4
+SHIP-10-6153,10,Mutare Tea Estate,Tea,263.7,130702,Field Harvest,2026-01-27,Processing Plant,14
+SHIP-10-9592,10,Mutare Tea Estate,Tea,116.4,112631,Processing,2026-03-03,Export Terminal,11
+SHIP-10-1569,10,Mutare Tea Estate,Tea,243.2,128425,Delivered,2026-03-20,Processing Plant,0
+SHIP-10-9930,10,Mutare Tea Estate,Tea,178.7,43138,Field Harvest,2026-02-25,Cold Storage,9
+SHIP-10-7999,10,Mutare Tea Estate,Tea,141.0,54272,Processing,2026-03-26,Processing Plant,14
+SHIP-10-8236,10,Mutare Tea Estate,Tea,39.5,88029,Delivered,2026-02-28,Private Buyer,0
+SHIP-10-8351,10,Mutare Tea Estate,Tea,17.1,24340,Transport,2026-01-10,Cold Storage,1
+SHIP-10-5994,10,Mutare Tea Estate,Tea,72.7,37642,Delivered,2026-02-06,Export Terminal,0
+SHIP-10-8675,10,Mutare Tea Estate,Tea,217.7,69377,Processing,2026-02-08,Local Market,11
+SHIP-10-2151,10,Mutare Tea Estate,Tea,71.0,36357,Field Harvest,2026-02-24,Export Terminal,9
+SHIP-10-9402,10,Mutare Tea Estate,Tea,14.0,66606,Processing,2026-02-02,Local Market,14
+SHIP-11-4955,11,Gweru Livestock Ranch,Cattle,109.3,19026,Field Harvest,2026-02-12,Processing Plant,6
+SHIP-11-8011,11,Gweru Livestock Ranch,Cattle,225.2,137818,Delivered,2026-01-17,GMB Depot,0
+SHIP-11-8073,11,Gweru Livestock Ranch,Cattle,107.3,34960,Delivered,2026-03-23,Export Terminal,0
+SHIP-11-4708,11,Gweru Livestock Ranch,Cattle,138.0,63105,Transport,2026-03-26,Private Buyer,2
+SHIP-11-8252,11,Gweru Livestock Ranch,Cattle,291.1,147897,Processing,2026-03-19,Local Market,14
+SHIP-11-2787,11,Gweru Livestock Ranch,Cattle,254.0,85738,Delivered,2026-01-22,Processing Plant,0
+SHIP-11-9065,11,Gweru Livestock Ranch,Cattle,70.3,76468,Export Cleared,2026-02-20,Private Buyer,0
+SHIP-11-6759,11,Gweru Livestock Ranch,Cattle,79.7,16268,Export Cleared,2026-03-23,Local Market,0
+SHIP-11-8973,11,Gweru Livestock Ranch,Cattle,298.0,12887,Processing,2026-03-31,Export Terminal,5
+SHIP-11-4897,11,Gweru Livestock Ranch,Cattle,185.5,121566,Transport,2026-01-24,Export Terminal,10
+SHIP-11-2515,11,Gweru Livestock Ranch,Cattle,27.2,51566,Field Harvest,2026-02-05,GMB Depot,10
+SHIP-11-3980,11,Gweru Livestock Ranch,Cattle,28.9,112855,Field Harvest,2026-03-08,Local Market,13
+SHIP-11-6373,11,Gweru Livestock Ranch,Cattle,189.6,21116,Processing,2026-03-11,Processing Plant,7
+SHIP-12-5606,12,Harare Peri-Urban Veg,Vegetables,92.5,34655,Delivered,2026-02-10,Export Terminal,0
+SHIP-12-1815,12,Harare Peri-Urban Veg,Vegetables,170.8,23895,Transport,2026-03-15,Private Buyer,4
+SHIP-12-1107,12,Harare Peri-Urban Veg,Vegetables,262.9,68083,Export Cleared,2026-02-27,Processing Plant,0
+SHIP-12-1255,12,Harare Peri-Urban Veg,Vegetables,231.1,20487,Storage,2026-03-18,Cold Storage,3
+SHIP-12-9372,12,Harare Peri-Urban Veg,Vegetables,146.4,124640,Storage,2026-03-13,GMB Depot,8
+SHIP-12-1591,12,Harare Peri-Urban Veg,Vegetables,141.5,138332,Field Harvest,2026-01-27,Local Market,3
+SHIP-12-9774,12,Harare Peri-Urban Veg,Vegetables,42.8,92616,Field Harvest,2026-02-22,Processing Plant,11
+SHIP-12-8864,12,Harare Peri-Urban Veg,Vegetables,225.6,39033,Export Cleared,2026-02-08,Cold Storage,0
+SHIP-12-3274,12,Harare Peri-Urban Veg,Vegetables,56.6,25044,Storage,2026-02-18,Processing Plant,10
+SHIP-12-2950,12,Harare Peri-Urban Veg,Vegetables,152.5,15411,Field Harvest,2026-03-20,Local Market,13
+SHIP-12-2387,12,Harare Peri-Urban Veg,Vegetables,36.2,143117,Delivered,2026-01-27,Export Terminal,0
+SHIP-12-6896,12,Harare Peri-Urban Veg,Vegetables,28.7,111147,Processing,2026-01-08,Cold Storage,2
+SHIP-12-8063,12,Harare Peri-Urban Veg,Vegetables,244.1,59708,Storage,2026-02-20,Cold Storage,12
+SHIP-12-3428,12,Harare Peri-Urban Veg,Vegetables,166.1,69230,Delivered,2026-02-18,Processing Plant,0
+SHIP-12-7708,12,Harare Peri-Urban Veg,Vegetables,29.3,74157,Delivered,2026-03-26,Export Terminal,0
+SHIP-12-3347,12,Harare Peri-Urban Veg,Vegetables,111.6,140995,Processing,2026-03-31,Private Buyer,2
+SHIP-12-3815,12,Harare Peri-Urban Veg,Vegetables,58.1,97290,Processing,2026-02-08,Processing Plant,7
+SHIP-12-1607,12,Harare Peri-Urban Veg,Vegetables,273.3,92493,Export Cleared,2026-01-07,Export Terminal,0
+SHIP-12-2074,12,Harare Peri-Urban Veg,Vegetables,212.4,64648,Processing,2026-02-02,Processing Plant,7
