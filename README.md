@@ -12,7 +12,28 @@
 
 ## 🚀 Live Demo
 
-**[View Live →](https://agriiq.up.railway.app)**
+**[View Live →](https://web-production-c8185.up.railway.app/)**
+
+---
+
+## 📸 Screenshots
+
+### Farm Operations Dashboard
+![Farm Dashboard](./screenshots/dashboard.png)
+
+### Farm Map - Geographic Intelligence
+![Farm Map](./screenshots/farm_map.png)
+
+### Farm P&L Engine
+![P&L Engine](./screenshots/pnl_engine.png)
+
+### Yield Forecasting
+![Yield Forecast](./screenshots/yield_forecast.png)
+
+### Board Reports
+![Board Reports](./screenshots/board_reports.png)
+
+> *Screenshots are located in the `/screenshots` folder. Add your own screenshots there.*
 
 ---
 
@@ -31,7 +52,7 @@
 | 09 | 🌾 Supply Chain Pipeline | End-to-end harvest-to-market shipment tracking |
 | 10 | 💳 Supplier Credit & Risk | Credit utilization, overdue accounts, suspension alerts |
 | 11 | 📢 Marketing ROI Tracker | Campaign spend vs revenue lift across channels |
-| 12 | 🏪 Market Price Watch | GMB vs TIMB vs COTTCO vs Private vs Export pricing |
+| 12 | 🏪 Market Price Watch | GMB vs Private vs Export pricing |
 | 13 | 💬 Buyer Satisfaction | Satisfaction scores, complaints, repeat order rates |
 | 14 | 👨‍🌾 Labour Intelligence | Workforce composition, cost per hectare, productivity |
 | 15 | 💔 Post-Harvest Loss | Spoilage, theft, pest damage — intervention recommendations |
@@ -45,27 +66,46 @@
 | Layer | Technology |
 |-------|-----------|
 | Framework | Plotly Dash 2.17 |
-| Data | Pandas, NumPy |
-| Visualisation | Plotly, Folium |
-| Database | Synthetic CSV (production-ready for PostgreSQL swap) |
+| Data Processing | Pandas, NumPy |
+| Visualisation | Plotly, Mapbox |
 | Deployment | Railway |
 | Process Manager | Gunicorn |
-| Styling | Custom CSS — dark agri theme |
+| Styling | Custom CSS — Dark Agri Theme |
+| Icons | Font Awesome 6 |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-agriiq/
-├── app.py                    # Main Dash application & routing
-├── Procfile                  # Railway/Heroku deployment
+Agriculture-Intelligence-Platform/
+│
+├── app.py                    # Main Dash application
+├── Procfile                  # Railway deployment
 ├── railway.json              # Railway build config
 ├── requirements.txt          # Python dependencies
+├── runtime.txt               # Python version
 │
 ├── data/
-│   ├── generate_data.py      # Synthetic dataset generator (7,000+ rows)
+│   ├── generate_data.py      # Synthetic dataset generator
 │   └── csv/                  # Generated CSV datasets (17 files)
+│       ├── farms.csv
+│       ├── monthly_performance.csv
+│       ├── pnl.csv
+│       ├── inventory.csv
+│       ├── harvest_movement.csv
+│       ├── yield_forecast.csv
+│       ├── reorder_optimizer.csv
+│       ├── supply_chain.csv
+│       ├── supplier_credit.csv
+│       ├── marketing_roi.csv
+│       ├── market_prices.csv
+│       ├── buyer_satisfaction.csv
+│       ├── labour.csv
+│       ├── losses.csv
+│       ├── economic_watch.csv
+│       ├── board_summary.csv
+│       └── weather.csv
 │
 ├── modules/                  # 17 dashboard modules
 │   ├── m01_overview.py
@@ -86,8 +126,20 @@ agriiq/
 │   ├── m16_economic_watch.py
 │   └── m17_board_reports.py
 │
-└── utils/
-    └── helpers.py            # Shared utilities, chart theme, data loaders
+├── utils/                    # Shared utilities
+│   ├── __init__.py
+│   ├── data_loader.py        # CSV data loading functions
+│   └── helpers.py            # Colors, formatting, KPIs, export functions
+│
+├── assets/                   # Static assets (optional)
+│   └── style.css
+│
+└── screenshots/              # Screenshots for README
+    ├── dashboard.png
+    ├── farm_map.png
+    ├── pnl_engine.png
+    ├── yield_forecast.png
+    └── board_reports.png
 ```
 
 ---
@@ -96,8 +148,8 @@ agriiq/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/AnesuManjengwa/agriiq.git
-cd agriiq
+git clone https://github.com/AnesuManjengwa/Agriculture-Intelligence-Platform.git
+cd Agriculture-Intelligence-Platform
 
 # 2. Create virtual environment
 python -m venv venv
@@ -126,12 +178,26 @@ npm install -g @railway/cli
 # 2. Login
 railway login
 
-# 3. Create project & deploy
-railway init
+# 3. Link to existing project or create new
+railway link
+
+# 4. Deploy
 railway up
+
+# 5. Open in browser
+railway open
 ```
 
 Railway automatically runs `generate_data.py` then starts Gunicorn via `railway.json`.
+
+---
+
+## 📤 Export Features
+
+- **CSV Export** — Download any dataset as CSV
+- **Search & Filter** — Search farms by name, province, or crop
+- **Mobile Responsive** — Sidebar collapses on mobile devices
+- **Auto-refresh** — Data refreshes every 5 minutes (configurable)
 
 ---
 
@@ -170,19 +236,48 @@ AgriIQ is built specifically for Zimbabwe's agricultural landscape:
 | board_summary | 3 | Season executive summaries |
 | weather | 2,190 | Station weather data |
 
-**Total: ~7,000+ rows across 17 datasets**
+**Total: ~7,500+ rows across 17 datasets**
 
 ---
 
 ## 🎯 Target Users
 
-- **Farm Owners / CEOs** — National overview, profit rankings, board reports
-- **Farm Managers** — Performance, inventory, labour
-- **Agronomists** — Yield forecasting, pest alerts, crop health
-- **Procurement Managers** — Reorder optimizer, supplier credit
-- **Finance Teams** — P&L engine, supplier payments
-- **Marketing Teams** — Price watch, marketing ROI
-- **Investors / Banks** — Board reports, risk assessment
+| User | Key Modules |
+|------|-------------|
+| **Farm Owners / CEOs** | Overview, Board Reports, P&L |
+| **Farm Managers** | Performance, Inventory, Labour |
+| **Agronomists** | Yield Forecasting, Pest Alerts |
+| **Procurement Managers** | Reorder Optimizer, Supplier Credit |
+| **Finance Teams** | P&L Engine, Supplier Payments |
+| **Marketing Teams** | Price Watch, Marketing ROI |
+| **Investors / Banks** | Board Reports, Risk Assessment |
+
+---
+
+## 🔧 Environment Variables (Optional)
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PORT` | Server port | 8080 |
+| `DEBUG` | Debug mode | False |
+| `REFRESH_INTERVAL` | Auto-refresh seconds | 300 |
+
+---
+
+## 🤝 Contributing
+
+This is a proprietary project. For inquiries or custom development:
+
+- **Email**: manjengwap10@gmail.com
+- **Website**: [MA TechHub](https://matechhub-website.vercel.app)
+
+---
+
+## 📝 License
+
+Copyright © 2026 Anesu Manjengwa. All rights reserved.
+
+This software and its source code are proprietary and confidential. Unauthorized copying, distribution, modification, or use of this software is strictly prohibited.
 
 ---
 
@@ -194,8 +289,23 @@ Data Analytics & Dashboard Consultant
 
 ---
 
-## 📄 License
+## 🙏 Acknowledgments
 
-Copyright (c) 2026 Anesu Manjengwa. All rights reserved.  
-Source code available for viewing and educational purposes only.  
-See [LICENSE](./LICENSE) for full terms.
+- Plotly Dash team for the amazing framework
+- Zimbabwe Grain Marketing Board (GMB) for market data inspiration
+- Local farmers who provided requirements and feedback
+
+---
+
+## 📞 Support
+
+For issues or questions about the live deployment:
+- Open an issue on GitHub
+- Contact: manjengwap10@gmail.com
+
+git add screenshots/
+git commit -m "Add README screenshots"
+git push
+```
+
+The README now accurately reflects your current repository structure with the `utils/` folder, all 17 modules, and includes screenshot placeholders!
