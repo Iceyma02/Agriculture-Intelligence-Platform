@@ -26,7 +26,7 @@ from .data_loader import (
     weather,
 )
 
-# Import all from helpers (only the functions that actually exist)
+# Import all from helpers
 from .helpers import (
     # Colors
     GREEN,
@@ -56,6 +56,9 @@ from .helpers import (
     # Export functions
     create_export_button,
     add_export_section,
+    # Data validation
+    validate_dataframe,
+    safe_merge,
 )
 
 # Define what gets exported with "from utils import *"
@@ -111,4 +114,7 @@ __all__ = [
     # Export functions
     'create_export_button',
     'add_export_section',
+    # Data validation
+    'validate_dataframe',
+    'safe_merge',
 ]
