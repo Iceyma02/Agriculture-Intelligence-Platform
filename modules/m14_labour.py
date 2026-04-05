@@ -5,14 +5,17 @@ import plotly.graph_objects as go
 import sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils import labour
-from utils import GREEN, AMBER, RED, LIME, BLUE, fmt_usd, fmt_tons, apply_theme, page_header, card, kpi
+from utils.data_loader import labour
+from utils.helpers import GREEN, AMBER, RED, LIME, BLUE, fmt_usd, apply_theme, page_header, card, kpi, add_export_section, create_empty_chart
 
 def layout():
     lb = labour()
     
+    export_section = add_export_section({"Labour_Data_Complete": lb})
+    
     if lb.empty:
         return html.Div([
+            export_section,
             page_header("Farm Labour Intelligence", "Workforce composition · Labour costs · Productivity · Seasonal tracking"),
             card([html.Div("⚠️ No labour data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
         ])
@@ -22,30 +25,22 @@ def layout():
     total_cost = lb["labour_cost_usd"].sum() if "labour_cost_usd" in lb.columns else 0
     avg_productivity = lb["productivity_score"].mean() if "productivity_score" in lb.columns else 0
 
-    if "month_label" in lb.columns:
+    # Workforce composition over time
+    if "month_label" in lb.columns and "permanent_workers" in lb.columns:
         monthly_totals = lb.groupby("month_label").agg(
-            permanent=("permanent_workers", "mean") if "permanent_workers" in lb.columns else ("permanent_workers", "mean"),
-            seasonal=("seasonal_workers", "mean") if "seasonal_workers" in lb.columns else ("seasonal_workers", "mean"),
+            permanent=("permanent_workers", "mean"),
+            seasonal=("seasonal_workers", "mean"),
         ).reset_index()
 
         fig_workforce = go.Figure()
-        if "permanent" in monthly_totals.columns:
-            fig_workforce.add_trace(go.Scatter(
-                x=monthly_totals["month_label"], y=monthly_totals["permanent"],
-                mode="lines", fill="tozeroy", name="Permanent",
-                line=dict(color=GREEN, width=2), fillcolor="rgba(34,197,94,0.15)",
-            ))
-        if "seasonal" in monthly_totals.columns:
-            fig_workforce.add_trace(go.Scatter(
-                x=monthly_totals["month_label"], y=monthly_totals["seasonal"],
-                mode="lines", fill="tonexty", name="Seasonal",
-                line=dict(color=AMBER, width=2), fillcolor="rgba(245,158,11,0.12)",
-            ))
+        fig_workforce.add_trace(go.Scatter(x=monthly_totals["month_label"], y=monthly_totals["permanent"], mode="lines", fill="tozeroy", name="Permanent", line=dict(color=GREEN, width=2), fillcolor="rgba(34,197,94,0.15)"))
+        fig_workforce.add_trace(go.Scatter(x=monthly_totals["month_label"], y=monthly_totals["seasonal"], mode="lines", fill="tonexty", name="Seasonal", line=dict(color=AMBER, width=2), fillcolor="rgba(245,158,11,0.12)"))
         apply_theme(fig_workforce, 280)
         fig_workforce.update_layout(title=dict(text="Workforce Composition — Permanent vs Seasonal", font=dict(color="#86efac", size=13)))
     else:
-        fig_workforce = go.Figure()
+        fig_workforce = create_empty_chart("No workforce data available", "Workforce Composition")
 
+    # Labour cost by farm
     if "farm_name" in lb.columns and "labour_cost_usd" in lb.columns:
         by_farm = lb.groupby("farm_name").agg(
             cost=("labour_cost_usd", "sum"),
@@ -57,26 +52,18 @@ def layout():
         fig_cost = go.Figure(go.Bar(
             x=by_farm["farm_name"], y=by_farm["cost"],
             marker=dict(color=by_farm["cost"], colorscale=[[0, "#1a2e1a"], [1, "#22c55e"]]),
-            text=[fmt_usd(v) for v in by_farm["cost"]],
-            textfont=dict(color="#f0fdf4", size=10),
+            text=[fmt_usd(v) for v in by_farm["cost"]], textfont=dict(color="#f0fdf4", size=10),
         ))
         apply_theme(fig_cost, 280)
         fig_cost.update_layout(title=dict(text="Total Labour Cost by Farm (12 months)", font=dict(color="#86efac", size=13)), xaxis_tickangle=-25)
 
         fig_prod = go.Figure(go.Scatter(
             x=by_farm["cost_ha"], y=by_farm["productivity"],
-            mode="markers+text",
-            marker=dict(size=15, color=by_farm["productivity"], colorscale=[[0, "#7f1d1d"], [1, "#22c55e"]], showscale=False),
-            text=by_farm["farm_name"].str[:12],
-            textposition="top center",
-            textfont=dict(color="#86efac", size=9),
+            mode="markers+text", marker=dict(size=15, color=by_farm["productivity"], colorscale=[[0, "#7f1d1d"], [1, "#22c55e"]], showscale=False),
+            text=by_farm["farm_name"].str[:12], textposition="top center", textfont=dict(color="#86efac", size=9),
         ))
         apply_theme(fig_prod, 280)
-        fig_prod.update_layout(
-            title=dict(text="Labour Cost/ha vs Productivity Score", font=dict(color="#86efac", size=13)),
-            xaxis=dict(title="Cost per Ha (USD)", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)"),
-            yaxis=dict(title="Productivity Score", tickfont=dict(color="#6b7280"), gridcolor="rgba(34,197,94,0.07)"),
-        )
+        fig_prod.update_layout(title=dict(text="Labour Cost/ha vs Productivity Score", font=dict(color="#86efac", size=13)), xaxis=dict(title="Cost per Ha (USD)"), yaxis=dict(title="Productivity Score"))
 
         rows = []
         for _, row in by_farm.iterrows():
@@ -90,16 +77,16 @@ def layout():
             ], style={"borderBottom": "1px solid rgba(34,197,94,0.07)"}))
 
         table = html.Table([
-            html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px", "letterSpacing": "0.06em"})
-                                 for h in ["Farm", "Total Labour Cost", "Cost / Ha", "Productivity", "Overtime Hours"]])),
+            html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px"}) for h in ["Farm", "Total Labour Cost", "Cost / Ha", "Productivity", "Overtime Hours"]])),
             html.Tbody(rows),
         ], style={"width": "100%", "borderCollapse": "collapse"})
     else:
-        fig_cost = go.Figure()
-        fig_prod = go.Figure()
+        fig_cost = create_empty_chart("No cost data available", "Labour Cost by Farm")
+        fig_prod = create_empty_chart("No productivity data available", "Cost vs Productivity")
         table = html.Div("No farm labour data available")
 
     return html.Div([
+        export_section,
         page_header("Farm Labour Intelligence", "Workforce composition · Labour costs · Productivity · Seasonal tracking"),
         html.Div([
             kpi(f"{int(total_perm):,}", "Avg Permanent Workers", "Across all farms", True, GREEN),
@@ -112,11 +99,7 @@ def layout():
             card([dcc.Graph(figure=fig_cost, config={"displayModeBar": False})]),
             card([dcc.Graph(figure=fig_prod, config={"displayModeBar": False})]),
         ], style={"display": "grid", "gridTemplateColumns": "1.2fr 1fr", "gap": "16px", "marginBottom": "16px"}),
-        card([
-            html.Div("👨‍🌾  Labour Summary by Farm", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}),
-            html.Div(table, style={"overflowX": "auto"}),
-        ]),
+        card([html.Div("👨‍🌾 Labour Summary by Farm", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}), html.Div(table, style={"overflowX": "auto"})]),
     ])
 
-def register_callbacks(app): 
-    pass
+def register_callbacks(app): pass
