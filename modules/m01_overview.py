@@ -79,34 +79,108 @@ def layout():
     else:
         fig_ranking = create_empty_chart("No profit data", "Profit Ranking by Farm")
 
-    # Crop mix
+    # ============================================================================
+    # CROP MIX CHART - FIXED VERSION
+    # ============================================================================
     try:
-        if not p.empty and not f.empty and 'farm_id' in p.columns and 'farm_id' in f.columns and 'primary_crop' in f.columns:
-            p['farm_id'] = p['farm_id'].astype(str)
-            f['farm_id'] = f['farm_id'].astype(str)
-            crop_rev = p.merge(f[['farm_id', 'primary_crop']], on='farm_id', how='left')
-            crop_mix = crop_rev.groupby('primary_crop')['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False)
+        if not p.empty and not f.empty:
+            # Check for required columns
+            has_farm_id = 'farm_id' in p.columns and 'farm_id' in f.columns
+            has_crop = 'primary_crop' in f.columns
+            has_revenue = 'revenue_usd' in p.columns
             
-            if not crop_mix.empty and crop_mix['revenue_usd'].sum() > 0:
+            if has_farm_id and has_crop and has_revenue:
+                # Convert farm_id to string for consistent merging
+                p['farm_id'] = p['farm_id'].astype(str).str.strip()
+                f['farm_id'] = f['farm_id'].astype(str).str.strip()
+                
+                # Merge the data
+                crop_rev = p.merge(f[['farm_id', 'primary_crop']], on='farm_id', how='left')
+                
+                # Group by crop
+                crop_mix = crop_rev.groupby('primary_crop')['revenue_usd'].sum().reset_index()
+                crop_mix = crop_mix[crop_mix['primary_crop'].notna()]
+                crop_mix = crop_mix.sort_values('revenue_usd', ascending=False)
+                
+                if not crop_mix.empty and crop_mix['revenue_usd'].sum() > 0:
+                    # Success - show crop revenue chart
+                    fig_crop = go.Figure(go.Bar(
+                        x=crop_mix['primary_crop'], 
+                        y=crop_mix['revenue_usd'],
+                        marker=dict(color=PALETTE[:len(crop_mix)]),
+                        text=[fmt_usd(v) for v in crop_mix['revenue_usd']],
+                        textposition='outside',
+                        textfont=dict(color="#f0fdf4", size=10),
+                    ))
+                    apply_theme(fig_crop, 300)
+                    fig_crop.update_layout(
+                        title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
+                        xaxis_tickangle=-25,
+                        yaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"))
+                    )
+                else:
+                    # No crop data - show farm revenue instead
+                    farm_rev = p.groupby('farm_name')['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False).head(8)
+                    fig_crop = go.Figure(go.Bar(
+                        x=farm_rev['farm_name'], 
+                        y=farm_rev['revenue_usd'],
+                        marker=dict(color=PALETTE[:len(farm_rev)]),
+                        text=[fmt_usd(v) for v in farm_rev['revenue_usd']],
+                        textposition='outside',
+                        textfont=dict(color="#f0fdf4", size=10),
+                    ))
+                    apply_theme(fig_crop, 300)
+                    fig_crop.update_layout(
+                        title=dict(text="Revenue by Farm (Top 8)", font=dict(color="#86efac", size=13)),
+                        xaxis_tickangle=-25,
+                        yaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"))
+                    )
+            else:
+                # Missing columns - show farm revenue as fallback
+                if 'farm_name' in p.columns and 'revenue_usd' in p.columns:
+                    farm_rev = p.groupby('farm_name')['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False).head(8)
+                    fig_crop = go.Figure(go.Bar(
+                        x=farm_rev['farm_name'], 
+                        y=farm_rev['revenue_usd'],
+                        marker=dict(color=PALETTE[:len(farm_rev)]),
+                        text=[fmt_usd(v) for v in farm_rev['revenue_usd']],
+                        textposition='outside',
+                        textfont=dict(color="#f0fdf4", size=10),
+                    ))
+                    apply_theme(fig_crop, 300)
+                    fig_crop.update_layout(
+                        title=dict(text="Revenue by Farm", font=dict(color="#86efac", size=13)),
+                        xaxis_tickangle=-25,
+                        yaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"))
+                    )
+                else:
+                    fig_crop = create_empty_chart("No revenue data available", "Revenue Overview")
+        else:
+            fig_crop = create_empty_chart("No P&L or farm data available", "Revenue Overview")
+    except Exception as e:
+        print(f"Error creating revenue chart: {e}")
+        # Ultimate fallback - try to show simple farm revenue
+        try:
+            if 'farm_name' in p.columns and 'revenue_usd' in p.columns:
+                farm_rev = p.groupby('farm_name')['revenue_usd'].sum().reset_index().sort_values('revenue_usd', ascending=False).head(8)
                 fig_crop = go.Figure(go.Bar(
-                    x=crop_mix['primary_crop'], y=crop_mix['revenue_usd'],
-                    marker=dict(color=PALETTE[:len(crop_mix)]),
-                    text=[fmt_usd(v) for v in crop_mix['revenue_usd']],
+                    x=farm_rev['farm_name'], 
+                    y=farm_rev['revenue_usd'],
+                    marker=dict(color=PALETTE[:len(farm_rev)]),
+                    text=[fmt_usd(v) for v in farm_rev['revenue_usd']],
                     textposition='outside',
                     textfont=dict(color="#f0fdf4", size=10),
                 ))
                 apply_theme(fig_crop, 300)
                 fig_crop.update_layout(
-                    title=dict(text="Revenue by Primary Crop", font=dict(color="#86efac", size=13)),
+                    title=dict(text="Revenue by Farm", font=dict(color="#86efac", size=13)),
                     xaxis_tickangle=-25,
-                    yaxis=dict(title="Revenue (USD)")
+                    yaxis=dict(title="Revenue (USD)", tickfont=dict(color="#6b7280"))
                 )
             else:
-                fig_crop = create_empty_chart("No crop revenue data", "Revenue by Primary Crop")
-        else:
-            fig_crop = create_empty_chart("Crop data not available", "Revenue by Primary Crop")
-    except Exception:
-        fig_crop = create_empty_chart("Error loading crop data", "Revenue by Primary Crop")
+                fig_crop = create_empty_chart(f"Error: {str(e)[:50]}", "Revenue Data")
+        except:
+            fig_crop = create_empty_chart("Unable to load revenue data", "Revenue Data")
 
     # Province performance
     if not f.empty and "province" in f.columns and "profit_margin_pct" in f.columns:
