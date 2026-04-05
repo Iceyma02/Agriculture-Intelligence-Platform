@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 from dash import html
 import base64
 import io
+from datetime import datetime
 
 # ============================================================================
 # COLOR DEFINITIONS
@@ -24,94 +25,6 @@ PALETTE = [LIME, BLUE, AMBER, PURPLE, GREEN, PINK]
 # ============================================================================
 # EXPORT FUNCTIONS
 # ============================================================================
-def create_pdf_export_button(dataframes_dict, filename="report", button_text="📄 Export PDF Report"):
-    """Create a PDF export button for comprehensive reports"""
-    from utils.pdf_export import create_pdf_report
-    
-    if not dataframes_dict:
-        return html.Div("No data available", style={"color": "#6b7280"})
-    
-    # Filter out empty dataframes
-    valid_dfs = {k: v for k, v in dataframes_dict.items() if v is not None and not v.empty}
-    
-    if not valid_dfs:
-        return html.Div("No data to export", style={"color": "#6b7280"})
-    
-    pdf_buffer = create_pdf_report(valid_dfs, filename)
-    pdf_base64 = base64.b64encode(pdf_buffer.getvalue()).decode()
-    
-    return html.A(
-        button_text,
-        href=f"data:application/pdf;base64,{pdf_base64}",
-        download=f"{filename}_{datetime.now().strftime('%Y%m%d')}.pdf",
-        className="export-btn",
-        style={
-            "backgroundColor": "#dc2626",
-            "color": "#ffffff",
-            "border": "none",
-            "padding": "8px 16px",
-            "borderRadius": "6px",
-            "cursor": "pointer",
-            "fontWeight": "600",
-            "fontSize": "0.8rem",
-            "textDecoration": "none",
-            "display": "inline-block",
-            "marginRight": "8px",
-            "marginBottom": "8px"
-        }
-    )
-
-def create_search_filter(id="search-input", placeholder="Search..."):
-    """Create a search input for filtering tables"""
-    return html.Div([
-        html.I(className="fas fa-search", style={"color": "#6b7280", "position": "absolute", "left": "12px", "top": "50%", "transform": "translateY(-50%)", "zIndex": 1}),
-        dcc.Input(
-            id=id,
-            type="text",
-            placeholder=placeholder,
-            style={
-                "width": "100%",
-                "padding": "10px 10px 10px 35px",
-                "backgroundColor": "#111811",
-                "border": "1px solid rgba(34,197,94,0.15)",
-                "borderRadius": "8px",
-                "color": "#f0fdf4",
-                "fontSize": "0.85rem"
-            }
-        )
-    ], style={"position": "relative", "marginBottom": "15px"})
-
-def create_date_filter(id="date-filter", label="Select Date Range"):
-    """Create a date range filter"""
-    from datetime import date
-    
-    return html.Div([
-        html.Label(label, style={"color": "#86efac", "fontSize": "0.8rem", "marginBottom": "5px", "display": "block"}),
-        dcc.DatePickerRange(
-            id=id,
-            start_date=date(2024, 1, 1),
-            end_date=date.today(),
-            display_format="YYYY-MM-DD",
-            style={
-                "backgroundColor": "#111811",
-                "color": "#f0fdf4",
-                "border": "1px solid rgba(34,197,94,0.15)",
-                "borderRadius": "6px"
-            }
-        )
-    ], style={"marginBottom": "15px"})
-
-def create_loading_overlay():
-    """Create a loading overlay component"""
-    return html.Div([
-        dcc.Loading(
-            id="loading-overlay",
-            type="circle",
-            color="#22c55e",
-            children=html.Div(id="loading-container"),
-            style={"position": "fixed", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)", "zIndex": 9999}
-        )
-    ])
 
 def create_export_button(df, filename="export", button_text="📥 Export to CSV"):
     """Create a working export button for a single dataframe"""
@@ -176,6 +89,56 @@ def add_export_section(dataframes_dict):
                 )
             )
     return html.Div(buttons, style={"marginBottom": "15px", "display": "flex", "flexWrap": "wrap", "gap": "8px"})
+
+# ============================================================================
+# SEARCH FUNCTION
+# ============================================================================
+
+def create_search_filter(id="search-input", placeholder="Search..."):
+    """Create a search input for filtering tables"""
+    from dash import dcc
+    
+    return html.Div([
+        html.I(className="fas fa-search", style={"color": "#6b7280", "position": "absolute", "left": "12px", "top": "50%", "transform": "translateY(-50%)", "zIndex": 1}),
+        dcc.Input(
+            id=id,
+            type="text",
+            placeholder=placeholder,
+            style={
+                "width": "100%",
+                "padding": "10px 10px 10px 35px",
+                "backgroundColor": "#111811",
+                "border": "1px solid rgba(34,197,94,0.15)",
+                "borderRadius": "8px",
+                "color": "#f0fdf4",
+                "fontSize": "0.85rem"
+            }
+        )
+    ], style={"position": "relative", "marginBottom": "15px"})
+
+# ============================================================================
+# DATE FILTER FUNCTION
+# ============================================================================
+
+def create_date_filter(id="date-filter", label="Select Date Range"):
+    """Create a date range filter"""
+    from dash import dcc
+    
+    return html.Div([
+        html.Label(label, style={"color": "#86efac", "fontSize": "0.8rem", "marginBottom": "5px", "display": "block"}),
+        dcc.DatePickerRange(
+            id=id,
+            start_date=datetime(2024, 1, 1),
+            end_date=datetime.now(),
+            display_format="YYYY-MM-DD",
+            style={
+                "backgroundColor": "#111811",
+                "color": "#f0fdf4",
+                "border": "1px solid rgba(34,197,94,0.15)",
+                "borderRadius": "6px"
+            }
+        )
+    ], style={"marginBottom": "15px"})
 
 # ============================================================================
 # FORMATTING FUNCTIONS
@@ -346,7 +309,7 @@ def get_color_gradient(value, min_val=0, max_val=100):
         return f"rgb({r}, {g}, {b})"
 
 # ============================================================================
-# DATA VALIDATION FUNCTIONS (ADDED for compatibility)
+# DATA VALIDATION FUNCTIONS
 # ============================================================================
 
 def validate_dataframe(df, required_columns, df_name="DataFrame"):
