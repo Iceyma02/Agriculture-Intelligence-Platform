@@ -4,7 +4,7 @@ Main application entry point
 """
 
 import dash
-from dash import dcc, html, Input, Output, callback_context
+from dash import dcc, html, Input, Output, State, callback_context  # ← Added State here
 import dash_bootstrap_components as dbc
 import sys
 import os
@@ -100,14 +100,6 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 /* Main content */
 .main-content { margin-left: 260px; min-height: 100vh; padding: 28px 32px; transition: margin-left 0.3s ease; }
 
-/* Cards */
-.card-agri {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px;
-    transition: all 0.3s ease;
-}
-.card-agri:hover { border-color: var(--border-strong); transform: translateY(-2px); }
-
 /* KPI cards */
 .kpi-card {
     background: var(--bg-card2); border: 1px solid var(--border);
@@ -135,7 +127,6 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: #22c55e40; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #22c55e80; }
 
 /* Plotly charts dark override */
 .js-plotly-plot .plotly .bg { fill: transparent !important; }
@@ -161,14 +152,6 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
     }
     .page-title {
         font-size: 1.5rem;
-    }
-}
-
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .main-content {
-        margin-left: 260px;
-        padding: 20px;
     }
 }
 
@@ -323,29 +306,8 @@ def render_page(page_id):
         content = html.Div([
             html.H3("Error Loading Page", style={"color": "#ef4444"}),
             html.P(f"Error: {str(e)}", style={"color": "#86efac"}),
-            html.Button("Retry", id="retry-btn", n_clicks=0, style={
-                "backgroundColor": "#22c55e",
-                "color": "#0a0f0a",
-                "border": "none",
-                "padding": "8px 16px",
-                "borderRadius": "6px",
-                "cursor": "pointer",
-                "marginTop": "15px"
-            })
         ], className="fade-in")
     return sidebar, content
-
-# Retry callback
-@app.callback(
-    Output("active-page", "data", allow_duplicate=True),
-    Input("retry-btn", "n_clicks"),
-    State("active-page", "data"),
-    prevent_initial_call=True,
-)
-def retry_page(n_clicks, current_page):
-    if n_clicks and n_clicks > 0:
-        return current_page
-    return current_page
 
 # Register all module callbacks
 for module in PAGE_MODULES.values():
