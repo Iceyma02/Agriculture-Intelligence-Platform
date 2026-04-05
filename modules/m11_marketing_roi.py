@@ -5,14 +5,17 @@ import plotly.graph_objects as go
 import sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils import marketing
-from utils import GREEN, AMBER, BLUE, LIME, RED, fmt_usd, apply_theme, page_header, card, kpi
+from utils.data_loader import marketing
+from utils.helpers import GREEN, AMBER, BLUE, LIME, RED, fmt_usd, apply_theme, page_header, card, kpi, add_export_section, create_empty_chart
 
 def layout():
     mk = marketing()
     
+    export_section = add_export_section({"Marketing_ROI_Complete": mk})
+    
     if mk.empty:
         return html.Div([
+            export_section,
             page_header("Marketing ROI Tracker", "Campaign effectiveness · Revenue lift · Buyer acquisition costs"),
             card([html.Div("⚠️ No marketing data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
         ])
@@ -33,13 +36,13 @@ def layout():
     fig_roi_pct = go.Figure(go.Bar(
         x=by_camp["campaign"], y=by_camp["roi"],
         marker=dict(color=[GREEN if v > 0 else RED for v in by_camp["roi"]]),
-        text=[f"{v:.0f}%" for v in by_camp["roi"]],
-        textfont=dict(color="#f0fdf4"),
+        text=[f"{v:.0f}%" for v in by_camp["roi"]], textfont=dict(color="#f0fdf4"),
     ))
     apply_theme(fig_roi_pct, 260)
     fig_roi_pct.update_layout(title=dict(text="ROI % by Campaign", font=dict(color="#86efac", size=13)), xaxis_tickangle=-20)
 
     return html.Div([
+        export_section,
         page_header("Marketing ROI Tracker", "Campaign effectiveness · Revenue lift · Buyer acquisition costs"),
         html.Div([
             kpi(fmt_usd(mk["spend_usd"].sum()), "Total Marketing Spend", None, False, AMBER),
@@ -51,5 +54,4 @@ def layout():
         card([dcc.Graph(figure=fig_roi_pct, config={"displayModeBar": False})]),
     ])
 
-def register_callbacks(app): 
-    pass
+def register_callbacks(app): pass
