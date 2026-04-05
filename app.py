@@ -1,13 +1,11 @@
 """
 AgriIQ — Agriculture Intelligence Platform
-Main application entry point with enhanced features
+Main application entry point
 """
 
 import dash
-from dash import dcc, html, Input, Output, State, callback_context
+from dash import dcc, html, Input, Output, callback_context
 import dash_bootstrap_components as dbc
-import pandas as pd
-from datetime import datetime
 import sys
 import os
 
@@ -21,19 +19,6 @@ from modules import (
     m09_supply_chain, m10_supplier_credit, m11_marketing_roi, m12_market_prices,
     m13_buyer_satisfaction, m14_labour, m15_losses, m16_economic_watch, m17_board_reports
 )
-
-# Import enhanced features
-from utils.data_loader import farms, pnl, monthly, inventory
-from utils.enhanced_helpers import (
-    create_loading_spinner, create_date_range_picker, create_season_filter,
-    create_export_button, create_refresh_button, create_search_bar,
-    create_compare_selector
-)
-from components.alerts_system import AlertSystem, create_alerts_panel
-from components.responsive_sidebar import add_mobile_css
-
-# Initialize alert system
-alert_system = AlertSystem()
 
 # Create Dash app
 app = dash.Dash(
@@ -146,23 +131,6 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 .badge-low { background: rgba(245,158,11,0.15); color: #f59e0b; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
 .badge-critical { background: rgba(239,68,68,0.15); color: #ef4444; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
 
-/* Export button */
-.export-btn {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: #0a0f0a;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-}
-.export-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(34,197,94,0.3);
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
@@ -172,16 +140,6 @@ body { background: var(--bg-primary); color: var(--text-primary); font-family: v
 /* Plotly charts dark override */
 .js-plotly-plot .plotly .bg { fill: transparent !important; }
 .modebar { display: none !important; }
-
-/* Loading spinner */
-._dash-loading-callback {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    color: #22c55e;
-}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -309,46 +267,11 @@ def build_sidebar(active_id="overview"):
 
     return html.Div(children, className="sidebar")
 
-# ── App layout with enhanced features ─────────────────────────────────────────
+# ── App layout ────────────────────────────────────────────────────────────────
 app.layout = html.Div([
-    # Storage components
     dcc.Store(id="active-page", data="overview"),
-    dcc.Store(id="refresh-trigger", data=0),
-    dcc.Store(id="last-update", data=datetime.now().isoformat()),
-    
-    # Interval for auto-refresh (5 minutes)
-    dcc.Interval(id="auto-refresh-interval", interval=300000, n_intervals=0),
-    
-    # Mobile menu button
-    html.Button(
-        html.I(className="fas fa-bars", style={"fontSize": "1.2rem"}),
-        id="mobile-menu-btn",
-        style={
-            "position": "fixed",
-            "top": "15px",
-            "left": "15px",
-            "zIndex": 1001,
-            "backgroundColor": "#22c55e",
-            "border": "none",
-            "borderRadius": "8px",
-            "padding": "10px 15px",
-            "cursor": "pointer",
-            "display": "none",
-            "color": "#0a0f0a",
-            "fontWeight": "600"
-        }
-    ),
-    
-    # Sidebar and main content
     html.Div(id="sidebar-container"),
     html.Div(id="page-content", className="main-content"),
-    
-    # Global loading spinner
-    create_loading_spinner(),
-    
-    # Global export component
-    html.Div(id="export-container", style={"display": "none"}),
-    dcc.Download(id="global-download"),
 ])
 
 # ── Callbacks ─────────────────────────────────────────────────────────────────
@@ -367,8 +290,9 @@ PAGE_MODULES = {
     "market-prices":   m12_market_prices,
     "buyer-sat":       m13_buyer_satisfaction,
     "labour":          m14_labour,
-    "mobile-menu":     m01_overview,
-    "performance":     m03_performance,
+    "losses":          m15_losses,
+    "economic-watch":  m16_economic_watch,
+    "board-reports":   m17_board_reports,
 }
 
 @app.callback(
@@ -389,10 +313,8 @@ def set_active_page(n_clicks_list):
     Output("sidebar-container", "children"),
     Output("page-content", "children"),
     Input("active-page", "data"),
-    Input("refresh-trigger", "data"),
-    prevent_initial_call=True,
 )
-def render_page(page_id, refresh_trigger):
+def render_page(page_id):
     sidebar = build_sidebar(page_id)
     module = PAGE_MODULES.get(page_id, m01_overview)
     try:
@@ -401,75 +323,19 @@ def render_page(page_id, refresh_trigger):
         content = html.Div([
             html.H3("Error Loading Page", style={"color": "#ef4444"}),
             html.P(f"Error: {str(e)}", style={"color": "#86efac"}),
-            html.Button("Retry", id="retry-btn", n_clicks=0)
+            html.Button("Retry", id="retry-btn", n_clicks=0, style={
+                "backgroundColor": "#22c55e",
+                "color": "#0a0f0a",
+                "border": "none",
+                "padding": "8px 16px",
+                "borderRadius": "6px",
+                "cursor": "pointer",
+                "marginTop": "15px"
+            })
         ], className="fade-in")
     return sidebar, content
 
-# Auto-refresh callback
-@app.callback(
-    Output("refresh-trigger", "data", allow_duplicate=True),
-    Input("auto-refresh-interval", "n_intervals"),
-    prevent_initial_call=True,
-)
-def auto_refresh_data(n_intervals):
-    """Auto-refresh data every 5 minutes"""
-    return n_intervals
-
-# Mobile sidebar toggle
-@app.callback(
-    Output("sidebar-container", "className"),
-    Input("mobile-menu-btn", "n_clicks"),
-    State("sidebar-container", "className"),
-    prevent_initial_call=True,
-)
-def toggle_sidebar(n_clicks, current_class):
-    if n_clicks and n_clicks > 0:
-        sidebar_elem = html.Div(id="sidebar-temp")
-        return "sidebar open" if "open" not in str(current_class) else "sidebar"
-    return current_class or "sidebar"
-
-# Export all data callback
-@app.callback(
-    Output("global-download", "data"),
-    Input("export-all-btn", "n_clicks"),
-    prevent_initial_call=True,
-)
-def export_all_data(n_clicks):
-    """Export all dashboard data to Excel"""
-    if n_clicks and n_clicks > 0:
-        import io
-        output = io.BytesIO()
-        with pd.ExcelWriter(output, engine='openpyxl') as writer:
-            farms_df = farms()
-            if not farms_df.empty:
-                farms_df.to_excel(writer, sheet_name="Farms", index=False)
-            
-            pnl_df = pnl()
-            if not pnl_df.empty:
-                pnl_df.to_excel(writer, sheet_name="PNL", index=False)
-            
-            monthly_df = monthly()
-            if not monthly_df.empty:
-                monthly_df.to_excel(writer, sheet_name="Monthly_Performance", index=False)
-            
-            inventory_df = inventory()
-            if not inventory_df.empty:
-                inventory_df.to_excel(writer, sheet_name="Inventory", index=False)
-        
-        output.seek(0)
-        return dcc.send_bytes(output.getvalue(), filename=f"agriiq_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx")
-    return None
-
-# Update last update time
-@app.callback(
-    Output("last-update", "data"),
-    Input("refresh-trigger", "data"),
-    prevent_initial_call=True,
-)
-def update_timestamp(trigger):
-    return datetime.now().isoformat()
-
-# Retry callback for error pages
+# Retry callback
 @app.callback(
     Output("active-page", "data", allow_duplicate=True),
     Input("retry-btn", "n_clicks"),
@@ -488,15 +354,6 @@ for module in PAGE_MODULES.values():
             module.register_callbacks(app)
         except Exception as e:
             print(f"Error registering callbacks for module: {e}")
-
-# Register enhanced callbacks
-try:
-    from callbacks.enhanced_callbacks import register_enhanced_callbacks
-    register_enhanced_callbacks(app)
-except ImportError:
-    print("Enhanced callbacks not available - using basic mode")
-except Exception as e:
-    print(f"Error registering enhanced callbacks: {e}")
 
 # Run the app
 if __name__ == "__main__":
