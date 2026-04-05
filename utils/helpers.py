@@ -3,6 +3,8 @@
 import pandas as pd
 import plotly.graph_objects as go
 from dash import html
+import base64
+import io
 
 # ============================================================================
 # COLOR DEFINITIONS
@@ -18,6 +20,76 @@ PINK = '#ec4899'
 
 # Color palette for charts
 PALETTE = [LIME, BLUE, AMBER, PURPLE, GREEN, PINK]
+
+# ============================================================================
+# EXPORT FUNCTIONS
+# ============================================================================
+
+def create_export_button(df, filename="export", button_text="📥 Export to CSV"):
+    """Create a working export button for a single dataframe"""
+    if df is None or df.empty:
+        return html.Div("No data available", style={"color": "#6b7280", "fontSize": "0.75rem"})
+    
+    # Convert dataframe to CSV
+    csv_buffer = io.StringIO()
+    df.to_csv(csv_buffer, index=False)
+    csv_string = csv_buffer.getvalue()
+    csv_base64 = base64.b64encode(csv_string.encode()).decode()
+    
+    return html.A(
+        button_text,
+        href=f"data:text/csv;base64,{csv_base64}",
+        download=f"{filename}.csv",
+        className="export-btn",
+        style={
+            "backgroundColor": "#22c55e",
+            "color": "#0a0f0a",
+            "border": "none",
+            "padding": "8px 16px",
+            "borderRadius": "6px",
+            "cursor": "pointer",
+            "fontWeight": "600",
+            "fontSize": "0.8rem",
+            "textDecoration": "none",
+            "display": "inline-block",
+            "marginRight": "8px",
+            "marginBottom": "8px"
+        }
+    )
+
+def add_export_section(dataframes_dict):
+    """Create export buttons for multiple dataframes"""
+    buttons = []
+    for name, df in dataframes_dict.items():
+        if df is not None and not df.empty:
+            # Convert to CSV
+            csv_buffer = io.StringIO()
+            df.to_csv(csv_buffer, index=False)
+            csv_string = csv_buffer.getvalue()
+            csv_base64 = base64.b64encode(csv_string.encode()).decode()
+            
+            buttons.append(
+                html.A(
+                    f"📊 Export {name}",
+                    href=f"data:text/csv;base64,{csv_base64}",
+                    download=f"agriiq_{name}.csv",
+                    className="export-btn",
+                    style={
+                        "backgroundColor": "#22c55e",
+                        "color": "#0a0f0a",
+                        "border": "none",
+                        "padding": "6px 12px",
+                        "borderRadius": "4px",
+                        "cursor": "pointer",
+                        "fontWeight": "600",
+                        "fontSize": "0.75rem",
+                        "textDecoration": "none",
+                        "marginRight": "8px",
+                        "marginBottom": "8px"
+                    }
+                )
+            )
+    return html.Div(buttons, style={"marginBottom": "15px", "display": "flex", "flexWrap": "wrap", "gap": "8px"})
 
 # ============================================================================
 # FORMATTING FUNCTIONS
@@ -181,71 +253,8 @@ def get_color_gradient(value, min_val=0, max_val=100):
     elif value >= max_val:
         return RED
     else:
-        # Interpolate between green and red
         ratio = (value - min_val) / (max_val - min_val)
-        r = int(34 + (239 - 34) * ratio)  # 34->239
-        g = int(197 + (68 - 197) * ratio)  # 197->68
-        b = int(94 + (68 - 94) * ratio)    # 94->68
+        r = int(34 + (239 - 34) * ratio)
+        g = int(197 + (68 - 197) * ratio)
+        b = int(94 + (68 - 94) * ratio)
         return f"rgb({r}, {g}, {b})"
-
-# ============================================================================
-# DATA VALIDATION FUNCTIONS
-# ============================================================================
-
-def validate_dataframe(df, required_columns, df_name="DataFrame"):
-    """Validate that a DataFrame has required columns"""
-    if df.empty:
-        return False, f"{df_name} is empty"
-    
-    missing_cols = [col for col in required_columns if col not in df.columns]
-    if missing_cols:
-        return False, f"{df_name} missing columns: {missing_cols}"
-    
-    return True, "Valid"
-    def create_export_button(data, filename="export", button_text="📥 Export to CSV"):
-    """Create a working export button"""
-    import base64
-    import io
-    
-    if data is None or data.empty:
-        return html.Div("No data to export", style={"color": "#6b7280"})
-    
-    # Convert dataframe to CSV
-    csv_buffer = io.StringIO()
-    data.to_csv(csv_buffer, index=False)
-    csv_string = csv_buffer.getvalue()
-    csv_base64 = base64.b64encode(csv_string.encode()).decode()
-    
-    return html.Div([
-        html.A(
-            button_text,
-            href=f"data:text/csv;base64,{csv_base64}",
-            download=f"{filename}.csv",
-            style={
-                "backgroundColor": "#22c55e",
-                "color": "#0a0f0a",
-                "border": "none",
-                "padding": "8px 16px",
-                "borderRadius": "6px",
-                "cursor": "pointer",
-                "fontWeight": "600",
-                "fontSize": "0.8rem",
-                "textDecoration": "none",
-                "display": "inline-block"
-            }
-        )
-    ])
-
-def safe_merge(df1, df2, on, how='left'):
-    """Safely merge two dataframes with type conversion"""
-    try:
-        # Convert join keys to string to avoid type mismatches
-        if on in df1.columns:
-            df1[on] = df1[on].astype(str)
-        if on in df2.columns:
-            df2[on] = df2[on].astype(str)
-        
-        return df1.merge(df2, on=on, how=how)
-    except Exception as e:
-        print(f"Error merging dataframes: {e}")
-        return pd.DataFrame()
