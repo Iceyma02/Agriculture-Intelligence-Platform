@@ -249,7 +249,20 @@ def build_sidebar(active_id="overview"):
     ], style={"marginTop": "auto", "padding": "16px 20px"}))
 
     return html.Div(children, className="sidebar")
-
+# Add near the top of app.layout
+app.layout = html.Div([
+    dcc.Store(id="active-page", data="overview"),
+    dcc.Loading(
+        id="global-loading",
+        type="circle",
+        color="#22c55e",
+        fullscreen=True,
+        children=[
+            html.Div(id="sidebar-container"),
+            html.Div(id="page-content", className="main-content"),
+        ]
+    ),
+])
 # ── App layout ────────────────────────────────────────────────────────────────
 app.layout = html.Div([
     dcc.Store(id="active-page", data="overview"),
