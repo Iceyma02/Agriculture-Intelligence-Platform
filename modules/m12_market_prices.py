@@ -5,14 +5,17 @@ import plotly.graph_objects as go
 import sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils import market_prices
-from utils import GREEN, AMBER, BLUE, LIME, RED, PURPLE, fmt_usd, apply_theme, page_header, card, kpi
+from utils.data_loader import market_prices
+from utils.helpers import GREEN, AMBER, BLUE, LIME, RED, PURPLE, fmt_usd, apply_theme, page_header, card, kpi, add_export_section, create_empty_chart
 
 def layout():
     mp = market_prices()
     
+    export_section = add_export_section({"Market_Prices_Complete": mp})
+    
     if mp.empty:
         return html.Div([
+            export_section,
             page_header("Market Price Watch", "Real-time price comparison · GMB · TIMB · COTTCO · Private · Export"),
             card([html.Div("⚠️ No market price data available", style={"color": AMBER, "textAlign": "center", "padding": "40px"})])
         ])
@@ -23,11 +26,7 @@ def layout():
     fig_prices = go.Figure()
     for channel, color in [("gmb_price", GREEN), ("private_buyer_price", AMBER), ("export_price_usd", BLUE)]:
         sub = latest.dropna(subset=[channel])
-        fig_prices.add_trace(go.Bar(
-            name=channel.replace("_", " ").title(),
-            x=sub["crop"], y=sub[channel],
-            marker_color=color,
-        ))
+        fig_prices.add_trace(go.Bar(name=channel.replace("_", " ").title(), x=sub["crop"], y=sub[channel], marker_color=color))
     fig_prices.update_layout(barmode="group", xaxis_tickangle=-15)
     apply_theme(fig_prices, 300)
     fig_prices.update_layout(title=dict(text="Current Prices: GMB vs Private vs Export (USD/ton)", font=dict(color="#86efac", size=13)))
@@ -45,9 +44,7 @@ def layout():
 
     rows = []
     for _, row in latest.iterrows():
-        prices = {"GMB": row.get("gmb_price", 0) or 0, 
-                  "Private": row.get("private_buyer_price", 0) or 0, 
-                  "Export": row.get("export_price_usd", 0) or 0}
+        prices = {"GMB": row.get("gmb_price", 0) or 0, "Private": row.get("private_buyer_price", 0) or 0, "Export": row.get("export_price_usd", 0) or 0}
         best = max(prices, key=prices.get)
         rows.append(html.Tr([
             html.Td(row["crop"], style={"color": "#f0fdf4", "fontSize": "0.82rem", "fontWeight": "500", "padding": "9px 6px"}),
@@ -58,12 +55,12 @@ def layout():
         ], style={"borderBottom": "1px solid rgba(34,197,94,0.07)"}))
 
     table = html.Table([
-        html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px", "letterSpacing": "0.06em"})
-                             for h in ["Crop", "GMB ($/ton)", "Private ($/ton)", "Export ($/ton)", "Recommended Channel"]])),
+        html.Thead(html.Tr([html.Th(h, style={"color": "#4ade80", "fontSize": "0.70rem", "fontWeight": "600", "textTransform": "uppercase", "padding": "8px 6px"}) for h in ["Crop", "GMB ($/ton)", "Private ($/ton)", "Export ($/ton)", "Recommended Channel"]])),
         html.Tbody(rows),
     ], style={"width": "100%", "borderCollapse": "collapse"})
 
     return html.Div([
+        export_section,
         page_header("Market Price Watch", "Real-time price comparison · GMB · TIMB · COTTCO · Private · Export"),
         html.Div([
             kpi("$285", "Maize — GMB Price", "Per ton today", True, GREEN),
@@ -73,11 +70,7 @@ def layout():
         ], style={"display": "grid", "gridTemplateColumns": "repeat(4,1fr)", "gap": "14px", "marginBottom": "24px"}),
         card([dcc.Graph(figure=fig_prices, config={"displayModeBar": False})], {"marginBottom": "16px"}),
         card([dcc.Graph(figure=fig_maize, config={"displayModeBar": False})], {"marginBottom": "16px"}),
-        card([
-            html.Div("📊  Sell Channel Recommendations — Today's Prices", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}),
-            html.Div(table, style={"overflowX": "auto"}),
-        ]),
+        card([html.Div("📊 Sell Channel Recommendations — Today's Prices", style={"color": "#86efac", "fontWeight": "600", "marginBottom": "14px", "fontSize": "0.9rem"}), html.Div(table, style={"overflowX": "auto"})]),
     ])
 
-def register_callbacks(app): 
-    pass
+def register_callbacks(app): pass
