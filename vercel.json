@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": ["data/csv/**"] }
+    }
+  ],
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/api/index.py" },
+    { "src": "/_dash-(.*)", "dest": "/api/index.py" },
+    { "src": "/(.*)", "dest": "/api/index.py" }
+  ]
+}
